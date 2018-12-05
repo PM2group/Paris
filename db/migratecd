@@ -1,0 +1,21 @@
+class CreateChatpages < ActiveRecord::Migration[5.2]
+  def change
+    create_table :chatpages do |t|
+      t.integer :designer_id, null: false
+      t.string :designer_name, null: false
+      t.date :period
+      t.integer :max_mem, null: false
+      t.integer :join_mem
+      t.boolean :rec, null: false, default: true
+      t.date :start_date
+      t.date :finish_date
+      t.string :thme, null: false
+      t.boolean :readable, default: true
+      t.string :password
+      t.string :page_url
+      t.date :update, null: false
+
+      t.timestamps
+    end
+  end
+end

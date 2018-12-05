@@ -802,3 +802,30 @@ Processing by SearchController#company as HTML
 Completed 200 OK in 64ms (Views: 56.7ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6220336080791520240)[0m
+  ↳ bin/rails:9
+  [1m[35m (33.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateChats (20181205144037)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (731.2ms)[0m  [1m[35mCREATE TABLE "chats" ("id" bigserial primary key, "designer_id" integer NOT NULL, "designer_name" character varying(50) NOT NULL, "period" date, "max_mem" integer NOT NULL, "join_mem" integer DEFAULT 0, "rec" boolean DEFAULT TRUE NOT NULL, "start_date" date, "finish_date" date, "thme" character varying(200) NOT NULL, "readable" boolean DEFAULT TRUE, "password" character varying(30), "page_url" character varying, "update" date NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181205144037_create_chats.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181205144037"]]
+  ↳ bin/rails:9
+  [1m[35m (41.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (31.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6220336080791520240)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (18.1ms)[0m  [1m[35mCREATE DATABASE "daiza3_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE DATABASE "daiza3_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
