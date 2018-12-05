@@ -415,3 +415,390 @@ Processing by SearchController#chat as HTML
 Completed 200 OK in 813ms (Views: 810.6ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/search/chat" for 127.0.0.1 at 2018-12-05 12:48:47 +0900
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by SearchController#chat as HTML
+  Rendering search/chat.html.erb within layouts/application
+  Rendered search/chat.html.erb within layouts/application (606.6ms)
+Completed 200 OK in 723ms (Views: 711.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/chat" for 127.0.0.1 at 2018-12-05 12:49:21 +0900
+Processing by SearchController#chat as HTML
+  Rendering search/chat.html.erb within layouts/application
+  Rendered search/chat.html.erb within layouts/application (2886.5ms)
+Completed 200 OK in 2979ms (Views: 2969.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/chat" for 127.0.0.1 at 2018-12-05 12:50:03 +0900
+Processing by SearchController#chat as HTML
+  Rendering search/chat.html.erb within layouts/application
+  Rendered search/chat.html.erb within layouts/application (1087.5ms)
+Completed 200 OK in 1160ms (Views: 1155.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/chat" for 127.0.0.1 at 2018-12-05 12:50:23 +0900
+Processing by SearchController#chat as HTML
+  Rendering search/chat.html.erb within layouts/application
+  Rendered search/chat.html.erb within layouts/application (1361.2ms)
+Completed 200 OK in 1466ms (Views: 1440.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/chat" for 127.0.0.1 at 2018-12-05 12:50:55 +0900
+Processing by SearchController#chat as HTML
+  Rendering search/chat.html.erb within layouts/application
+  Rendered search/chat.html.erb within layouts/application (1028.1ms)
+Completed 200 OK in 1134ms (Views: 1124.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/chat" for 127.0.0.1 at 2018-12-05 12:52:18 +0900
+Processing by SearchController#chat as HTML
+  Rendering search/chat.html.erb within layouts/application
+  Rendered search/chat.html.erb within layouts/application (1114.8ms)
+Completed 200 OK in 1236ms (Views: 1221.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/chat" for 127.0.0.1 at 2018-12-05 12:52:28 +0900
+Processing by SearchController#chat as HTML
+  Rendering search/chat.html.erb within layouts/application
+  Rendered search/chat.html.erb within layouts/application (1188.1ms)
+Completed 200 OK in 1265ms (Views: 1253.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/chat" for 127.0.0.1 at 2018-12-05 12:52:45 +0900
+Processing by SearchController#chat as HTML
+  Rendering search/chat.html.erb within layouts/application
+  Rendered search/chat.html.erb within layouts/application (1598.1ms)
+Completed 200 OK in 1743ms (Views: 1724.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/chat" for 127.0.0.1 at 2018-12-05 12:53:07 +0900
+Processing by SearchController#chat as HTML
+  Rendering search/chat.html.erb within layouts/application
+  Rendered search/chat.html.erb within layouts/application (1060.9ms)
+Completed 200 OK in 1127ms (Views: 1122.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/chat" for 127.0.0.1 at 2018-12-05 13:01:43 +0900
+Processing by SearchController#chat as HTML
+  Rendering search/chat.html.erb within layouts/application
+  Rendered search/chat.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 73ms (Views: 66.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-05 13:01:50 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (2.1ms)
+Completed 200 OK in 61ms (Views: 57.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-12-05 13:01:55 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.slim within layouts/application
+  Rendered sessions/new.html.slim within layouts/application (10.2ms)
+Completed 200 OK in 68ms (Views: 63.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-12-05 13:02:09 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d+5whOu4m/0a8xYxzdD1yi27pvEu8d2cSaps0GCU7PYkpBOZSJdAxAiItRHwwKc7AobkTWIwVozlQVcn7JDLOQ==", "session"=>{"mem_info"=>"aaa", "password"=>"[FILTERED]"}, "commit"=>"ログインする"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."mem_info" = $1 LIMIT $2[0m  [["mem_info", "aaa"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10
+Redirected to http://localhost:3000/user_pages
+Completed 302 Found in 146ms (ActiveRecord: 14.9ms)
+
+
+Started GET "/user_pages" for 127.0.0.1 at 2018-12-05 13:02:09 +0900
+Processing by UserPagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendering user_pages/index.html.slim within layouts/application
+  Rendered user_pages/index.html.slim within layouts/application (9.5ms)
+Completed 200 OK in 77ms (Views: 70.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/company_pages" for 127.0.0.1 at 2018-12-05 13:02:48 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/company_pages"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started DELETE "/logout" for 127.0.0.1 at 2018-12-05 13:02:54 +0900
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pkK+XI0BaGWsjLl9+XzINOT5VVrpqNuJHF7MWdtWey3l9/BKuvD0kGkJ+cUJk7DK7iKsox7BSZuix3Xxz5Y/XQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-05 13:02:54 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (2.5ms)
+Completed 200 OK in 65ms (Views: 60.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login_com" for 127.0.0.1 at 2018-12-05 13:02:56 +0900
+Processing by SessionsComController#new as HTML
+  Rendering sessions_com/new.html.slim within layouts/application
+  Rendered sessions_com/new.html.slim within layouts/application (4.6ms)
+Completed 200 OK in 77ms (Views: 73.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companys/new" for 127.0.0.1 at 2018-12-05 13:02:59 +0900
+Processing by CompanysController#new as HTML
+  Rendering companys/new.html.slim within layouts/application
+  Rendered companys/_form.html.slim (69.9ms)
+  Rendered companys/new.html.slim within layouts/application (75.4ms)
+Completed 200 OK in 161ms (Views: 127.1ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/companys" for 127.0.0.1 at 2018-12-05 13:03:18 +0900
+Processing by CompanysController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D/r6IfXn2TAqDOi1DpoLtTotZzdkcg6peLFUprtRkliq2/dpEOMvXL6sBAxP15Eg78bDqgDiecybk+6LXJOQWw==", "company"=>{"com_name"=>"yuusei", "occupations"=>"yuusei", "com_info"=>"aaa", "location"=>"千葉", "salary"=>"7", "condition"=>"aaa", "appeal"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/companys_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/companys_controller.rb:14
+  Rendering companys/new.html.slim within layouts/application
+  Rendered companys/_form.html.slim (11.3ms)
+  Rendered companys/new.html.slim within layouts/application (17.7ms)
+Completed 200 OK in 116ms (Views: 85.0ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/companys" for 127.0.0.1 at 2018-12-05 13:04:18 +0900
+Processing by CompanysController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SqiUFFv9r3Li4Ab7lpVmNpwEsCt46KFRzX0YVDJUcJ6ZpDKEFLMVhh29L/nsib/D7YFT4W3hKl8vglsoKqg2uw==", "com_name"=>"yuusei", "occupations"=>"yuusei", "com_info"=>"aaa", "location"=>"千葉", "salary"=>"11", "condition"=>"ｈｊｄｓ", "appeal"=>"がんばります", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "commit"=>"保存する"}
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: company):
+  
+app/controllers/companys_controller.rb:41:in `company_params'
+app/controllers/companys_controller.rb:12:in `create'
+Started GET "/" for 127.0.0.1 at 2018-12-05 13:04:27 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (2.7ms)
+Completed 200 OK in 82ms (Views: 79.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-05 13:05:12 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (2.6ms)
+Completed 200 OK in 51ms (Views: 48.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-05 13:05:30 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (11.2ms)
+Completed 200 OK in 163ms (Views: 155.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-12-05 13:10:46 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.slim within layouts/application
+  Rendered sessions/new.html.slim within layouts/application (7.0ms)
+Completed 200 OK in 106ms (Views: 100.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-12-05 13:14:41 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q7nt5k5x6eIv955f3Gy4lmWssun0phQ1iB7FFoEyM2lw6ye9NhiAkLpR9R1Poi275ONp7o3xEIrJdzZ0bw6WkA==", "session"=>{"mem_info"=>"yuusei", "password"=>"[FILTERED]"}, "commit"=>"ログインする"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."mem_info" = $1 LIMIT $2[0m  [["mem_info", "yuusei"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10
+  Rendering sessions/new.html.slim within layouts/application
+  Rendered sessions/new.html.slim within layouts/application (3.7ms)
+Completed 200 OK in 89ms (Views: 65.2ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-12-05 13:14:47 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AsAltc+SnCzp/1BFYAy8xvWdMzQ9YEmj7vgza4EGdmXRzIMlgNwm2BaieUcaEGUzhBjQ/ihpwq0MB3AXmfowQA==", "session"=>{"mem_info"=>"aaa", "password"=>"[FILTERED]"}, "commit"=>"ログインする"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."mem_info" = $1 LIMIT $2[0m  [["mem_info", "aaa"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10
+Redirected to http://localhost:3000/user_pages
+Completed 302 Found in 129ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/user_pages" for 127.0.0.1 at 2018-12-05 13:14:47 +0900
+Processing by UserPagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendering user_pages/index.html.slim within layouts/application
+  Rendered user_pages/index.html.slim within layouts/application (3.9ms)
+Completed 200 OK in 60ms (Views: 55.6ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2018-12-05 13:21:36 +0900
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5lFfp0hWhvZY9KHoTrUEhRARPBFN6GR2XYfYE8tcRQU1Xfk3Bxg8AqepiOo0qd1wYZTf21jh73i/eJtv06ADIA=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-05 13:21:36 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (5.6ms)
+Completed 200 OK in 64ms (Views: 61.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search_company" for 127.0.0.1 at 2018-12-05 13:21:38 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/search_company"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-12-05 13:21:52 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (4.8ms)
+Completed 200 OK in 69ms (Views: 66.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/company" for 127.0.0.1 at 2018-12-05 13:21:53 +0900
+Processing by SearchController#company as HTML
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 59ms (Views: 55.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/chat" for 127.0.0.1 at 2018-12-05 13:22:40 +0900
+Processing by SearchController#chat as HTML
+  Rendering search/chat.html.erb within layouts/application
+  Rendered search/chat.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 83ms (Views: 78.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/company" for 127.0.0.1 at 2018-12-05 13:22:48 +0900
+Processing by SearchController#company as HTML
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 64ms (Views: 60.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/company" for 127.0.0.1 at 2018-12-05 13:22:50 +0900
+Processing by SearchController#company as HTML
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 69ms (Views: 62.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/company" for 127.0.0.1 at 2018-12-05 13:22:51 +0900
+Processing by SearchController#company as HTML
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 59ms (Views: 54.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/company" for 127.0.0.1 at 2018-12-05 13:22:51 +0900
+Processing by SearchController#company as HTML
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 69ms (Views: 64.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/company" for 127.0.0.1 at 2018-12-05 13:22:51 +0900
+Processing by SearchController#company as HTML
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 63ms (Views: 56.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/company" for 127.0.0.1 at 2018-12-05 13:22:51 +0900
+Processing by SearchController#company as HTML
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 61ms (Views: 56.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/company" for 127.0.0.1 at 2018-12-05 13:22:52 +0900
+Processing by SearchController#company as HTML
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 71ms (Views: 66.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/company" for 127.0.0.1 at 2018-12-05 13:22:52 +0900
+Processing by SearchController#company as HTML
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 60ms (Views: 57.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/company" for 127.0.0.1 at 2018-12-05 13:22:52 +0900
+Processing by SearchController#company as HTML
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 64ms (Views: 59.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/member" for 127.0.0.1 at 2018-12-05 13:22:55 +0900
+Processing by SearchController#member as HTML
+  Rendering search/member.html.erb within layouts/application
+  Rendered search/member.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 71ms (Views: 67.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/company" for 127.0.0.1 at 2018-12-05 13:22:56 +0900
+Processing by SearchController#company as HTML
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 64ms (Views: 56.7ms | ActiveRecord: 0.0ms)
+
+
