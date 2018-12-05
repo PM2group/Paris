@@ -1,0 +1,14 @@
+class ComPagesController < ApplicationController
+  def index
+    @company = current_company
+  end
+
+  def show
+  end
+
+  def new
+  end
+
+  def edit
+  end
+end

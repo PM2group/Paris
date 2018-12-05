@@ -1,0 +1,20 @@
+class CreateCompanies < ActiveRecord::Migration[5.2]
+  def change
+    create_table :companies do |t|
+      t.string :com_name
+      t.string :occupations
+      t.string :location
+      t.string :com_info
+      t.string :condition
+      t.integer :salary
+      t.string :password_digest
+      t.string :frame
+      t.string :lang
+      t.string :adoption
+      t.text :appeal
+      t.string :system
+
+      t.timestamps
+    end
+  end
+end
