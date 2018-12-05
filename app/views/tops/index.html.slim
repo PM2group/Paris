@@ -1,2 +1,11 @@
 h1 トップページ
+
+li.nav-item= link_to  '学生でログイン', login_path, class: 'nav-link'
+li.nav-item= link_to  '企業でログイン', login_com_path, class: 'nav-link'
+li.nav-item= link_to  '学生で新規登録', new_user_path, class: 'nav-link'
+li.nav-item= link_to  '企業で新規登録', new_company_path, class: 'nav-link'
+li.nav-item= link_to  '企業検索', "search/company", class: 'nav-link'
+li.nav-item= link_to  '学生検索', "search/memeber", class: 'nav-link'
+li.nav-item= link_to  'チャット検索', "search/chat", class: 'nav-link'
+
 p とりあえずのトップページ。企業情報とかを羅列するだけなら結構簡単に行けるよ

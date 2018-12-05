@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   resources :companys
   resources :com_pages
   resources :tops
+
 end
