@@ -1,0 +1,15 @@
+h1 企業情報
+
+.mb-3
+table.table.table-hover
+  thead.thead-default
+    tr
+      th = Company.human_attribute_name(:com_name)
+      th = Company.human_attribute_name(:occupations)
+      th = Company.human_attribute_name(:location)
+  tbody
+    tr
+      td= @company.com_name
+      td= @company.occupations
+      td= @company.location
+  = link_to '編集する',edit_company_path(current_company),class: 'btn btn-primary mr-3'

@@ -1,0 +1,3 @@
+h1 ユーザ修正画面
+
+= render partial: 'form', locals: { company: @company }

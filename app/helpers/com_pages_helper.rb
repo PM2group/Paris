@@ -1,0 +1,2 @@
+module ComPagesHelper
+end

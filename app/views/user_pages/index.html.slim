@@ -1,0 +1,17 @@
+h1 ユーザ情報
+
+.mb-3
+table.table.table-hover
+  thead.thead-default
+    tr
+      th = User.human_attribute_name(:mem_name)
+      th = User.human_attribute_name(:user_name)
+      th = User.human_attribute_name(:des_occupation)
+      th = User.human_attribute_name(:des_location)
+  tbody
+    tr
+      td= @user.mem_name
+      td= @user.user_name
+      td= @user.des_occupation
+      td= @user.des_location
+  = link_to '編集する',edit_user_path(current_user), class: 'btn btn-primary mr-3'

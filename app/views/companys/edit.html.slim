@@ -1,0 +1,5 @@
+h1 企業修正画面
+.nav.justify-content-end
+  =link_to 'マイページへ',com_pages_path, class: 'nav-link'
+
+= render partial: 'form', locals: { company: @company }
