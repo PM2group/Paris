@@ -1,125 +1,137 @@
-<%= stylesheet_link_tag "book/search", :media => "all" %>
+    <%= stylesheet_link_tag "book/search", :media => "all" %>
 
-<div id = "mypage">
-<a href = "company">
- <input type="button" name="search" value="マイぺージ" />
-</a>
-</div>
+    <div id = "mypage">
+    <a href = "company">
+    <input type="button" name="search" value="マイぺージ" />
+    </a>
+    </div>
 
-<div id ="s_word">
- 検索ワード
- <input type="text" name="s_word" style="width:300px; height:30px"/>
-</div>
+    <form method="GET" action="/search/member">
 
-<div id ="e_word">
- 除外ワード
- <input type="text" name="e_word" style="width:300px; height:30px"/>
-</div>
+        <div id ="s_word">
+        検索ワード
+        <input type="text" name="s_word" style="width:300px; height:30px"/>
 
-<div id ="search">
- <%= link_to "検索" , :des_occ => "a" ,:des_loc => "aa"%>
-</div>
+        </div>
 
-<div id ="result">
- 学生検索結果
-</div>
+        <div id ="e_word">
+        除外ワード
+        <input type="text" name="e_word" style="width:300px; height:30px"/>
+        </div>
 
-<div id ="condition">
-詳細条件
-</div>
+        <div id ="result">
+        学生検索結果
+        </div>
 
-<div id ="des_occ">
-    <details>
-    <summary>希望職種</summary>
-    <input type="radio" name="$des_occ" />
-    プログラマ
-    </br>
-    <input type="radio" name="$des_occ" />
-    システムエンジニア
-    </br>
-    <input type="radio" name="$des_occ" />
-    ネットワークエンジニア
-    </br>
-    <input type="radio" name="$des_occ" />
-    データベースエンジニア
-    </br>
-    <input type="radio" name="$des_occ" />
-    Webエンジニア
-    </details>
-</div>
+        <div id ="condition">
+        詳細条件
+        </div>
 
-<div id ="des_loc">
-    <details>
-    <summary>希望勤務地</summary>
-    <input type="radio" name="des_loc" value="1" />
-    1
-    </br>
-    <input type="radio" name="des_loc" value="2" />
-    2
-    </br>
-    <input type="radio" name="des_loc" value="3" />
-    3
-    </details>
-</div>
 
-<div id ="quali">
-    <details>
-    <summary>持っている資格</summary>
-    <input type="radio" name="quali" value="1" />
-    1
-    </br>
-    <input type="radio" name="quali" value="2" />
-    2
-    </br>
-    <input type="radio" name="quali" value="3" />
-    3
-    </details>
+        <div id ="des_occ">
+            <details>
+            <summary>希望職種</summary>
+            <input type="radio" name="des_occ" value = "プログラマ"/>
+            プログラマ
+            </br>
+            <input type="radio" name="des_occ" />
+            システムエンジニア
+            </br>
+            <input type="radio" name="des_occ" />
+            ネットワークエンジニア
+            </br>
+            <input type="radio" name="des_occ" />
+            データベースエンジニア
+            </br>
+            <input type="radio" name="des_occ" />
+            Webエンジニア
+            <input type="radio" name="des_occ" value = "" checked="checked" style="display:none;" />
+            </details>
+        </div>
 
-</div>
+        <div id ="des_loc">
+            <details>
+            <summary>希望勤務地</summary>
+            <input type="radio" name="des_loc" value="1" />
+            1
+            </br>
+            <input type="radio" name="des_loc" value="2" />
+            2
+            </br>
+            <input type="radio" name="des_loc" value="3" />
+            3
+            <input type="radio" name="des_loc" value = "" checked="checked" style="display:none;" />
+            </details>
+        </div>
 
-<div id ="univ">
-    <details>
-    <summary>所属大学</summary>
-    <input type="radio" name="quali" value="1" />
-    1
-    </br>
-    <input type="radio" name="quali" value="2" />
-    2
-    </br>
-    <input type="radio" name="quali" value="3" />
-    3
-    </details>
+        <div id ="quali">
+            <details>
+            <summary>持っている資格</summary>
+            <input type="radio" name="quali" value="1" />
+            1
+            </br>
+            <input type="radio" name="quali" value="2" />
+            2
+            </br>
+            <input type="radio" name="quali" value="3" />
+            3
+            <input type="radio" name="quali" value = "" checked="checked" style="display:none;" />
+            </details>
 
-</div>
+        </div>
 
-<div id ="lan_exp">
-    <details>
-    <summary>プログラミング言語</summary>
-    <input type="radio" name="quali" value="1" />
-    1
-    </br>
-    <input type="radio" name="quali" value="2" />
-    2
-    </br>
-    <input type="radio" name="quali" value="3" />
-    3
-    </details>
+        <div id ="univ">
+            <details>
+            <summary>所属大学</summary>
+            <input type="radio" name="quali" value="1" />
+            1
+            </br>
+            <input type="radio" name="quali" value="2" />
+            2
+            </br>
+            <input type="radio" name="quali" value="3" />
+            3
+            <input type="radio" name="univ" value = "" checked="checked" style="display:none;" />
+            </details>
 
-</div>
+        </div>
 
-<div id ="results">
-    
-        <% @member.each do |member| %>
-            <a href = "member/<%= member.user_name %>" >
-                名前：<%= member.user_name%>
-                生年月日:<%= member.mem_birth %>
-            </a>
-         <% end %>
+        <div id ="lan_exp">
+            <details>
+            <summary>プログラミング言語</summary>
+            <input type="radio" name="quali" value="1" />
+            1
+            </br>
+            <input type="radio" name="quali" value="2" />
+            2
+            </br>
+            <input type="radio" name="quali" value="3" />
+            3
+            <input type="radio" name="lan_exp" value = "" checked="checked" style="display:none;" />
+            </details>
 
-</div>
+        </div>
 
-</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
-<h1>Serch#member</h1>
-<p>Find me in app/views/serch/member.html.erb</p>
-<a href = "company"> company </a>
-<a href = "chat"> chat </a>
+        <div id ="results">
+            
+                <% @member.each do |member| %>
+                    <a href = "member/<%= member.user_name %>" >
+                        名前：<%= member.user_name%></br>
+                        生年月日:<%= member.mem_birth %>
+                        
+                    </a>
+                <% end %>
+
+        </div>
+
+        <div id ="search">
+        <%= button_to "検索" , {:des_occ => @des_occ ,:des_loc => @des_loc},{method: :get}%>
+        <%= @s_word %>
+        </div>
+
+    </form>
+
+    </br></br></br></br></br></br></br></br></br></br></br></br>
+    <p>Find me in app/views/serch/member.html.erb</p>
+    <a href = "company"> company </a>
+    <a href = "chat"> chat </a>
