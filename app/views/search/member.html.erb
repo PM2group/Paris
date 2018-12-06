@@ -17,9 +17,7 @@
 </div>
 
 <div id ="search">
-<a href = "company">
- <input type="button" name="search" value="検索" />
-</a>
+ <%= link_to "検索" , :des_occ => "a" ,:des_loc => "aa"%>
 </div>
 
 <div id ="result">
@@ -33,19 +31,19 @@
 <div id ="des_occ">
     <details>
     <summary>希望職種</summary>
-    <input type="radio" name="category" />
+    <input type="radio" name="$des_occ" />
     プログラマ
     </br>
-    <input type="radio" name="category" />
+    <input type="radio" name="$des_occ" />
     システムエンジニア
     </br>
-    <input type="radio" name="category" />
+    <input type="radio" name="$des_occ" />
     ネットワークエンジニア
     </br>
-    <input type="radio" name="category" />
+    <input type="radio" name="$des_occ" />
     データベースエンジニア
     </br>
-    <input type="radio" name="category" />
+    <input type="radio" name="$des_occ" />
     Webエンジニア
     </details>
 </div>
@@ -53,13 +51,13 @@
 <div id ="des_loc">
     <details>
     <summary>希望勤務地</summary>
-    <input type="radio" name="theme" value="1" />
+    <input type="radio" name="des_loc" value="1" />
     1
     </br>
-    <input type="radio" name="theme" value="2" />
+    <input type="radio" name="des_loc" value="2" />
     2
     </br>
-    <input type="radio" name="theme" value="3" />
+    <input type="radio" name="des_loc" value="3" />
     3
     </details>
 </div>
@@ -67,13 +65,13 @@
 <div id ="quali">
     <details>
     <summary>持っている資格</summary>
-    <input type="radio" name="theme" value="1" />
+    <input type="radio" name="quali" value="1" />
     1
     </br>
-    <input type="radio" name="theme" value="2" />
+    <input type="radio" name="quali" value="2" />
     2
     </br>
-    <input type="radio" name="theme" value="3" />
+    <input type="radio" name="quali" value="3" />
     3
     </details>
 
@@ -82,13 +80,13 @@
 <div id ="univ">
     <details>
     <summary>所属大学</summary>
-    <input type="radio" name="theme" value="1" />
+    <input type="radio" name="quali" value="1" />
     1
     </br>
-    <input type="radio" name="theme" value="2" />
+    <input type="radio" name="quali" value="2" />
     2
     </br>
-    <input type="radio" name="theme" value="3" />
+    <input type="radio" name="quali" value="3" />
     3
     </details>
 
@@ -97,20 +95,31 @@
 <div id ="lan_exp">
     <details>
     <summary>プログラミング言語</summary>
-    <input type="radio" name="theme" value="1" />
+    <input type="radio" name="quali" value="1" />
     1
     </br>
-    <input type="radio" name="theme" value="2" />
+    <input type="radio" name="quali" value="2" />
     2
     </br>
-    <input type="radio" name="theme" value="3" />
+    <input type="radio" name="quali" value="3" />
     3
     </details>
 
 </div>
 
+<div id ="results">
+    
+        <% @member.each do |member| %>
+            <a href = "member/<%= member.user_name %>" >
+                名前：<%= member.user_name%>
+                生年月日:<%= member.mem_birth %>
+            </a>
+         <% end %>
+
+</div>
+
 </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
- <h1>Serch#member</h1>
- <p>Find me in app/views/serch/member.html.erb</p>
- <a href = "company"> company </a>
+<h1>Serch#member</h1>
+<p>Find me in app/views/serch/member.html.erb</p>
+<a href = "company"> company </a>
 <a href = "chat"> chat </a>

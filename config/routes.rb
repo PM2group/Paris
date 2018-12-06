@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   
-  get 'search/member'
-  get 'search/company'
-  get 'search/chat'
+  get 'search/member' => 'search#member'
+  get 'search/company' => 'search#company'
+  get 'search/chat' => 'search#chat'
 
-  
+  get 'search/member/:user_name' => 'search#member'
+  get 'search/company' => 'search#company'
+  get 'search/chat' => 'search#chat'
+
   get '/login_com', to: 'sessions_com#new'
   post '/login_com', to: 'sessions_com#create'
   delete '/logout_com', to: 'sessions_com#destroy'
