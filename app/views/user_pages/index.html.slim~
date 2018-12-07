@@ -4,6 +4,7 @@ h1 ユーザ情報
 table.table.table-hover
   thead.thead-default
     tr
+<<<<<<< HEAD
       th = User.human_attribute_name(:名前)
       th = User.human_attribute_name(:ユーザ名)
       th = User.human_attribute_name(:希望職)
@@ -13,12 +14,19 @@ table.table.table-hover
       th = User.human_attribute_name(:資格)
       th = User.human_attribute_name(:言語経験)
       th = User.human_attribute_name(:経験開発体制)
+=======
+      th = User.human_attribute_name(:mem_name)
+      th = User.human_attribute_name(:user_name)
+      th = User.human_attribute_name(:des_occupation)
+      th = User.human_attribute_name(:des_location)
+>>>>>>> doraemon/master
   tbody
     tr
       td= @user.mem_name
       td= @user.user_name
       td= @user.des_occupation
       td= @user.des_location
+<<<<<<< HEAD
       td= @user.study
       td= @user.activity
       td= @user.qualification
@@ -52,3 +60,6 @@ table.table.table-hover
               = f.submit nil, class: 'btn btn-primary'
   - if current_user
     = link_to '編集する',edit_user_path(current_user), class: 'btn btn-primary mr-3'
+=======
+  = link_to '編集する',edit_user_path, class: 'btn btn-primary mr-3'
+>>>>>>> doraemon/master

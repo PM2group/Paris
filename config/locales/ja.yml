@@ -10,6 +10,7 @@ ja:
   models:
     user: 学生
     company: 企業
+<<<<<<< HEAD
     company_offer: オファー
     
   attributes:
@@ -19,6 +20,17 @@ ja:
       user_name: ユーザ名
       mem_info: メールアドレス
       mem_birth: 生年
+=======
+    chat_page: チャットページ
+    
+  attributes:
+    user:
+      id: 学生ID
+      mem_name: 名前
+      user_name: ユーザ名
+      mem_info: メールアドレス
+      mem_birth: 生年月日
+>>>>>>> doraemon/master
       mem_gra: 卒業予定日
       des_occupation: 希望職種
       des_location: 希望勤務地
@@ -32,12 +44,20 @@ ja:
       deliver: 成果物
       activity: 学外活動
       qualification: 資格
+<<<<<<< HEAD
       lang_ex: 開発言語経験
+=======
+      lang_experience: 開発言語経験
+>>>>>>> doraemon/master
       flame_ex: 経験フレームワーク
       updated_at: ログイン日時
 
     company:
+<<<<<<< HEAD
       com_id: 企業ID
+=======
+      id: 企業ID
+>>>>>>> doraemon/master
       com_name: 企業名
       ocuupations: 職種
       location: 勤務地
@@ -53,9 +73,12 @@ ja:
       system: 開発体制
       updated_at: ログイン日時
 
+<<<<<<< HEAD
     company_offer:
       message: 文章
 
+=======
+>>>>>>> doraemon/master
   date:
     abbr_day_names:
     - 日

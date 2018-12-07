@@ -4,7 +4,11 @@ class CreateCompanies < ActiveRecord::Migration[5.2]
       t.string :com_name
       t.string :occupations
       t.string :location
+<<<<<<< HEAD
       t.string :com_info, null: false
+=======
+      t.string :com_info
+>>>>>>> doraemon/master
       t.string :condition
       t.integer :salary
       t.string :password_digest

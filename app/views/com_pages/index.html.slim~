@@ -12,6 +12,7 @@ table.table.table-hover
       td= @company.com_name
       td= @company.occupations
       td= @company.location
+<<<<<<< HEAD
       - if @company_offers
         - @company_offers.each do |offer| 
           tr
@@ -28,3 +29,5 @@ table.table.table-hover
                 td= '未承認'
 
   = link_to '編集する',edit_company_path(current_company),class: 'btn btn-primary mr-3'
+=======
+>>>>>>> doraemon/master

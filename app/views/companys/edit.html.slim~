@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 h1 企業修正画面
 .nav.justify-content-end
   =link_to 'マイページへ',com_pages_path, class: 'nav-link'
@@ -31,3 +32,8 @@ h1 企業修正画面
     = f.label :password_confirmation, 'パスワード確認'
     = f.password_field :password_confirmation, class: 'form-control', id: 'company_password_confirmation'
   = f.submit nil, class: 'btn btn-primay'
+=======
+h1 ユーザ修正画面
+
+= render partial: 'form', locals: { company: @company }
+>>>>>>> doraemon/master
