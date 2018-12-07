@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post 'search/company' => 'search#company'
   post 'search/chat' => 'search#chat'
 
-  get 'search/member/:id' => ""
+  get 'search/member/:id' => "member"
 
   get '/login_com', to: 'sessions_com#new'
   post '/login_com', to: 'sessions_com#create'
