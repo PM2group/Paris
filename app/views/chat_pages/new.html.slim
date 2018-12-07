@@ -4,10 +4,9 @@ h1 チャット作成
   .form-group
     = f.label :max_mem, '上限人数'
     = f.text_field :max_mem, class: 'form-controll', id: 'chat_page_max_mem'
-  .form-group
     = f.label :start_date, '開催日時'
     = f.text_field :start_date, class: 'form-controll', id: 'chat_page_start_date'
-  .form-group
+  .form-group-row
     = f.label :password, 'パスワード'
     = f.text_field :password, class: 'form-controll', id: 'chat_page_password'
   .form-check

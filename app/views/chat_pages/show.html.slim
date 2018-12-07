@@ -1,19 +1,21 @@
 h1= @chat_page.theme
 
+=link_to 'トップページ', tops_path
+
+p 参加人数
+= @chat_page.join_mem
+
 .mb-3
 table.table.table-hover
   thead.thead-default
     tr
       th 発言内容
       th 発言者
-      th url
-      th 
   tbody
     - @chat_states.each do |chat_state|
       tr
         td= chat_state.sentence
-        td= chat_state.mem_name
-        td= 
+        td= link_to chat_state.mem_name, user_page_path(User.find(chat_state.mem_id))
 
 = form_with model: @chat_state, local: true do |f|
   .form-group
