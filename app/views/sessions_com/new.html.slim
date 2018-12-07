@@ -1,0 +1,10 @@
+h1 企業でログイン
+
+= form_with scope: :session_com, local: true do |f|
+  .form-group
+    = f.label :com_info, 'メールアドレス'
+    = f.text_field :com_info, class: 'form-control'
+  .form-group
+    = f.label :password, 'パスワード'
+    = f.password_field :password, class: 'form-control'
+  = f.submit 'ログインする', class: 'btn btn-primary'

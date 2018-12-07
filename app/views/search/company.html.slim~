@@ -1,0 +1,95 @@
+= stylesheet_link_tag "book/search", :media => "all"
+#mypage
+  a[href="company"]
+    input[type="button" name="search" value="マイぺージ"]
+#s_word
+  |  検索ワード 
+  input[type="text" name="s_word" style="width:300px; height:30px"]
+#e_word
+  |  除外ワード 
+  input[type="text" name="e_word" style="width:300px; height:30px"]
+#search
+  a[href="company"]
+    input[type="button" name="search" value="検索"]
+#result
+  |  企業検索結果 
+#condition
+  |  詳細条件 
+#occ
+  details
+    summary
+      | 職種
+    input[type="radio" name="category"]
+    |  プログラマ 
+    input[type="radio" name="category"]
+    |  システムエンジニア 
+    input[type="radio" name="category"]
+    |  ネットワークエンジニア 
+    input[type="radio" name="category"]
+    |  データベースエンジニア 
+    input[type="radio" name="category"]
+    |  Webエンジニア 
+#loc
+  details
+    summary
+      | 勤務地
+    input[type="radio" name="theme" value="1"]
+    |  1 
+    input[type="radio" name="theme" value="2"]
+    |  2 
+    input[type="radio" name="theme" value="3"]
+    |  3 
+#sys
+  details
+    summary
+      | 開発ジャンル
+    input[type="radio" name="theme" value="1"]
+    |  1 
+    input[type="radio" name="theme" value="2"]
+    |  2 
+    input[type="radio" name="theme" value="3"]
+    |  3 
+#salary
+  details
+    summary
+      | 給与
+    input[type="radio" name="theme" value="1"]
+    |  1 
+    input[type="radio" name="theme" value="2"]
+    |  2 
+    input[type="radio" name="theme" value="3"]
+    |  3 
+#frame
+  details
+    summary
+      | フレームワーク
+    input[type="radio" name="theme" value="1"]
+    |  1 
+    input[type="radio" name="theme" value="2"]
+    |  2 
+    input[type="radio" name="theme" value="3"]
+    |  3 
+#lang
+  details
+    summary
+      | 使用言語
+    input[type="radio" name="theme" value="1"]
+    |  1 
+    input[type="radio" name="theme" value="2"]
+    |  2 
+    input[type="radio" name="theme" value="3"]
+    |  3 
+
+
+
+
+
+
+h1
+  | Search#company
+p
+  | Find me in app/views/serch/company.html.erb
+a[href="member"]
+  input[type="button" name="search" value="member" style="width:320px; height:30px"]
+a[href="chat"]
+  input[type="button" name="search" value="chat" style="width:320px; height:30px"]

@@ -1,0 +1,6 @@
+h1 アカウント修正
+
+.nav.justify-content-end
+  = link_to 'マイページへ',user_pages_path, class: 'nav-link'
+
+= render partial: 'form', locals: { user: @user}

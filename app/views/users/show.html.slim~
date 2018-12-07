@@ -1,0 +1,3 @@
+h1 登録完了
+p 登録したからしたのボタンからマイページに飛んでくれ
+link_to 'マイページ(編集)', edit_user_path(user),class: 'btn btn-primary'

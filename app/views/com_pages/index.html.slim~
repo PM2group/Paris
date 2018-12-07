@@ -1,0 +1,30 @@
+h1 企業情報
+
+.mb-3
+table.table.table-hover
+  thead.thead-default
+    tr
+      th = Company.human_attribute_name(:com_name)
+      th = Company.human_attribute_name(:occupations)
+      th = Company.human_attribute_name(:location)
+  tbody
+    tr
+      td= @company.com_name
+      td= @company.occupations
+      td= @company.location
+      - if @company_offers
+        - @company_offers.each do |offer| 
+          tr
+            th = CompanyOffer.human_attribute_name(:相手)
+            th = CompanyOffer.human_attribute_name(:メッセージ)
+          tbody
+            tr
+              td= offer.mem_id
+              td= offer.message
+              td= link_to '学生ページへ', company_offer_path(offer),class: 'btn btn-primary mr-3'
+              - if offer.acc_flag == TRUE
+                td= '承認済み' 
+              - elsif offer.acc_flag == FALSE
+                td= '未承認'
+
+  = link_to '編集する',edit_company_path(current_company),class: 'btn btn-primary mr-3'

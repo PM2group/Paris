@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  com_name: MyString
+  occupations: MyString
+  location: MyString
+  com_info: MyString
+  condition: 
+  salary: 1
+  password_digest: MyString
+  frame: MyString
+  lang: MyString
+  adoption: MyString
+  appeal: MyText
+  system: MyString
+
+two:
+  com_name: MyString
+  occupations: MyString
+  location: MyString
+  com_info: MyString
+  condition: 
+  salary: 1
+  password_digest: MyString
+  frame: MyString
+  lang: MyString
+  adoption: MyString
+  appeal: MyText
+  system: MyString

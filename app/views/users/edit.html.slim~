@@ -1,0 +1,2 @@
+h1 アカウント修正
+= render partial: 'form', locals: { user: @user}

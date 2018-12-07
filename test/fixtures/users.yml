@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mem_id: 1
+  mem_name: MyString
+  user_name: MyString
+  mem_info: MyString
+  mem_birth: 2018-12-01
+  mem_gra: 2018-12-01
+  des_occupation: MyString
+  des_location: MyString
+  password_digest: MyString
+  pic: MyString
+  univercity: MyString
+  circle: MyString
+  labo: MyString
+  studey: MyString
+  deliver: MyString
+  activity: MyString
+  qualification: MyString
+  lang_experience: MyString
+  system_ex: MyString
+  flame_ex: MyString
+  mem_last_login: 2018-12-01
+
+two:
+  mem_id: 1
+  mem_name: MyString
+  user_name: MyString
+  mem_info: MyString
+  mem_birth: 2018-12-01
+  mem_gra: 2018-12-01
+  des_occupation: MyString
+  des_location: MyString
+  password_digest: MyString
+  pic: MyString
+  univercity: MyString
+  circle: MyString
+  labo: MyString
+  studey: MyString
+  deliver: MyString
+  activity: MyString
+  qualification: MyString
+  lang_experience: MyString
+  system_ex: MyString
+  flame_ex: MyString
+  mem_last_login: 2018-12-01
