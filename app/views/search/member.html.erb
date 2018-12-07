@@ -34,16 +34,16 @@
             <input type="radio" name="des_occ" value = "プログラマ"/>
             プログラマ
             </br>
-            <input type="radio" name="des_occ" />
+            <input type="radio" name="des_occ" value = "システムエンジニア"/>
             システムエンジニア
             </br>
-            <input type="radio" name="des_occ" />
+            <input type="radio" name="des_occ" value = "ネットワークエンジニア"/>
             ネットワークエンジニア
             </br>
-            <input type="radio" name="des_occ" />
+            <input type="radio" name="des_occ" value = "データベースエンジニア"/>
             データベースエンジニア
             </br>
-            <input type="radio" name="des_occ" />
+            <input type="radio" name="des_occ" value = "Webエンジニア"/>
             Webエンジニア
             <input type="radio" name="des_occ" value = "" checked="checked" style="display:none;" />
             </details>
@@ -52,13 +52,13 @@
         <div id ="des_loc">
             <details>
             <summary>希望勤務地</summary>
-            <input type="radio" name="des_loc" value="1" />
+            <input type="radio" name="des_loc" value="1"value = "1" />
             1
             </br>
-            <input type="radio" name="des_loc" value="2" />
+            <input type="radio" name="des_loc" value="2" value = "2"/>
             2
             </br>
-            <input type="radio" name="des_loc" value="3" />
+            <input type="radio" name="des_loc" value="3" value = "3"/>
             3
             <input type="radio" name="des_loc" value = "" checked="checked" style="display:none;" />
             </details>
@@ -67,13 +67,13 @@
         <div id ="quali">
             <details>
             <summary>持っている資格</summary>
-            <input type="radio" name="quali" value="1" />
+            <input type="radio" name="quali" value="1" value = "1"/>
             1
             </br>
-            <input type="radio" name="quali" value="2" />
+            <input type="radio" name="quali" value="2" value = "2"/>
             2
             </br>
-            <input type="radio" name="quali" value="3" />
+            <input type="radio" name="quali" value="3" value = "3"/>
             3
             <input type="radio" name="quali" value = "" checked="checked" style="display:none;" />
             </details>
@@ -83,13 +83,13 @@
         <div id ="univ">
             <details>
             <summary>所属大学</summary>
-            <input type="radio" name="quali" value="1" />
+            <input type="radio" name="quali" value="1" value = "1"/>
             1
             </br>
-            <input type="radio" name="quali" value="2" />
+            <input type="radio" name="quali" value="2" value = "2"/>
             2
             </br>
-            <input type="radio" name="quali" value="3" />
+            <input type="radio" name="quali" value="3" value = "3"/>
             3
             <input type="radio" name="univ" value = "" checked="checked" style="display:none;" />
             </details>
@@ -99,13 +99,13 @@
         <div id ="lan_exp">
             <details>
             <summary>プログラミング言語</summary>
-            <input type="radio" name="quali" value="1" />
+            <input type="radio" name="quali" value="1" value = "1"/>
             1
             </br>
-            <input type="radio" name="quali" value="2" />
+            <input type="radio" name="quali" value="2" value = "2"/>
             2
             </br>
-            <input type="radio" name="quali" value="3" />
+            <input type="radio" name="quali" value="3" value = ""3/>
             3
             <input type="radio" name="lan_exp" value = "" checked="checked" style="display:none;" />
             </details>
@@ -118,8 +118,8 @@
                     <a href = "member/<%= member.user_name %>" >
                         名前：<%= member.user_name%></br>
                         生年月日:<%= member.mem_birth %>
-                        
-                    </a>
+                        </br>
+                        </a>
                 <% end %>
 
         </div>
