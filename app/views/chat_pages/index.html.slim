@@ -1,0 +1,14 @@
+h1 チャット一覧
+
+.mb-3
+table.table.table-hover
+  thead.thead-default
+    tr
+      th チャットid
+      th テーマ
+      th  
+  tbody
+    - @chat_pages.each do |chat_page|
+      tr
+        td= chat_page.id
+        td= link_to chat_page.theme, chat_page

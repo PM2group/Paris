@@ -18,10 +18,11 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   root to: 'tops#index'
+  resources :chat_pages
+  resources :chat_states
   resources :users
   resources :user_pages
   resources :companys
   resources :com_pages
   resources :tops
-
 end
