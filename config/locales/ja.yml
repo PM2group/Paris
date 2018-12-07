@@ -10,6 +10,8 @@ ja:
   models:
     user: 学生
     company: 企業
+    chat_page: チャットページ
+    
   attributes:
     user:
       id: 学生ID

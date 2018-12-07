@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get 'search/company'
   get 'search/chat'
 
-  
   get '/login_com', to: 'sessions_com#new'
   post '/login_com', to: 'sessions_com#create'
   delete '/logout_com', to: 'sessions_com#destroy'
@@ -13,10 +12,11 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   root to: 'tops#index'
+  resources :chat_pages
+  resources :chat_states
   resources :users
   resources :user_pages
   resources :companys
   resources :com_pages
   resources :tops
-
 end

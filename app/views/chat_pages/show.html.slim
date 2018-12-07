@@ -1,0 +1,21 @@
+h1= @chat_page.theme
+
+.mb-3
+table.table.table-hover
+  thead.thead-default
+    tr
+      th 発言内容
+      th 発言者
+      th url
+      th 
+  tbody
+    - @chat_states.each do |chat_state|
+      tr
+        td= chat_state.sentence
+        td= chat_state.mem_name
+        td= 
+
+= form_with model: @chat_state, local: true do |f|
+  .form-group
+    = f.text_area :sentence, cols: 150, class: 'form-controll', id: 'chat_state_sentence'
+  = f.submit '送信', class: 'btn btn-primary'
