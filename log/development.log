@@ -12176,3 +12176,174 @@ Processing by SearchController#company as HTML
 Completed 200 OK in 99ms (Views: 86.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-12-07 10:47:13 +0900
+  [1m[35m (12.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (36.5ms)
+Completed 200 OK in 1951ms (Views: 1938.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/member" for 127.0.0.1 at 2018-12-07 10:47:50 +0900
+Processing by SearchController#member as HTML
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (16.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."des_occupation" IS NULL[0m
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (113.6ms)
+Completed 200 OK in 288ms (Views: 139.4ms | ActiveRecord: 44.2ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-07 10:47:57 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."des_occupation" = $1[0m  [["des_occupation", ""]]
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 62ms (Views: 59.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-07 10:48:04 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"プログラマ", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."des_occupation" = $1[0m  [["des_occupation", "プログラマ"]]
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 57ms (Views: 52.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-07 10:48:07 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"システムエンジニア", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."des_occupation" = $1[0m  [["des_occupation", "システムエンジニア"]]
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (303.3ms)
+Completed 200 OK in 352ms (Views: 125.4ms | ActiveRecord: 221.2ms)
+
+
+Started GET "/search/member/yuusei" for 127.0.0.1 at 2018-12-07 10:48:09 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/search/member/yuusei"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-07 10:48:11 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"システムエンジニア", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."des_occupation" = $1[0m  [["des_occupation", "システムエンジニア"]]
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 62ms (Views: 55.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/search/member/yuu" for 127.0.0.1 at 2018-12-07 10:48:12 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/search/member/yuu"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-07 10:48:15 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"システムエンジニア", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."des_occupation" = $1[0m  [["des_occupation", "システムエンジニア"]]
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 59ms (Views: 56.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/search/member/yuusei" for 127.0.0.1 at 2018-12-07 10:48:18 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/search/member/yuusei"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-07 10:48:22 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"システムエンジニア", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."des_occupation" = $1[0m  [["des_occupation", "システムエンジニア"]]
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 61ms (Views: 56.1ms | ActiveRecord: 0.3ms)
+
+
