@@ -1,243 +1,247 @@
-<%= stylesheet_link_tag "book/search", :media => "all" %>
+    <%= stylesheet_link_tag "book/search", :media => "all" %>
 
-<div id = "mypage">
+    <div id = "mypage">
 
-  <a href = "company">
+      <a href = "company">
 
-    <input type="button" name="search" value="マイぺージ" />
+        <input type="button" name="search" value="マイぺージ" />
 
-  </a>
+      </a>
 
-</div>
+    </div>
 
-<div id ="s_word">
+    <form method="GET" action="/search/member">
 
-  検索ワード
+    <div id ="s_word">
 
-  <input type="text" name="s_word" style="width:300px; height:30px"/>
+      検索ワード
 
-</div>
+      <input type="text" name="s_word" style="width:300px; height:30px"/>
 
-<div id ="e_word">
+    </div>
 
-  除外ワード
+    <div id ="e_word">
 
-  <input type="text" name="e_word" style="width:300px; height:30px"/>
+      除外ワード
 
-</div>
+      <input type="text" name="e_word" style="width:300px; height:30px"/>
 
-<div id ="search">
+    </div>
 
-  <a href = "company">
+    <div id ="result">
 
-    <input type="button" name="search" value="検索" />
+      企業検索結果
 
-  </a>
+    </div>
 
-</div>
+    <div id ="condition">
 
-<div id ="result">
+      詳細条件
 
-  企業検索結果
+    </div>
 
-</div>
+    <div id ="occ">
 
-<div id ="condition">
+      <details>
 
-  詳細条件
+        <summary>職種</summary>
 
-</div>
+        <input type="radio" name="occ" values = ""/>
 
-<div id ="occ">
+        プログラマ
 
-  <details>
+            </br>
 
-    <summary>職種</summary>
+      <input type="radio" name="occ" />
 
-    <input type="radio" name="category" />
+      システムエンジニア
 
-    プログラマ
+          </br>
 
-        </br>
+          <input type="radio" name="occ" />
 
-	<input type="radio" name="category" />
+          ネットワークエンジニア
 
-	システムエンジニア
+              </br>
 
-	    </br>
+        <input type="radio" name="category" />
 
-	    <input type="radio" name="category" />
+        データベースエンジニア
 
-	    ネットワークエンジニア
+            </br>
 
-	        </br>
+            <input type="radio" name="category" />
 
-		<input type="radio" name="category" />
+            Webエンジニア
 
-		データベースエンジニア
+      </details>
 
-		    </br>
+    </div>
 
-		    <input type="radio" name="category" />
+    <div id ="loc">
 
-		    Webエンジニア
+      <details>
 
-  </details>
+        <summary>勤務地</summary>
 
-</div>
+        <input type="radio" name="theme" value="1" />
 
-<div id ="loc">
+        1
 
-  <details>
+            </br>
 
-    <summary>勤務地</summary>
+      <input type="radio" name="theme" value="2" />
 
-    <input type="radio" name="theme" value="1" />
+      2
 
-    1
+          </br>
 
-        </br>
+          <input type="radio" name="theme" value="3" />
 
-	<input type="radio" name="theme" value="2" />
+          3
 
-	2
+      </details>
 
-	    </br>
+    </div>
 
-	    <input type="radio" name="theme" value="3" />
+    <div id ="sys">
 
-	    3
+      <details>
 
-  </details>
+        <summary>開発ジャンル</summary>
 
-</div>
+        <input type="radio" name="theme" value="1" />
 
-<div id ="sys">
+        1
 
-  <details>
+            </br>
 
-    <summary>開発ジャンル</summary>
+      <input type="radio" name="theme" value="2" />
 
-    <input type="radio" name="theme" value="1" />
+      2
 
-    1
+          </br>
 
-        </br>
+          <input type="radio" name="theme" value="3" />
 
-	<input type="radio" name="theme" value="2" />
+          3
 
-	2
+      </details>
 
-	    </br>
 
-	    <input type="radio" name="theme" value="3" />
 
-	    3
+    </div>
 
-  </details>
+    <div id ="salary">
 
+      <details>
 
+        <summary>給与</summary>
 
-</div>
+        <input type="radio" name="theme" value="1" />
 
-<div id ="salary">
+        1
 
-  <details>
+            </br>
 
-    <summary>給与</summary>
+      <input type="radio" name="theme" value="2" />
 
-    <input type="radio" name="theme" value="1" />
+      2
 
-    1
+          </br>
 
-        </br>
+          <input type="radio" name="theme" value="3" />
 
-	<input type="radio" name="theme" value="2" />
+          3
 
-	2
+      </details>
 
-	    </br>
 
-	    <input type="radio" name="theme" value="3" />
 
-	    3
+    </div>
 
-  </details>
+    <div id ="frame">
 
+      <details>
 
+        <summary>フレームワーク</summary>
 
-</div>
+        <input type="radio" name="theme" value="1" />
 
-<div id ="frame">
+        1
 
-  <details>
+            </br>
 
-    <summary>フレームワーク</summary>
+      <input type="radio" name="theme" value="2" />
 
-    <input type="radio" name="theme" value="1" />
+      2
 
-    1
+          </br>
 
-        </br>
+          <input type="radio" name="theme" value="3" />
 
-	<input type="radio" name="theme" value="2" />
+          3
 
-	2
+      </details>
 
-	    </br>
 
-	    <input type="radio" name="theme" value="3" />
 
-	    3
+    </div>
 
-  </details>
+    <div id ="lang">
 
+      <details>
 
+        <summary>使用言語</summary>
 
-</div>
+        <input type="radio" name="theme" value="1" />
 
-<div id ="lang">
+        1
 
-  <details>
+            </br>
 
-    <summary>使用言語</summary>
+      <input type="radio" name="theme" value="2" />
 
-    <input type="radio" name="theme" value="1" />
+      2
 
-    1
+          </br>
 
-        </br>
+          <input type="radio" name="theme" value="3" />
 
-	<input type="radio" name="theme" value="2" />
+          3
 
-	2
+      </details>
 
-	    </br>
 
-	    <input type="radio" name="theme" value="3" />
 
-	    3
+    </div>
 
-  </details>
+    <div id ="search">
 
+      <a href = "company">
 
+        <input type="button" name="search" value="検索" />
 
-</div>
+      </a>
 
-</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+    </div>
 
-<h1>Serch#company</h1>
+    </form>
 
-<p>Find me in app/views/serch/company.html.erb</p>
+    </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
 
-<a href = "member">
+    <h1>Serch#company</h1>
 
-  <input type="button" name="search" value="member" style="width:320px; height:30px"/>
+    <p>Find me in app/views/serch/company.html.erb</p>
 
-</a>
+    <a href = "member">
 
-<a href = "chat">
+      <input type="button" name="search" value="member" style="width:320px; height:30px"/>
 
-  <input type="button" name="search" value="chat" style="width:320px; height:30px"/>
+    </a>
 
-</a>
+    <a href = "chat">
+
+      <input type="button" name="search" value="chat" style="width:320px; height:30px"/>
+
+    </a>
