@@ -54,9 +54,9 @@
     = f.text_field :flame_ex, class: 'form-control'
   .form-group
     = f.label :"資格"
-    = f.select :qualification,[["-","NULL"],["基本情報技術者","基本情報技術者"],["応用情報技術者","応用情報技術者"],]
+    = f.select :qualification,[["-",""],["基本情報技術者","基本情報技術者"],["応用情報技術者","応用情報技術者"],]
   .form-group
     = f.label :"言語経験"
-    = f.select :lang_ex,[["-","NULL"],["C言語","C言語"],["Java","Java"],["C++","C++"],["Ruby","Ruby"],["Python","Python"]]
+    = f.select :lang_ex,[["-",""],["C言語","C言語"],["Java","Java"],["C++","C++"],["Ruby","Ruby"],["Python","Python"]]
     
   = f.submit nil, class: 'btn btn-primay'

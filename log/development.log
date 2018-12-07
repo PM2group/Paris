@@ -1530,3 +1530,160 @@ ActionView::Template::Error (undefined method `lang_ex' for #<User:0x00007ffff49
     30:       th = User.human_attribute_name(:オファー一覧)
   
 app/views/user_pages/index.html.slim:27:in `_app_views_user_pages_index_html_slim__2251719259179249166_70368645619280'
+Started GET "/user_pages" for 127.0.0.1 at 2018-12-07 17:07:33 +0900
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by UserPagesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCompanyOffer Load (0.5ms)[0m  [1m[34mSELECT "company_offers".* FROM "company_offers" WHERE "company_offers"."mem_id" = $1[0m  [["mem_id", 3]]
+  ↳ app/controllers/user_pages_controller.rb:9
+  Rendering user_pages/index.html.slim within layouts/application
+  Rendered user_pages/index.html.slim within layouts/application (56.9ms)
+Completed 500 Internal Server Error in 132ms (ActiveRecord: 13.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `lang_ex' for #<User:0x00007fffe6daa758>):
+    24:       td= @user.study
+    25:       td= @user.activity
+    26:       td= @user.qualification
+    27:       td= @user.lang_ex
+    28:       td= @user.system_ex
+    29:     tr
+    30:       th = User.human_attribute_name(:オファー一覧)
+  
+app/views/user_pages/index.html.slim:27:in `_app_views_user_pages_index_html_slim__4250563317936222658_70368542659340'
+Started GET "/user_pages" for 127.0.0.1 at 2018-12-07 17:08:12 +0900
+Processing by UserPagesController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCompanyOffer Load (0.7ms)[0m  [1m[34mSELECT "company_offers".* FROM "company_offers" WHERE "company_offers"."mem_id" = $1[0m  [["mem_id", 3]]
+  ↳ app/controllers/user_pages_controller.rb:9
+  Rendering user_pages/index.html.slim within layouts/application
+  Rendered user_pages/index.html.slim within layouts/application (22.8ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `lang_ex' for #<User:0x00007f4be005e870>):
+    24:       td= @user.study
+    25:       td= @user.activity
+    26:       td= @user.qualification
+    27:       td= @user.lang_ex
+    28:       td= @user.system_ex
+    29:     tr
+    30:       th = User.human_attribute_name(:オファー一覧)
+  
+app/views/user_pages/index.html.slim:27:in `_app_views_user_pages_index_html_slim__4250563317936222658_69981928894600'
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (354.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "daiza3_development"[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (330.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "daiza3_test"[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (3409.9ms)[0m  [1m[35mCREATE DATABASE "daiza3_development" ENCODING = 'unicode'[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (2485.5ms)[0m  [1m[35mCREATE DATABASE "daiza3_test" ENCODING = 'unicode'[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (42.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (31.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6220336080791520240)[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateUsers (20181201021026)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (25.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "mem_name" character varying(20) NOT NULL, "user_name" character varying(10) NOT NULL, "mem_info" character varying(30) NOT NULL, "mem_birth" character varying NOT NULL, "mem_gra" character varying NOT NULL, "des_occupation" character varying(100) NOT NULL, "des_location" character varying(50) NOT NULL, "password_digest" character varying NOT NULL, "pic" character varying, "univercity" character varying(20), "circle" character varying, "labo" character varying, "study" character varying(100), "deliver" character varying(10), "activity" character varying(50), "qualification" character varying, "lang_ex" character varying, "system_ex" character varying(50), "flame_ex" character varying(50), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181201021026_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181201021026"]]
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (9.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateCompanies (20181202024552)
+  [1m[35m (5.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (29.6ms)[0m  [1m[35mCREATE TABLE "companies" ("id" bigserial primary key, "com_name" character varying(50) NOT NULL, "occupations" character varying(100) NOT NULL, "location" character varying(50) NOT NULL, "com_info" character varying(30) NOT NULL, "condition" character varying(100) NOT NULL, "salary" integer NOT NULL, "password_digest" character varying, "frame" character varying, "lang" character varying, "adoption" character varying, "appeal" text, "system" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181202024552_create_companies.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181202024552"]]
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (9.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateCompanyOffers (20181204113323)
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (26.3ms)[0m  [1m[35mCREATE TABLE "company_offers" ("id" bigserial primary key, "com_id" integer, "mem_id" integer, "senddate" date, "acc_flag" boolean, "message" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181204113323_create_company_offers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181204113323"]]
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateChatPages (20181205162704)
+  [1m[35m (3.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (25.6ms)[0m  [1m[35mCREATE TABLE "chat_pages" ("id" bigserial primary key, "designer_id" integer NOT NULL, "designer_name" character varying(50) NOT NULL, "period" date, "max_mem" integer NOT NULL, "join_mem" integer DEFAULT 0, "rec" boolean DEFAULT TRUE NOT NULL, "start_date" date, "finish_date" date, "theme" character varying(200) NOT NULL, "readable" boolean DEFAULT TRUE, "password" character varying(30), "page_url" character varying, "update" date NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181205162704_create_chat_pages.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181205162704"]]
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateChatStates (20181206211053)
+  [1m[35m (3.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (24.6ms)[0m  [1m[35mCREATE TABLE "chat_states" ("id" bigserial primary key, "remark_date" date NOT NULL, "mem_id" integer NOT NULL, "mem_name" character varying NOT NULL, "sentence" text NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181206211053_create_chat_states.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181206211053"]]
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to AddChatPageIdToChatState (20181206212221)
+  [1m[35m (3.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[31mDELETE FROM chat_states[0m
+  ↳ db/migrate/20181206212221_add_chat_page_id_to_chat_state.rb:3
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "chat_states" ADD "chat_page_id" bigint NOT NULL[0m
+  ↳ db/migrate/20181206212221_add_chat_page_id_to_chat_state.rb:4
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE  INDEX  "index_chat_states_on_chat_page_id" ON "chat_states"  ("chat_page_id")[0m
+  ↳ db/migrate/20181206212221_add_chat_page_id_to_chat_state.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181206212221"]]
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-12-07 08:12:29.347722"], ["updated_at", "2018-12-07 08:12:29.347722"]]
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6220336080791520240)[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/bin/rake:23
+Started GET "/" for 127.0.0.1 at 2018-12-07 17:12:49 +0900
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (9.3ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 641ms (Views: 629.8ms | ActiveRecord: 3.8ms)
+
+
