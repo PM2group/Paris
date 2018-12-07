@@ -1,0 +1,28 @@
+- if current_user
+  h1 企業情報
+
+  .mb-3
+  table.table.table-hover
+    thead.thead-default
+      tr
+        th = Company.human_attribute_name(:com_name)
+        th = Company.human_attribute_name(:occupations)
+        th = Company.human_attribute_name(:location)
+    tbody
+      tr
+        td= @company.com_name
+        td= @company.occupations
+        td= @company.location
+  .nav.justify-content-end
+    = link_to 'マイページへ',user_pages_path, class: 'nav-link'
+
+- elsif current_company
+  h1 学生情報
+
+  .mb-3
+  table.table.table-hover
+    thead.thead-default
+      tr
+      
+  .nav.justify-content-end
+    = link_to 'マイページへ',com_pages_path, class: 'nav-link'

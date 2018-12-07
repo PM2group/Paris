@@ -11,6 +11,16 @@
     = f.label :mem_info
     = f.text_field :mem_info, class: 'form-control'
   .form-group
+<<<<<<< HEAD
+    = f.label :"生年"
+    = f.select :mem_birth,[["1997年","1997年"],["1998年","1998年"],["1996年","1996年"],["1995年","1995年"]]
+  .form-group
+    = f.label :"卒業年(下二桁)"
+    = f.select :mem_gra,[["18","2018年3月27日"],["19","2019年3月27日"],["20","2020年3月27日"]]
+  .form-group
+    = f.label :"希望職種"
+    = f.select :des_occupation,[["システムエンジニア","システムエンジニア"],["ゲームクリエイター","ゲームクリエイター"],["Webデザイナー","Webデザイナー"],["アプリケーションエンジニア","アプリケーションエンジニア"]]
+=======
     = f.label :"生年月日"
     = f.select :mem_birth,[["1","2007年5月30日"],["2","2007年5月1日"]]
   .form-group
@@ -19,6 +29,7 @@
   .form-group
     = f.label :"希望職種"
     = f.select :des_occupation,[["SE","システムエンジニア"],["ゲーム","ゲームクリエイター"]]
+>>>>>>> doraemon/master
   .form-group
     = f.label :"希望勤務地"
     = f.select :des_location,[["千葉","千葉"],["茨城","茨城"]]
@@ -28,4 +39,38 @@
   .form-group
     = f.label :password_confirmation, 'パスワード確認'
     = f.password_field :password_confirmation, class: 'form-control'
+<<<<<<< HEAD
+  .form-group
+    = f.label :"所属学校"
+    = f.text_field :univercity, class: 'form-control'
+  .form-group
+    = f.label :"所属サークル"
+    = f.text_field :circle, class: 'form-control'
+  .form-group
+    = f.label :"所属研究室"
+    = f.text_field :labo, class: 'form-control'
+  .form-group
+    = f.label :"研究内容"
+    = f.text_field :study, class: 'form-control'
+  .form-group
+    = f.label :"成果物"
+    = f.text_field :deliver, class: 'form-control'
+  .form-group
+    = f.label :"学外活動"
+    = f.text_field :activity, class: 'form-control'
+  .form-group
+    = f.label :"経験開発体制"
+    = f.text_field :system_ex, class: 'form-control'
+  .form-group
+    = f.label :"経験フレームワーク"
+    = f.text_field :flame_ex, class: 'form-control'
+  .form-group
+    = f.label :"資格"
+    = f.select :qualification,[["-","NULL"],["基本情報技術者","基本情報技術者"],["応用情報技術者","応用情報技術者"],]
+  .form-group
+    = f.label :"開発言語経験"
+    = f.select :lang_experience,[["-","NULL"],["C言語","C言語"],["Java","Java"],["C++","C++"],["Ruby","Ruby"],["Python","Python"]]
+  = f.submit nil, class: 'btn btn-primay'
+=======
   = f.submit nill, class: 'btn btn-primay'
+>>>>>>> doraemon/master

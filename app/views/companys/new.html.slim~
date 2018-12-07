@@ -1,2 +1,36 @@
+<<<<<<< HEAD
+h1 企業登録画面
+
+= form_with model: company, url: companys_path, local: true do |f|
+  .form-group
+    = f.label :com_name
+    = f.text_field :com_name, class: 'form-control', id: 'company_com_name'
+  .form-group
+    = f.label :occupations
+    = f.text_field :occupations, class: 'form-control', id: 'company_occupations'
+  .form-group
+    = f.label :com_info
+    = f.text_field :com_info, class: 'form-control', id: 'company_com_info'
+  .form-group
+    = f.label :"勤務地"
+    = f.select :location,[["千葉","千葉"],["茨城","茨城"]], id: 'company_location'
+  .form-group
+    = f.label :salary
+    = f.number_field :salary, id: 'company_salary'
+  .form-group
+    = f.label :condition
+    = f.text_field :condition, class: 'form-control', id: 'company_condition'
+  .form-group
+    = f.label :appeal
+    = f.text_area :appeal, class: 'form-control', id: 'company_appeal'
+  .form-group
+    = f.label :password, 'パスワード'
+    = f.password_field :password, class: 'form-control', id: 'company_password'
+  .form-group
+    = f.label :password_confirmation, 'パスワード確認'
+    = f.password_field :password_confirmation, class: 'form-control', id: 'company_password_confirmation'
+  = f.submit nil, class: 'btn btn-primay'
+=======
 h1 Companys#new
 p Find me in app/views/companys/new.html.slim
+>>>>>>> doraemon/master

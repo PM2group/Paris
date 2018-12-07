@@ -1,6 +1,13 @@
 class ComPagesController < ApplicationController
+<<<<<<< HEAD
+  skip_before_action :login_required
   def index
     @company = current_company
+    @company_offers = CompanyOffer.where(com_id = current_company)
+=======
+  def index
+    @company = current_company
+>>>>>>> doraemon/master
   end
 
   def show

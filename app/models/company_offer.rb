@@ -1,0 +1,2 @@
+class CompanyOffer < ApplicationRecord
+end

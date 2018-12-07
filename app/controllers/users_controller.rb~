@@ -8,18 +8,37 @@ class UsersController < ApplicationController
   end
 
   def create
+<<<<<<< HEAD
+    @user = User.new(user_params)
+
+    if @user.save
+        redirect_to users_path, notice:"登録完了"
+=======
     user = User.new(user_params)
 
     if user.save
       redirect_to users_path, notice:"登録完了"
+>>>>>>> doraemon/master
     else
       render :new
     end
   end
   
   def edit
+<<<<<<< HEAD
+    @user = current_user
   end
 
+  def update
+    user = current_user
+    user.update!(user_params)
+    redirect_to user_pages_path, notice: "更新完了"
+  end
+  
+=======
+  end
+
+>>>>>>> doraemon/master
   def show
   end
 

@@ -8,9 +8,15 @@ class UsersController < ApplicationController
   end
 
   def create
+<<<<<<< HEAD
+    @user = User.new(user_params)
+
+    if @user.save
+=======
     user = User.new(user_params)
 
     if user.save
+>>>>>>> doraemon/master
         redirect_to users_path, notice:"登録完了"
     else
       render :new
@@ -35,6 +41,10 @@ class UsersController < ApplicationController
   
   private
   def user_params
+<<<<<<< HEAD
+  params.require(:user).permit(:mem_id, :mem_name, :user_name, :mem_info, :mem_birth, :mem_gra, :des_occupation, :des_location, :password, :password_confirmation, :pic, :univercity, :circle, :labo, :study, :deliver, :activity, :qualification, :lang_ex, :system_ex, :flame_ex)
+=======
   params.require(:user).permit(:mem_id, :mem_name, :user_name, :mem_info, :mem_birth, :mem_gra, :des_occupation, :des_location, :password, :password_confirmation, :pic, :univercity, :circle, :labo, :study, :deliver, :activity, :qualification, :lang, :system_ex, :flame_ex)
+>>>>>>> doraemon/master
   end
 end
