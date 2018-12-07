@@ -1,0 +1,759 @@
+Started GET "/" for 127.0.0.1 at 2018-12-07 15:44:39 +0900
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.1) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-12-07 15:44:52 +0900
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.1) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (10.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6220336080791520240)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCompanyOffers (20181204113323)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (120.2ms)[0m  [1m[35mCREATE TABLE "company_offers" ("id" bigserial primary key, "com_id" integer, "mem_id" integer, "senddate" date, "acc_flag" boolean, "message" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181204113323_create_company_offers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181204113323"]]
+  ↳ bin/rails:9
+  [1m[35m (10.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateChatPages (20181205162704)
+  [1m[35m (5.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (24.3ms)[0m  [1m[35mCREATE TABLE "chat_pages" ("id" bigserial primary key, "designer_id" integer NOT NULL, "designer_name" character varying(50) NOT NULL, "period" date, "max_mem" integer NOT NULL, "join_mem" integer DEFAULT 0, "rec" boolean DEFAULT TRUE NOT NULL, "start_date" date, "finish_date" date, "theme" character varying(200) NOT NULL, "readable" boolean DEFAULT TRUE, "password" character varying(30), "page_url" character varying, "update" date NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181205162704_create_chat_pages.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181205162704"]]
+  ↳ bin/rails:9
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateChatStates (20181206211053)
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (25.2ms)[0m  [1m[35mCREATE TABLE "chat_states" ("id" bigserial primary key, "remark_date" date NOT NULL, "mem_id" integer NOT NULL, "mem_name" character varying NOT NULL, "sentence" text NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181206211053_create_chat_states.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181206211053"]]
+  ↳ bin/rails:9
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddChatPageIdToChatState (20181206212221)
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[31mDELETE FROM chat_states[0m
+  ↳ db/migrate/20181206212221_add_chat_page_id_to_chat_state.rb:3
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "chat_states" ADD "chat_page_id" bigint NOT NULL[0m
+  ↳ db/migrate/20181206212221_add_chat_page_id_to_chat_state.rb:4
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE  INDEX  "index_chat_states_on_chat_page_id" ON "chat_states"  ("chat_page_id")[0m
+  ↳ db/migrate/20181206212221_add_chat_page_id_to_chat_state.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181206212221"]]
+  ↳ bin/rails:9
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6220336080791520240)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2018-12-07 15:50:14 +0900
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Unknown line indicator
+  /mnt/c/yahoo/Paris/app/views/tops/index.html.slim, Line 15, Column 0
+    >>>>>>> doraemon/master
+    ^
+):
+    12: li.nav-item= link_to  'チャット作成', new_chat_page_path, class: 'nav-link'
+    13: li.nav-item= link_to  'チャット一覧', chat_pages_path, class: 'nav-link'
+    14: 
+    15: >>>>>>> doraemon/master
+    16: p とりあえずのトップページ。企業情報とかを羅列するだけなら結構簡単に行けるよ
+  
+app/views/tops/index.html.slim:15
+Started GET "/" for 127.0.0.1 at 2018-12-07 15:50:48 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (11.7ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Malformed indentation
+  /mnt/c/yahoo/Paris/app/views/layouts/application.html.slim, Line 17, Column 6
+    - else
+    ^
+):
+    14:       - if current_user
+    15: <<<<<<< HEAD
+    16:           li.nav-item= link_to  'ログアウト', logout_path, method: :delete,class: 'nav-link'
+    17:       - else
+    18:         - if current_company
+    19:           li.nav-item= link_to  'ログアウト', logout_com_path, method: :delete,class: 'nav-link'
+    20:         - else
+  
+app/views/layouts/application.html.slim:17
+Started GET "/" for 127.0.0.1 at 2018-12-07 15:51:21 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 876ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "<<<<<<< HEAD": expected "{", was "}"):
+     5:       | Daiza3
+     6:     = csrf_meta_tags
+     7:     = csp_meta_tag
+     8:     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+     9:     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    10:   body
+    11:     .app-title.navbar.navbar-expand-md.nevbar-light.bg-light
+  
+app/assets/stylesheets/book/search.scss:44
+app/views/layouts/application.html.slim:8:in `_app_views_layouts_application_html_slim__2795552805547087449_70316908667040'
+Started GET "/" for 127.0.0.1 at 2018-12-07 15:51:56 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "<<<<<<< HEAD": expected "{", was "}"):
+     5:       | Daiza3
+     6:     = csrf_meta_tags
+     7:     = csp_meta_tag
+     8:     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+     9:     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    10:   body
+    11:     .app-title.navbar.navbar-expand-md.nevbar-light.bg-light
+  
+app/assets/stylesheets/book/search.scss:44
+app/views/layouts/application.html.slim:8:in `_app_views_layouts_application_html_slim__2795552805547087449_70316876999140'
+Started GET "/" for 127.0.0.1 at 2018-12-07 15:52:33 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "<<<<<<< HEAD": expected "{", was "}"):
+     5:       | Daiza3
+     6:     = csrf_meta_tags
+     7:     = csp_meta_tag
+     8:     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+     9:     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    10:   body
+    11:     .app-title.navbar.navbar-expand-md.nevbar-light.bg-light
+  
+app/assets/stylesheets/book/search.scss:44
+app/views/layouts/application.html.slim:8:in `_app_views_layouts_application_html_slim__2795552805547087449_70316888346380'
+Started GET "/" for 127.0.0.1 at 2018-12-07 15:55:39 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "<<<<<<< HEAD": expected "{", was "}"):
+     5:       | Daiza3
+     6:     = csrf_meta_tags
+     7:     = csp_meta_tag
+     8:     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+     9:     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    10:   body
+    11:     .app-title.navbar.navbar-expand-md.nevbar-light.bg-light
+  
+app/assets/stylesheets/book/search.scss:44
+app/views/layouts/application.html.slim:8:in `_app_views_layouts_application_html_slim__2795552805547087449_70316891186180'
+Started GET "/" for 127.0.0.1 at 2018-12-07 15:58:59 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (3.7ms)
+Started GET "/" for 127.0.0.1 at 2018-12-07 15:59:01 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (4.7ms)
+Completed 200 OK in 1311ms (Views: 1308.0ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 3983ms (Views: 3980.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chat_pages/new" for 127.0.0.1 at 2018-12-07 15:59:13 +0900
+Processing by ChatPagesController#new as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :login_required rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-12-07 15:59:13 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.slim within layouts/application
+  Rendered sessions/new.html.slim within layouts/application (27.9ms)
+Completed 200 OK in 95ms (Views: 87.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-12-07 15:59:16 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ld/X24L+wlHTpjiXtKRFUYDE7fYneX0jQi+GgjimKhz1bvJjVcpwRfDkpchYxA8wCPcPdtA7GD9leFJt1gWaRQ==", "session"=>{"mem_info"=>"aa", "password"=>"[FILTERED]"}, "commit"=>"ログインする"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."mem_info" = $1 LIMIT $2[0m  [["mem_info", "aa"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10
+  Rendering sessions/new.html.slim within layouts/application
+  Rendered sessions/new.html.slim within layouts/application (3.5ms)
+Completed 200 OK in 99ms (Views: 48.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-07 15:59:20 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (3.4ms)
+Completed 200 OK in 69ms (Views: 66.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-12-07 15:59:21 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.slim within layouts/application
+  Rendered sessions/new.html.slim within layouts/application (4.9ms)
+Completed 200 OK in 67ms (Views: 63.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-12-07 15:59:25 +0900
+  
+SyntaxError (/mnt/c/yahoo/Paris/app/controllers/users_controller.rb:11: syntax error, unexpected <<
+<<<<<<< HEAD
+^~
+/mnt/c/yahoo/Paris/app/controllers/users_controller.rb:15: syntax error, unexpected ===
+=======
+^~~
+/mnt/c/yahoo/Paris/app/controllers/users_controller.rb:19: syntax error, unexpected >>
+>>>>>>> doraemon/master
+^~
+/mnt/c/yahoo/Paris/app/controllers/users_controller.rb:44: syntax error, unexpected <<
+<<<<<<< HEAD
+^~
+/mnt/c/yahoo/Paris/app/controllers/users_controller.rb:46: syntax error, unexpected ===, expecting keyword_end
+=======
+^~~
+/mnt/c/yahoo/Paris/app/controllers/users_controller.rb:48: syntax error, unexpected >>, expecting keyword_end
+>>>>>>> doraemon/master
+^~
+/mnt/c/yahoo/Paris/app/controllers/users_controller.rb:50: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/users_controller.rb:11: syntax error, unexpected <<
+app/controllers/users_controller.rb:15: syntax error, unexpected ===
+app/controllers/users_controller.rb:19: syntax error, unexpected >>
+app/controllers/users_controller.rb:44: syntax error, unexpected <<
+app/controllers/users_controller.rb:46: syntax error, unexpected ===, expecting keyword_end
+app/controllers/users_controller.rb:48: syntax error, unexpected >>, expecting keyword_end
+app/controllers/users_controller.rb:50: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users/new" for 127.0.0.1 at 2018-12-07 16:01:22 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_form.html.slim (3.1ms)
+  Rendered users/new.html.slim within layouts/application (14.0ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 7.4ms)
+
+
+  
+ActionView::Template::Error (Malformed indentation
+  /mnt/c/yahoo/Paris/app/views/users/_form.html.slim, Line 17, Column 2
+    .form-group
+    ^
+):
+    14: <<<<<<< HEAD
+    15:     = f.label :"生年"
+    16:     = f.select :mem_birth,[["1997年","1997年"],["1998年","1998年"],["1996年","1996年"],["1995年","1995年"]]
+    17:   .form-group
+    18:     = f.label :"卒業年(下二桁)"
+    19:     = f.select :mem_gra,[["18","2018年3月27日"],["19","2019年3月27日"],["20","2020年3月27日"]]
+    20:   .form-group
+  
+app/views/users/_form.html.slim:17
+app/views/users/new.html.slim:3:in `_app_views_users_new_html_slim__1485980483590998612_70316892334340'
+Started GET "/users/new" for 127.0.0.1 at 2018-12-07 16:06:50 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_form.html.slim (321.7ms)
+  Rendered users/new.html.slim within layouts/application (329.2ms)
+Completed 500 Internal Server Error in 359ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (can not load translations from /mnt/c/yahoo/Paris/config/locales/ja.yml: #<Psych::SyntaxError: (<unknown>): could not find expected ':' while scanning a simple key at line 13 column 1>):
+    2: 
+    3: = form_with model: user, local: true do |f|
+    4:   .form-group
+    5:     = f.label :mem_name
+    6:     = f.text_field :mem_name, class: 'form-control'
+    7:   .form-group
+    8:     = f.label :user_name
+  
+app/views/users/_form.html.slim:5:in `block in _app_views_users__form_html_slim__747383988617532640_70316882137360'
+app/views/users/_form.html.slim:3:in `_app_views_users__form_html_slim__747383988617532640_70316882137360'
+app/views/users/new.html.slim:3:in `_app_views_users_new_html_slim__1485980483590998612_70316882481380'
+Started GET "/users/new" for 127.0.0.1 at 2018-12-07 16:09:00 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_form.html.slim (338.2ms)
+  Rendered users/new.html.slim within layouts/application (343.9ms)
+Completed 200 OK in 432ms (Views: 409.4ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-12-07 16:10:05 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uVPYiLBS6ss6ZaW/Ooj2YCYj99w0cYVbcS5TJ21uKHU7K4o5kEik3FamXgvsuU1v6JyL5Ahp2+nah0orhGllXg==", "user"=>{"mem_name"=>"aa", "user_name"=>"yuusei", "mem_info"=>"a", "mem_birth"=>"1997年", "mem_gra"=>"2018年3月27日", "des_occupation"=>"システムエンジニア", "des_location"=>"千葉", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "univercity"=>"a", "circle"=>"a", "labo"=>"a", "study"=>"a", "deliver"=>"a", "activity"=>"a", "system_ex"=>"a", "flame_ex"=>"a", "qualification"=>"基本情報技術者", "lang_experience"=>"Java"}, "commit"=>"登録する"}
+Unpermitted parameter: :lang_experience
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("mem_name", "user_name", "mem_info", "des_occupation", "des_location", "password_digest", "univercity", "circle", "labo", "study", "deliver", "activity", "qualification", "system_ex", "flame_ex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"[0m  [["mem_name", "aa"], ["user_name", "yuusei"], ["mem_info", "a"], ["des_occupation", "システムエンジニア"], ["des_location", "千葉"], ["password_digest", "$2a$10$2EbphlexWtxbSQxfbSm29.y5wx8vCbaAWqL2SFfcw63Azm2li/TzC"], ["univercity", "a"], ["circle", "a"], ["labo", "a"], ["study", "a"], ["deliver", "a"], ["activity", "a"], ["qualification", "基本情報技術者"], ["system_ex", "a"], ["flame_ex", "a"], ["created_at", "2018-12-07 07:10:05.541821"], ["updated_at", "2018-12-07 07:10:05.541821"]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[35m (10.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:13
+Redirected to http://localhost:3000/users
+Completed 302 Found in 89ms (ActiveRecord: 11.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-12-07 16:10:05 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.slim within layouts/application
+  Rendered users/index.html.slim within layouts/application (2.2ms)
+Completed 200 OK in 70ms (Views: 60.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-07 16:10:14 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (3.4ms)
+Completed 200 OK in 57ms (Views: 53.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-12-07 16:10:15 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.slim within layouts/application
+  Rendered sessions/new.html.slim within layouts/application (4.3ms)
+Completed 200 OK in 55ms (Views: 51.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-12-07 16:10:19 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tI8vx95ikpWNP67uaMDMF+XwgxsVQsN4wiarPb1v01HUPgp/CVYgga59M7GEoIZ2bcNhm+IApmTlcX/SU8xjCA==", "session"=>{"mem_info"=>"a", "password"=>"[FILTERED]"}, "commit"=>"ログインする"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."mem_info" = $1 LIMIT $2[0m  [["mem_info", "a"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10
+Redirected to http://localhost:3000/user_pages
+Completed 302 Found in 78ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/user_pages" for 127.0.0.1 at 2018-12-07 16:10:19 +0900
+  
+SyntaxError (/mnt/c/yahoo/Paris/app/controllers/user_pages_controller.rb:1: syntax error, unexpected <<
+<<<<<<< HEAD
+^~
+/mnt/c/yahoo/Paris/app/controllers/user_pages_controller.rb:17: syntax error, unexpected ===, expecting keyword_end
+=======
+^~~
+/mnt/c/yahoo/Paris/app/controllers/user_pages_controller.rb:18: class definition in method body
+...troller < ApplicationController
+...                               ^
+/mnt/c/yahoo/Paris/app/controllers/user_pages_controller.rb:23: syntax error, unexpected >>, expecting keyword_end
+>>>>>>> doraemon/master
+^~
+/mnt/c/yahoo/Paris/app/controllers/user_pages_controller.rb:34: syntax error, unexpected <<, expecting keyword_end
+<<<<<<< HEAD
+^~
+/mnt/c/yahoo/Paris/app/controllers/user_pages_controller.rb:44: syntax error, unexpected ===, expecting keyword_end
+=======
+^~~
+/mnt/c/yahoo/Paris/app/controllers/user_pages_controller.rb:46: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/user_pages_controller.rb:1: syntax error, unexpected <<
+app/controllers/user_pages_controller.rb:17: syntax error, unexpected ===, expecting keyword_end
+app/controllers/user_pages_controller.rb:18: class definition in method body
+app/controllers/user_pages_controller.rb:23: syntax error, unexpected >>, expecting keyword_end
+app/controllers/user_pages_controller.rb:34: syntax error, unexpected <<, expecting keyword_end
+app/controllers/user_pages_controller.rb:44: syntax error, unexpected ===, expecting keyword_end
+app/controllers/user_pages_controller.rb:46: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/user_pages" for 127.0.0.1 at 2018-12-07 16:11:16 +0900
+  
+SyntaxError (/mnt/c/yahoo/Paris/app/controllers/user_pages_controller.rb:1: syntax error, unexpected <<
+<<<<<<< HEAD
+^~
+/mnt/c/yahoo/Paris/app/controllers/user_pages_controller.rb:17: syntax error, unexpected ===, expecting keyword_end
+=======
+^~~
+/mnt/c/yahoo/Paris/app/controllers/user_pages_controller.rb:18: class definition in method body
+...troller < ApplicationController
+...                               ^
+/mnt/c/yahoo/Paris/app/controllers/user_pages_controller.rb:23: syntax error, unexpected >>, expecting keyword_end
+>>>>>>> doraemon/master
+^~
+/mnt/c/yahoo/Paris/app/controllers/user_pages_controller.rb:34: syntax error, unexpected <<, expecting keyword_end
+<<<<<<< HEAD
+^~
+/mnt/c/yahoo/Paris/app/controllers/user_pages_controller.rb:44: syntax error, unexpected ===, expecting keyword_end
+=======
+^~~
+/mnt/c/yahoo/Paris/app/controllers/user_pages_controller.rb:46: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/user_pages_controller.rb:1: syntax error, unexpected <<
+app/controllers/user_pages_controller.rb:17: syntax error, unexpected ===, expecting keyword_end
+app/controllers/user_pages_controller.rb:18: class definition in method body
+app/controllers/user_pages_controller.rb:23: syntax error, unexpected >>, expecting keyword_end
+app/controllers/user_pages_controller.rb:34: syntax error, unexpected <<, expecting keyword_end
+app/controllers/user_pages_controller.rb:44: syntax error, unexpected ===, expecting keyword_end
+app/controllers/user_pages_controller.rb:46: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/user_pages" for 127.0.0.1 at 2018-12-07 16:12:22 +0900
+Processing by UserPagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCompanyOffer Load (0.6ms)[0m  [1m[34mSELECT "company_offers".* FROM "company_offers" WHERE "company_offers"."mem_id" = $1[0m  [["mem_id", 3]]
+  ↳ app/controllers/user_pages_controller.rb:9
+  Rendering user_pages/index.html.slim within layouts/application
+  Rendered user_pages/index.html.slim within layouts/application (19.8ms)
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 6.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `lang_ex' for #<User:0x00007fe7daa6afa8>):
+    24:       td= @user.study
+    25:       td= @user.activity
+    26:       td= @user.qualification
+    27:       td= @user.lang_ex
+    28:       td= @user.system_ex
+    29:     tr
+    30:       th = User.human_attribute_name(:オファー一覧)
+  
+app/views/user_pages/index.html.slim:27:in `_app_views_user_pages_index_html_slim__2047206627184149506_70316891212320'
+Started GET "/user_pages" for 127.0.0.1 at 2018-12-07 16:13:14 +0900
+Processing by UserPagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCompanyOffer Load (0.3ms)[0m  [1m[34mSELECT "company_offers".* FROM "company_offers" WHERE "company_offers"."mem_id" = $1[0m  [["mem_id", 3]]
+  ↳ app/controllers/user_pages_controller.rb:9
+  Rendering user_pages/index.html.slim within layouts/application
+  Rendered user_pages/index.html.slim within layouts/application (21.4ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `lang_ex' for #<User:0x00007fe7d9679030>):
+    24:       td= @user.study
+    25:       td= @user.activity
+    26:       td= @user.qualification
+    27:       td= @user.lang_ex
+    28:       td= @user.system_ex
+    29:     tr
+    30:       th = User.human_attribute_name(:オファー一覧)
+  
+app/views/user_pages/index.html.slim:27:in `_app_views_user_pages_index_html_slim__2047206627184149506_70316880736540'
+Started GET "/user_pages" for 127.0.0.1 at 2018-12-07 16:15:59 +0900
+Processing by UserPagesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCompanyOffer Load (0.4ms)[0m  [1m[34mSELECT "company_offers".* FROM "company_offers" WHERE "company_offers"."mem_id" = $1[0m  [["mem_id", 3]]
+  ↳ app/controllers/user_pages_controller.rb:9
+  Rendering user_pages/index.html.slim within layouts/application
+  Rendered user_pages/index.html.slim within layouts/application (20.0ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `lang_ex' for #<User:0x00007fe7daa80c90>):
+    24:       td= @user.study
+    25:       td= @user.activity
+    26:       td= @user.qualification
+    27:       td= @user.lang_ex
+    28:       td= @user.system_ex
+    29:     tr
+    30:       th = User.human_attribute_name(:オファー一覧)
+  
+app/views/user_pages/index.html.slim:27:in `_app_views_user_pages_index_html_slim__2047206627184149506_70316891297580'
+Started GET "/user_pages" for 127.0.0.1 at 2018-12-07 16:18:05 +0900
+Processing by UserPagesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCompanyOffer Load (0.2ms)[0m  [1m[34mSELECT "company_offers".* FROM "company_offers" WHERE "company_offers"."mem_id" = $1[0m  [["mem_id", 3]]
+  ↳ app/controllers/user_pages_controller.rb:9
+  Rendering user_pages/index.html.slim within layouts/application
+  Rendered user_pages/index.html.slim within layouts/application (17.9ms)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 4.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `lang_ex' for #<User:0x00007fe7dd0c6350>):
+    24:       td= @user.study
+    25:       td= @user.activity
+    26:       td= @user.qualification
+    27:       td= @user.lang_ex
+    28:       td= @user.system_ex
+    29:     tr
+    30:       th = User.human_attribute_name(:オファー一覧)
+  
+app/views/user_pages/index.html.slim:27:in `_app_views_user_pages_index_html_slim__2047206627184149506_70316911350320'
+Started GET "/login" for 127.0.0.1 at 2018-12-07 16:18:30 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.slim within layouts/application
+  Rendered sessions/new.html.slim within layouts/application (5.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 94ms (Views: 81.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-07 16:18:35 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (3.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 72ms (Views: 67.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-12-07 16:18:38 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_form.html.slim (12.5ms)
+  Rendered users/new.html.slim within layouts/application (18.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 78ms (Views: 74.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-12-07 16:19:05 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xV3W7OdDoIiNQ0duQw+KI0hx+mK2Qvq6VPoNeamadFCBVdnERVD+lh+lzA2aW0DJkVs3zTN93rq6HlOX6d9XFQ==", "user"=>{"mem_name"=>"aa", "user_name"=>"aa", "mem_info"=>"aa", "mem_birth"=>"1997年", "mem_gra"=>"2018年3月27日", "des_occupation"=>"システムエンジニア", "des_location"=>"千葉", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "univercity"=>"", "circle"=>"", "labo"=>"", "study"=>"", "deliver"=>"", "activity"=>"", "system_ex"=>"", "flame_ex"=>"", "qualification"=>"NULL", "lang_ex"=>"Python"}, "commit"=>"登録する"}
+Completed 500 Internal Server Error in 96ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'lang_ex' for User.):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started POST "/users" for 127.0.0.1 at 2018-12-07 16:22:53 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xV3W7OdDoIiNQ0duQw+KI0hx+mK2Qvq6VPoNeamadFCBVdnERVD+lh+lzA2aW0DJkVs3zTN93rq6HlOX6d9XFQ==", "user"=>{"mem_name"=>"aa", "user_name"=>"aa", "mem_info"=>"aa", "mem_birth"=>"1997年", "mem_gra"=>"2018年3月27日", "des_occupation"=>"システムエンジニア", "des_location"=>"千葉", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "univercity"=>"", "circle"=>"", "labo"=>"", "study"=>"", "deliver"=>"", "activity"=>"", "system_ex"=>"", "flame_ex"=>"", "qualification"=>"NULL", "lang_ex"=>"Python"}, "commit"=>"登録する"}
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 2.9ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'lang_ex' for User.):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started POST "/users" for 127.0.0.1 at 2018-12-07 16:23:31 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xV3W7OdDoIiNQ0duQw+KI0hx+mK2Qvq6VPoNeamadFCBVdnERVD+lh+lzA2aW0DJkVs3zTN93rq6HlOX6d9XFQ==", "user"=>{"mem_name"=>"aa", "user_name"=>"aa", "mem_info"=>"aa", "mem_birth"=>"1997年", "mem_gra"=>"2018年3月27日", "des_occupation"=>"システムエンジニア", "des_location"=>"千葉", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "univercity"=>"", "circle"=>"", "labo"=>"", "study"=>"", "deliver"=>"", "activity"=>"", "system_ex"=>"", "flame_ex"=>"", "qualification"=>"NULL", "lang_ex"=>"Python"}, "commit"=>"登録する"}
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 3.4ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'lang_ex' for User.):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started POST "/users" for 127.0.0.1 at 2018-12-07 16:25:00 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xV3W7OdDoIiNQ0duQw+KI0hx+mK2Qvq6VPoNeamadFCBVdnERVD+lh+lzA2aW0DJkVs3zTN93rq6HlOX6d9XFQ==", "user"=>{"mem_name"=>"aa", "user_name"=>"aa", "mem_info"=>"aa", "mem_birth"=>"1997年", "mem_gra"=>"2018年3月27日", "des_occupation"=>"システムエンジニア", "des_location"=>"千葉", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "univercity"=>"", "circle"=>"", "labo"=>"", "study"=>"", "deliver"=>"", "activity"=>"", "system_ex"=>"", "flame_ex"=>"", "qualification"=>"NULL", "lang_ex"=>"Python"}, "commit"=>"登録する"}
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 3.1ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'lang_ex' for User.):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started POST "/users" for 127.0.0.1 at 2018-12-07 16:25:14 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xV3W7OdDoIiNQ0duQw+KI0hx+mK2Qvq6VPoNeamadFCBVdnERVD+lh+lzA2aW0DJkVs3zTN93rq6HlOX6d9XFQ==", "user"=>{"mem_name"=>"aa", "user_name"=>"aa", "mem_info"=>"aa", "mem_birth"=>"1997年", "mem_gra"=>"2018年3月27日", "des_occupation"=>"システムエンジニア", "des_location"=>"千葉", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "univercity"=>"", "circle"=>"", "labo"=>"", "study"=>"", "deliver"=>"", "activity"=>"", "system_ex"=>"", "flame_ex"=>"", "qualification"=>"NULL", "lang_ex"=>"Python"}, "commit"=>"登録する"}
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'lang_ex' for User.):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started POST "/users" for 127.0.0.1 at 2018-12-07 16:30:14 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xV3W7OdDoIiNQ0duQw+KI0hx+mK2Qvq6VPoNeamadFCBVdnERVD+lh+lzA2aW0DJkVs3zTN93rq6HlOX6d9XFQ==", "user"=>{"mem_name"=>"aa", "user_name"=>"aa", "mem_info"=>"aa", "mem_birth"=>"1997年", "mem_gra"=>"2018年3月27日", "des_occupation"=>"システムエンジニア", "des_location"=>"千葉", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "univercity"=>"", "circle"=>"", "labo"=>"", "study"=>"", "deliver"=>"", "activity"=>"", "system_ex"=>"", "flame_ex"=>"", "qualification"=>"NULL", "lang_ex"=>"Python"}, "commit"=>"登録する"}
+Completed 500 Internal Server Error in 111ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'lang_ex' for User.):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started POST "/users" for 127.0.0.1 at 2018-12-07 16:31:58 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xV3W7OdDoIiNQ0duQw+KI0hx+mK2Qvq6VPoNeamadFCBVdnERVD+lh+lzA2aW0DJkVs3zTN93rq6HlOX6d9XFQ==", "user"=>{"mem_name"=>"aa", "user_name"=>"aa", "mem_info"=>"aa", "mem_birth"=>"1997年", "mem_gra"=>"2018年3月27日", "des_occupation"=>"システムエンジニア", "des_location"=>"千葉", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "univercity"=>"", "circle"=>"", "labo"=>"", "study"=>"", "deliver"=>"", "activity"=>"", "system_ex"=>"", "flame_ex"=>"", "qualification"=>"NULL", "lang_ex"=>"Python"}, "commit"=>"登録する"}
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'lang_ex' for User.):
+  
+app/controllers/users_controller.rb:11:in `create'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6220336080791520240)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6220336080791520240)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started POST "/users" for 127.0.0.1 at 2018-12-07 16:32:19 +0900
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xV3W7OdDoIiNQ0duQw+KI0hx+mK2Qvq6VPoNeamadFCBVdnERVD+lh+lzA2aW0DJkVs3zTN93rq6HlOX6d9XFQ==", "user"=>{"mem_name"=>"aa", "user_name"=>"aa", "mem_info"=>"aa", "mem_birth"=>"1997年", "mem_gra"=>"2018年3月27日", "des_occupation"=>"システムエンジニア", "des_location"=>"千葉", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "univercity"=>"", "circle"=>"", "labo"=>"", "study"=>"", "deliver"=>"", "activity"=>"", "system_ex"=>"", "flame_ex"=>"", "qualification"=>"NULL", "lang_ex"=>"Python"}, "commit"=>"登録する"}
+Completed 500 Internal Server Error in 90ms (ActiveRecord: 4.7ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'lang_ex' for User.):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started POST "/users" for 127.0.0.1 at 2018-12-07 16:33:43 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xV3W7OdDoIiNQ0duQw+KI0hx+mK2Qvq6VPoNeamadFCBVdnERVD+lh+lzA2aW0DJkVs3zTN93rq6HlOX6d9XFQ==", "user"=>{"mem_name"=>"aa", "user_name"=>"aa", "mem_info"=>"aa", "mem_birth"=>"1997年", "mem_gra"=>"2018年3月27日", "des_occupation"=>"システムエンジニア", "des_location"=>"千葉", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "univercity"=>"", "circle"=>"", "labo"=>"", "study"=>"", "deliver"=>"", "activity"=>"", "system_ex"=>"", "flame_ex"=>"", "qualification"=>"NULL", "lang_ex"=>"Python"}, "commit"=>"登録する"}
+Completed 500 Internal Server Error in 106ms (ActiveRecord: 12.1ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'lang_ex' for User.):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started GET "/" for 127.0.0.1 at 2018-12-07 16:33:59 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (14.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 636ms (Views: 632.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/login_com" for 127.0.0.1 at 2018-12-07 16:34:03 +0900
+Processing by SessionsComController#new as HTML
+  Rendering sessions_com/new.html.slim within layouts/application
+  Rendered sessions_com/new.html.slim within layouts/application (8.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 66ms (Views: 57.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/companys/new" for 127.0.0.1 at 2018-12-07 16:34:05 +0900
+Processing by CompanysController#new as HTML
+  Rendering companys/new.html.slim within layouts/application
+  Rendered companys/new.html.slim within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (Unknown line indicator
+  /mnt/c/yahoo/Paris/app/views/companys/new.html.slim, Line 37, Column 0
+    >>>>>>> doraemon/master
+    ^
+):
+    34: h1 ユーザ登録画面
+    35: 
+    36: = render partial: 'form', locals: { company: @company }
+    37: >>>>>>> doraemon/master
+  
+app/views/companys/new.html.slim:37
