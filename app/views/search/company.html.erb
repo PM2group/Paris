@@ -119,6 +119,18 @@
 
     </div>
 
+    <div id ="results">
+            
+    <% @company.each do |company| %>
+        <a href = "company/<%= company.id %>" >
+            名前：<%= company.com_name%></br>
+            生年月日:<%= company.occupations %>
+            </br>
+            </a>
+    <% end %>
+
+</div>
+
     <div id ="search">
     <%= button_to "検索"%>
     </div>
