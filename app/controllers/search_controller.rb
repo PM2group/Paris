@@ -144,7 +144,7 @@ class SearchController < ApplicationController
       list.push(part)
     end
 
-    @chat = Chat_page.order("updated_at").where(list)
+    @chat = ChatPage.order("updated_at").where(list)
 
   end
 

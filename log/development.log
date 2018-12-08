@@ -5276,3 +5276,140 @@ Processing by SearchController#member as HTML
 Completed 200 OK in 321ms (Views: 205.5ms | ActiveRecord: 72.3ms)
 
 
+Started GET "/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=" for 127.0.0.1 at 2018-12-08 15:35:10 +0900
+Processing by SearchController#company as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "occ"=>"", "loc"=>"", "system"=>"", "salary"=>"", "frame"=>"", "lang"=>""}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/search_controller.rb:58:in `company'
+Started GET "/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=" for 127.0.0.1 at 2018-12-08 15:42:25 +0900
+Started GET "/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=" for 127.0.0.1 at 2018-12-08 15:42:36 +0900
+Processing by SearchController#company as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "occ"=>"", "loc"=>"", "system"=>"", "salary"=>"", "frame"=>"", "lang"=>""}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/search_controller.rb:59:in `company'
+Processing by SearchController#company as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "occ"=>"", "loc"=>"", "system"=>"", "salary"=>"", "frame"=>"", "lang"=>""}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/search_controller.rb:59:in `company'
+Started GET "/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=" for 127.0.0.1 at 2018-12-08 15:43:21 +0900
+Processing by SearchController#company as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "occ"=>"", "loc"=>"", "system"=>"", "salary"=>"", "frame"=>"", "lang"=>""}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/search_controller.rb:74:in `company'
+Started GET "/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=" for 127.0.0.1 at 2018-12-08 15:44:04 +0900
+Processing by SearchController#company as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "occ"=>"", "loc"=>"", "system"=>"", "salary"=>"", "frame"=>"", "lang"=>""}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/search_controller.rb:74:in `company'
+Started GET "/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=" for 127.0.0.1 at 2018-12-08 15:44:07 +0900
+Processing by SearchController#company as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "occ"=>"", "loc"=>"", "system"=>"", "salary"=>"", "frame"=>"", "lang"=>""}
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 72ms (Views: 66.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-08 15:46:09 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (3.8ms)
+Completed 200 OK in 64ms (Views: 61.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/chat?s_word=&e_word=&category=&theme=&part=" for 127.0.0.1 at 2018-12-08 15:46:10 +0900
+Processing by SearchController#chat as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "category"=>"", "theme"=>"", "part"=>""}
+  Rendering search/chat.html.erb within layouts/application
+  Rendered search/chat.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 55ms (Views: 52.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/chat?s_word=&e_word=&category=&theme=&part=" for 127.0.0.1 at 2018-12-08 15:46:32 +0900
+Processing by SearchController#chat as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "category"=>"", "theme"=>"", "part"=>""}
+  Rendering search/chat.html.erb within layouts/application
+  Rendered search/chat.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 71ms (Views: 66.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/chat?s_word=&e_word=&category=%E5%AD%A6%E7%94%9F%E5%90%8C%E5%A3%AB%E3%81%AE%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%83%81%E3%83%A3%E3%83%83%E3%83%88&theme=&part=&authenticity_token=%2Bkl%2BpR5jmDROM07r97r0GrAWsGMnHqGYVpKx3DtTENbn7wdHdc62EVlgWYhIqz4FcZLHptRSnCamdjHnKkqZiA%3D%3D" for 127.0.0.1 at 2018-12-08 16:26:53 +0900
+Processing by SearchController#chat as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "category"=>"学生同士のグループチャット", "theme"=>"", "part"=>"", "authenticity_token"=>"+kl+pR5jmDROM07r97r0GrAWsGMnHqGYVpKx3DtTENbn7wdHdc62EVlgWYhIqz4FcZLHptRSnCamdjHnKkqZiA=="}
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (Unable to autoload constant Chat_page, expected /mnt/c/yahoo/Paris/app/models/chat_page.rb to define it):
+  
+app/controllers/search_controller.rb:147:in `chat'
+Started GET "/" for 127.0.0.1 at 2018-12-08 16:28:26 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (3.4ms)
+Completed 200 OK in 73ms (Views: 70.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=" for 127.0.0.1 at 2018-12-08 16:28:27 +0900
+Processing by SearchController#company as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "occ"=>"", "loc"=>"", "system"=>"", "salary"=>"", "frame"=>"", "lang"=>""}
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 337ms (Views: 50.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=&authenticity_token=Hw%2F%2BRefLdCL3kaJveXkhi8vUpO4jkczd1uNM3G5bPLFWExFAMK31vO%2F6yBsjlVbGQ0rLF8Bqe9cIWSpRABngqg%3D%3D" for 127.0.0.1 at 2018-12-08 16:28:29 +0900
+Processing by SearchController#company as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "occ"=>"", "loc"=>"", "system"=>"", "salary"=>"", "frame"=>"", "lang"=>"", "authenticity_token"=>"Hw/+RefLdCL3kaJveXkhi8vUpO4jkczd1uNM3G5bPLFWExFAMK31vO/6yBsjlVbGQ0rLF8Bqe9cIWSpRABngqg=="}
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 59ms (Views: 56.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/company?s_word=&e_word=&occ=%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E&loc=&system=&salary=&frame=&lang=&authenticity_token=qwEbpFVxhs7O%2Bdn6z3l%2F3z7lKRGakBRa71kMhPyV3KC2p2JGPtyo69mqzplwaLXA%2F2Fe1GncKeQfvYy%2F7YxV%2Fg%3D%3D" for 127.0.0.1 at 2018-12-08 16:28:35 +0900
+Processing by SearchController#company as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "occ"=>"プログラマ", "loc"=>"", "system"=>"", "salary"=>"", "frame"=>"", "lang"=>"", "authenticity_token"=>"qwEbpFVxhs7O+dn6z3l/3z7lKRGakBRa71kMhPyV3KC2p2JGPtyo69mqzplwaLXA/2Fe1GncKeQfvYy/7YxV/g=="}
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 58ms (Views: 53.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/company?s_word=&e_word=&occ=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&loc=&system=&salary=&frame=&lang=&authenticity_token=1fhF4jtknuTBErOHAERK15cCm6IE%2BVMjUPnuJPy2mQPIXjwAUMmwwdZBpOS%2FVYDIVobsZ%2Fe1bp2gHW4f7a8QXQ%3D%3D" for 127.0.0.1 at 2018-12-08 16:29:43 +0900
+Processing by SearchController#company as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "occ"=>"システムエンジニア", "loc"=>"", "system"=>"", "salary"=>"", "frame"=>"", "lang"=>"", "authenticity_token"=>"1fhF4jtknuTBErOHAERK15cCm6IE+VMjUPnuJPy2mQPIXjwAUMmwwdZBpOS/VYDIVobsZ/e1bp2gHW4f7a8QXQ=="}
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 87ms (Views: 81.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-08 16:34:21 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (3.6ms)
+Completed 200 OK in 68ms (Views: 65.4ms | ActiveRecord: 0.0ms)
+
+
