@@ -1,7 +1,7 @@
     <%= stylesheet_link_tag "book/search", :media => "all" %>
 
     <div id = "mypage">
-    <a href = "company">
+    <a href = com_pages_path>
     <input type="button" name="search" value="マイぺージ" />
     </a>
     </div>
@@ -52,14 +52,14 @@
         <div id ="des_loc">
             <details>
             <summary>希望勤務地</summary>
-            <input type="radio" name="des_loc" value="1"value = "1" />
-            1
+            <input type="radio" name="des_loc" value="東京" />
+            東京
             </br>
-            <input type="radio" name="des_loc" value="2" value = "2"/>
-            2
+            <input type="radio" name="des_loc" value="千葉"/>
+            千葉
             </br>
-            <input type="radio" name="des_loc" value="3" value = "3"/>
-            3
+            <input type="radio" name="des_loc" value="茨城" />
+            茨城
             <input type="radio" name="des_loc" value = "" checked="checked" style="display:none;" />
             </details>
         </div>

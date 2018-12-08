@@ -18,7 +18,7 @@ one:
   deliver: MyString
   activity: MyString
   qualification: MyString
-  lang_experience: MyString
+  lang_ex: MyString
   system_ex: MyString
   flame_ex: MyString
   mem_last_login: 2018-12-01
@@ -41,7 +41,7 @@ two:
   deliver: MyString
   activity: MyString
   qualification: MyString
-  lang_experience: MyString
+  lang_ex: MyString
   system_ex: MyString
   flame_ex: MyString
   mem_last_login: 2018-12-01

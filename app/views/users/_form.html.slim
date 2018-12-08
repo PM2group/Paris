@@ -11,7 +11,6 @@
     = f.label :mem_info
     = f.text_field :mem_info, class: 'form-control'
   .form-group
-<<<<<<< HEAD
     = f.label :"生年"
     = f.select :mem_birth,[["1997年","1997年"],["1998年","1998年"],["1996年","1996年"],["1995年","1995年"]]
   .form-group
@@ -20,16 +19,6 @@
   .form-group
     = f.label :"希望職種"
     = f.select :des_occupation,[["システムエンジニア","システムエンジニア"],["ゲームクリエイター","ゲームクリエイター"],["Webデザイナー","Webデザイナー"],["アプリケーションエンジニア","アプリケーションエンジニア"]]
-=======
-    = f.label :"生年月日"
-    = f.select :mem_birth,[["1","2007年5月30日"],["2","2007年5月1日"]]
-  .form-group
-    = f.label :"卒業年"
-    = f.select :mem_gra,[["18","2018年5月30日"],["19","2019年5月1日"]]
-  .form-group
-    = f.label :"希望職種"
-    = f.select :des_occupation,[["SE","システムエンジニア"],["ゲーム","ゲームクリエイター"]]
->>>>>>> doraemon/master
   .form-group
     = f.label :"希望勤務地"
     = f.select :des_location,[["千葉","千葉"],["茨城","茨城"]]
@@ -39,7 +28,6 @@
   .form-group
     = f.label :password_confirmation, 'パスワード確認'
     = f.password_field :password_confirmation, class: 'form-control'
-<<<<<<< HEAD
   .form-group
     = f.label :"所属学校"
     = f.text_field :univercity, class: 'form-control'
@@ -66,10 +54,9 @@
     = f.text_field :flame_ex, class: 'form-control'
   .form-group
     = f.label :"資格"
-    = f.select :qualification,[["-","NULL"],["基本情報技術者","基本情報技術者"],["応用情報技術者","応用情報技術者"],]
+    = f.select :qualification,[["-",""],["基本情報技術者","基本情報技術者"],["応用情報技術者","応用情報技術者"],]
   .form-group
-    = f.label :"開発言語経験"
-    = f.select :lang_experience,[["-","NULL"],["C言語","C言語"],["Java","Java"],["C++","C++"],["Ruby","Ruby"],["Python","Python"]]
-=======
->>>>>>> doraemon/master
+    = f.label :"言語経験"
+    = f.select :lang_ex,[["-",""],["C言語","C言語"],["Java","Java"],["C++","C++"],["Ruby","Ruby"],["Python","Python"]]
+    
   = f.submit nil, class: 'btn btn-primay'
