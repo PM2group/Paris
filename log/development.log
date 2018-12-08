@@ -2923,3 +2923,2511 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-12-08 11:21:49 +0900
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (73.3ms)
+Completed 200 OK in 4026ms (Views: 3957.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-12-08 11:22:10 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.slim within layouts/application
+  Rendered sessions/new.html.slim within layouts/application (409.9ms)
+Completed 200 OK in 492ms (Views: 481.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-12-08 11:22:13 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GuT4u8TXHOSjJR/W3e3TndX4vJHczQs3WG1gcUHHfNR0jM7emfn/Pc7n5dvYMFfl2S2uTji+yZoOpkRib+mlKw==", "session"=>{"mem_info"=>"b", "password"=>"[FILTERED]"}, "commit"=>"ログインする"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."mem_info" = $1 LIMIT $2[0m  [["mem_info", "b"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10
+Redirected to http://localhost:3000/user_pages
+Completed 302 Found in 312ms (ActiveRecord: 85.8ms)
+
+
+Started GET "/user_pages" for 127.0.0.1 at 2018-12-08 11:22:14 +0900
+Processing by UserPagesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCompanyOffer Load (0.7ms)[0m  [1m[34mSELECT "company_offers".* FROM "company_offers" WHERE "company_offers"."mem_id" = $1[0m  [["mem_id", 2]]
+  ↳ app/controllers/user_pages_controller.rb:9
+  Rendering user_pages/index.html.slim within layouts/application
+  Rendered user_pages/index.html.slim within layouts/application (200.7ms)
+Completed 200 OK in 335ms (Views: 270.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/serch/company" for 127.0.0.1 at 2018-12-08 11:22:27 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/serch/company"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/search/company" for 127.0.0.1 at 2018-12-08 11:22:34 +0900
+Processing by SearchController#company as HTML
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (189.9ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 392ms (Views: 374.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/search/company" for 127.0.0.1 at 2018-12-08 11:22:38 +0900
+Processing by SearchController#company as HTML
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 79ms (Views: 74.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/search/company" for 127.0.0.1 at 2018-12-08 11:22:39 +0900
+Processing by SearchController#company as HTML
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (10.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 79ms (Views: 73.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/search/company" for 127.0.0.1 at 2018-12-08 11:22:40 +0900
+Processing by SearchController#company as HTML
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (4.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 79ms (Views: 74.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/search/company" for 127.0.0.1 at 2018-12-08 11:22:40 +0900
+Processing by SearchController#company as HTML
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 80ms (Views: 74.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/search/company" for 127.0.0.1 at 2018-12-08 11:22:40 +0900
+Processing by SearchController#company as HTML
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 90ms (Views: 81.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/search/company" for 127.0.0.1 at 2018-12-08 11:22:40 +0900
+Processing by SearchController#company as HTML
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (5.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 78ms (Views: 71.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search/company" for 127.0.0.1 at 2018-12-08 11:22:40 +0900
+Processing by SearchController#company as HTML
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (8.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 83ms (Views: 79.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/search/company" for 127.0.0.1 at 2018-12-08 11:22:40 +0900
+Processing by SearchController#company as HTML
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 80ms (Views: 74.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/search/member" for 127.0.0.1 at 2018-12-08 11:22:51 +0900
+Processing by SearchController#member as HTML
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."des_occupation" IS NULL[0m
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (10.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 97ms (Views: 90.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/search/com_pages_path" for 127.0.0.1 at 2018-12-08 11:22:55 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/search/com_pages_path"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-12-08 11:24:23 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (14.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 198ms (Views: 188.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-12-08 11:24:26 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.slim within layouts/application
+  Rendered sessions/new.html.slim within layouts/application (5.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 105ms (Views: 100.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-12-08 11:24:31 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_form.html.slim (93.2ms)
+  Rendered users/new.html.slim within layouts/application (133.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 222ms (Views: 206.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-12-08 11:27:55 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IRMHtkJMRmw4PPRaJ2qk0A7qKDkGuN5dFMDGJQSJmifzIOPl+kBMJWGx9j1pXkhOqQVrCvQ0aFM1QwaSOzccOg==", "user"=>{"mem_name"=>"波多友聖", "user_name"=>"yuusei", "mem_info"=>"c", "mem_birth"=>"1998年", "mem_gra"=>"2019年3月27日", "des_occupation"=>"Webデザイナー", "des_location"=>"茨城", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "univercity"=>"茨城大学", "circle"=>"競技カルタ会", "labo"=>"笹井研究室", "study"=>"Pythonによる、検索システム", "deliver"=>"", "activity"=>"", "system_ex"=>"", "flame_ex"=>"Ruby on rails", "qualification"=>"基本情報技術者", "lang_ex"=>"Ruby"}, "commit"=>"登録する"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Create (3.0ms)[0m  [1m[32mINSERT INTO "users" ("mem_name", "user_name", "mem_info", "mem_birth", "mem_gra", "des_occupation", "des_location", "password_digest", "univercity", "circle", "labo", "study", "deliver", "activity", "qualification", "lang_ex", "system_ex", "flame_ex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20) RETURNING "id"[0m  [["mem_name", "波多友聖"], ["user_name", "yuusei"], ["mem_info", "c"], ["mem_birth", "1998年"], ["mem_gra", "2019年3月27日"], ["des_occupation", "Webデザイナー"], ["des_location", "茨城"], ["password_digest", "$2a$10$PO7PtIZzmJSUTw4SRu0v0uvjMgHJJ6W5TU2C7zyrL18aU/mbq4hGq"], ["univercity", "茨城大学"], ["circle", "競技カルタ会"], ["labo", "笹井研究室"], ["study", "Pythonによる、検索システム"], ["deliver", ""], ["activity", ""], ["qualification", "基本情報技術者"], ["lang_ex", "Ruby"], ["system_ex", ""], ["flame_ex", "Ruby on rails"], ["created_at", "2018-12-08 02:27:55.347501"], ["updated_at", "2018-12-08 02:27:55.347501"]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[35m (76.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:13
+Redirected to http://localhost:3000/users
+Completed 302 Found in 241ms (ActiveRecord: 84.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-12-08 11:27:55 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.slim within layouts/application
+  Rendered users/index.html.slim within layouts/application (7.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 191ms (Views: 159.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-08 11:28:02 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (6.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 78ms (Views: 73.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-12-08 11:28:04 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.slim within layouts/application
+  Rendered sessions/new.html.slim within layouts/application (5.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 77ms (Views: 73.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-12-08 11:28:09 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mLFGKwzGjE3pQVLCREJf+QnG86steGSlTMywVWE6Rwb22XBOUehvlISDqM9Bn9uBBRPhdMkLpggaB5RGTxSe+Q==", "session"=>{"mem_info"=>"c", "password"=>"[FILTERED]"}, "commit"=>"ログインする"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."mem_info" = $1 LIMIT $2[0m  [["mem_info", "c"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10
+Redirected to http://localhost:3000/user_pages
+Completed 302 Found in 107ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/user_pages" for 127.0.0.1 at 2018-12-08 11:28:09 +0900
+Processing by UserPagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCompanyOffer Load (0.3ms)[0m  [1m[34mSELECT "company_offers".* FROM "company_offers" WHERE "company_offers"."mem_id" = $1[0m  [["mem_id", 3]]
+  ↳ app/controllers/user_pages_controller.rb:9
+  Rendering user_pages/index.html.slim within layouts/application
+  Rendered user_pages/index.html.slim within layouts/application (10.4ms)
+Completed 200 OK in 95ms (Views: 83.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-08 11:28:16 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (5.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 85ms (Views: 80.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search/member" for 127.0.0.1 at 2018-12-08 11:28:18 +0900
+Processing by SearchController#member as HTML
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."des_occupation" IS NULL[0m
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (7.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 74ms (Views: 70.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=Web%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 11:28:29 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"Webエンジニア", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."des_occupation" = $1[0m  [["des_occupation", "Webエンジニア"]]
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (10.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 82ms (Views: 77.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/search/com_pages_path" for 127.0.0.1 at 2018-12-08 11:28:39 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/search/com_pages_path"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/search/member?s_word=&e_word=&des_occ=Web%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 11:28:42 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"Webエンジニア", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."des_occupation" = $1[0m  [["des_occupation", "Webエンジニア"]]
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (9.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 94ms (Views: 90.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-08 11:28:48 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (5.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 82ms (Views: 78.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/login_com" for 127.0.0.1 at 2018-12-08 11:28:52 +0900
+Processing by SessionsComController#new as HTML
+  Rendering sessions_com/new.html.slim within layouts/application
+  Rendered sessions_com/new.html.slim within layouts/application (4.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 83ms (Views: 70.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-12-08 11:28:55 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.slim within layouts/application
+  Rendered sessions/new.html.slim within layouts/application (4.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 75ms (Views: 71.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-12-08 11:29:00 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AqvaBixzAocpdAfDmIUJ77juiGXT3YfPP3ST8sKCm75sw+xjcV3hXkS2/c6dWI2XtDuaujeuRWJpv7fh7KxCQQ==", "session"=>{"mem_info"=>"a", "password"=>"[FILTERED]"}, "commit"=>"ログインする"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."mem_info" = $1 LIMIT $2[0m  [["mem_info", "a"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10
+Redirected to http://localhost:3000/user_pages
+Completed 302 Found in 98ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/user_pages" for 127.0.0.1 at 2018-12-08 11:29:00 +0900
+Processing by UserPagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCompanyOffer Load (0.4ms)[0m  [1m[34mSELECT "company_offers".* FROM "company_offers" WHERE "company_offers"."mem_id" = $1[0m  [["mem_id", 1]]
+  ↳ app/controllers/user_pages_controller.rb:9
+  Rendering user_pages/index.html.slim within layouts/application
+  Rendered user_pages/index.html.slim within layouts/application (10.9ms)
+Completed 200 OK in 83ms (Views: 73.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2018-12-08 11:29:02 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendering users/edit.html.slim within layouts/application
+  Rendered users/_form.html.slim (29.5ms)
+  Rendered users/edit.html.slim within layouts/application (36.3ms)
+Completed 200 OK in 116ms (Views: 101.8ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-12-08 11:29:34 +0900
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ih/oFECIhFK58haUto3c2zzLx0sMhGMga0vSxk26FMrLvhb7wEb3RwF0UxtvzORYwChY0Hayzl6xLT7WOeCt5Q==", "user"=>{"mem_name"=>"a", "user_name"=>"a", "mem_info"=>"a", "mem_birth"=>"1997年", "mem_gra"=>"2018年3月27日", "des_occupation"=>"システムエンジニア", "des_location"=>"千葉", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "univercity"=>"茨城大学", "circle"=>"競技カルタ会", "labo"=>"笹井研究室", "study"=>"Pythonによる、検索システム", "deliver"=>"", "activity"=>"", "system_ex"=>"", "flame_ex"=>"Ruby on rails", "qualification"=>"基本情報技術者", "lang_ex"=>"Ruby"}, "commit"=>"更新する", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:26
+  [1m[36mUser Update (1.1ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = $1, "univercity" = $2, "circle" = $3, "labo" = $4, "study" = $5, "qualification" = $6, "flame_ex" = $7, "updated_at" = $8 WHERE "users"."id" = $9[0m  [["password_digest", "$2a$10$rXUe6vaWsvTKhBLu7oLyeewidK7g9hpAuC1wRbhVt5DZaaAzx/xEW"], ["univercity", "茨城大学"], ["circle", "競技カルタ会"], ["labo", "笹井研究室"], ["study", "Pythonによる、検索システム"], ["qualification", "基本情報技術者"], ["flame_ex", "Ruby on rails"], ["updated_at", "2018-12-08 02:29:34.803440"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[35m (8720.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:26
+Redirected to http://localhost:3000/user_pages
+Completed 302 Found in 8836ms (ActiveRecord: 8722.1ms)
+
+
+Started GET "/user_pages" for 127.0.0.1 at 2018-12-08 11:29:43 +0900
+Processing by UserPagesController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCompanyOffer Load (1.5ms)[0m  [1m[34mSELECT "company_offers".* FROM "company_offers" WHERE "company_offers"."mem_id" = $1[0m  [["mem_id", 1]]
+  ↳ app/controllers/user_pages_controller.rb:9
+  Rendering user_pages/index.html.slim within layouts/application
+  Rendered user_pages/index.html.slim within layouts/application (32.8ms)
+Completed 200 OK in 290ms (Views: 252.0ms | ActiveRecord: 2.6ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2018-12-08 11:29:55 +0900
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9dCbicnxC2OF49JEMU/3vhhQcNAr+HoskWu9pigV6ssHhx2I2FzSNd3u+ONfKWLaFRExwGc9aX0rd1uVZ5oZow=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-08 11:29:55 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (5.5ms)
+Completed 200 OK in 68ms (Views: 64.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/member" for 127.0.0.1 at 2018-12-08 11:30:03 +0900
+Processing by SearchController#member as HTML
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."des_occupation" IS NULL[0m
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 70ms (Views: 64.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 11:30:09 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"プログラマ", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."des_occupation" = $1[0m  [["des_occupation", "プログラマ"]]
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 92ms (Views: 89.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 11:30:13 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"プログラマ", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."des_occupation" = $1[0m  [["des_occupation", "プログラマ"]]
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 75ms (Views: 71.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 11:30:17 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"プログラマ", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."des_occupation" = $1[0m  [["des_occupation", "プログラマ"]]
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 77ms (Views: 73.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 11:30:21 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"システムエンジニア", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."des_occupation" = $1[0m  [["des_occupation", "システムエンジニア"]]
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 84ms (Views: 79.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/search/member/1" for 127.0.0.1 at 2018-12-08 11:30:25 +0900
+Processing by UserPagesController#index as HTML
+  Parameters: {"id"=>"1"}
+  Rendering user_pages/index.html.slim within layouts/application
+  Rendered user_pages/index.html.slim within layouts/application (16.6ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `mem_name' for nil:NilClass):
+    17:       th = User.human_attribute_name(:経験開発体制)
+    18:   tbody
+    19:     tr
+    20:       td= @user.mem_name
+    21:       td= @user.user_name
+    22:       td= @user.des_occupation
+    23:       td= @user.des_location
+  
+app/views/user_pages/index.html.slim:20:in `_app_views_user_pages_index_html_slim__826429518401776974_70188644878840'
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 11:32:15 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"システムエンジニア", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."des_occupation" = $1[0m  [["des_occupation", "システムエンジニア"]]
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (2263.0ms)
+Completed 200 OK in 2379ms (Views: 2347.3ms | ActiveRecord: 16.5ms)
+
+
+Started GET "/search/member/2" for 127.0.0.1 at 2018-12-08 11:32:20 +0900
+Processing by UserPagesController#index as HTML
+  Parameters: {"id"=>"2"}
+  Rendering user_pages/index.html.slim within layouts/application
+  Rendered user_pages/index.html.slim within layouts/application (14.9ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `mem_name' for nil:NilClass):
+    17:       th = User.human_attribute_name(:経験開発体制)
+    18:   tbody
+    19:     tr
+    20:       td= @user.mem_name
+    21:       td= @user.user_name
+    22:       td= @user.des_occupation
+    23:       td= @user.des_location
+  
+app/views/user_pages/index.html.slim:20:in `_app_views_user_pages_index_html_slim__826429518401776974_70188639179360'
+Started GET "/search/member/2" for 127.0.0.1 at 2018-12-08 11:33:47 +0900
+Processing by UserPagesController#index as HTML
+  Parameters: {"id"=>"2"}
+  Rendering user_pages/index.html.slim within layouts/application
+  Rendered user_pages/index.html.slim within layouts/application (18.2ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_name' for nil:NilClass):
+    18:   tbody
+    19:     tr
+    20: 
+    21:       td= @user.user_name
+    22:       td= @user.des_occupation
+    23:       td= @user.des_location
+    24:       td= @user.study
+  
+app/views/user_pages/index.html.slim:21:in `_app_views_user_pages_index_html_slim__826429518401776974_70188650222400'
+Started GET "/" for 127.0.0.1 at 2018-12-08 11:35:15 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (5.0ms)
+Completed 200 OK in 87ms (Views: 83.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/company" for 127.0.0.1 at 2018-12-08 11:39:34 +0900
+Processing by SearchController#company as HTML
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 73ms (Views: 67.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login_com" for 127.0.0.1 at 2018-12-08 11:39:38 +0900
+Processing by SessionsComController#new as HTML
+  Rendering sessions_com/new.html.slim within layouts/application
+  Rendered sessions_com/new.html.slim within layouts/application (5.1ms)
+Completed 200 OK in 90ms (Views: 85.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login_com" for 127.0.0.1 at 2018-12-08 11:39:40 +0900
+Processing by SessionsComController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zGhytYdITGRy8NcEKD4qR6cmX/hCDeqVRDQ0oHtecFgHLlQzmNMNBJ86ceUQO8CNA0R9YYHDTvOgwclnGNGdfQ==", "session_com"=>{"com_info"=>"a", "password"=>"[FILTERED]"}, "commit"=>"ログインする"}
+  [1m[36mCompany Load (1.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."com_info" = $1 LIMIT $2[0m  [["com_info", "a"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_com_controller.rb:9
+Redirected to http://localhost:3000/com_pages
+Completed 302 Found in 318ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/com_pages" for 127.0.0.1 at 2018-12-08 11:39:40 +0900
+Processing by ComPagesController#index as HTML
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21
+  Rendering com_pages/index.html.slim within layouts/application
+  [1m[36mCompanyOffer Load (0.5ms)[0m  [1m[34mSELECT "company_offers".* FROM "company_offers" WHERE "company_offers"."com_id" = $1[0m  [["com_id", 1]]
+  ↳ app/views/com_pages/index.html.slim:32
+  Rendered com_pages/index.html.slim within layouts/application (17.0ms)
+Completed 200 OK in 111ms (Views: 98.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/search/member" for 127.0.0.1 at 2018-12-08 11:39:42 +0900
+Processing by SearchController#member as HTML
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."des_occupation" IS NULL[0m
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (24.1ms)
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21
+Completed 200 OK in 283ms (Views: 238.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 11:39:49 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"システムエンジニア", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."des_occupation" = $1[0m  [["des_occupation", "システムエンジニア"]]
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (30.4ms)
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21
+Completed 200 OK in 102ms (Views: 96.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/search/member/1" for 127.0.0.1 at 2018-12-08 11:39:50 +0900
+Processing by UserPagesController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_pages_controller.rb:13
+  Rendering user_pages/index.html.slim within layouts/application
+  Rendered user_pages/index.html.slim within layouts/application (25.1ms)
+Completed 200 OK in 113ms (Views: 94.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/search/member/2" for 127.0.0.1 at 2018-12-08 11:39:56 +0900
+Processing by UserPagesController#index as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/user_pages_controller.rb:13
+  Rendering user_pages/index.html.slim within layouts/application
+  Rendered user_pages/index.html.slim within layouts/application (13.0ms)
+Completed 200 OK in 84ms (Views: 73.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/search/member/1" for 127.0.0.1 at 2018-12-08 11:40:00 +0900
+Processing by UserPagesController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_pages_controller.rb:13
+  Rendering user_pages/index.html.slim within layouts/application
+  Rendered user_pages/index.html.slim within layouts/application (15.4ms)
+Completed 200 OK in 104ms (Views: 90.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/search/member/search/member" for 127.0.0.1 at 2018-12-08 11:44:27 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/search/member/search/member"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 11:45:38 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."des_occupation" = $1 AND "users"."des_location" = $2[0m  [["des_occupation", ""], ["des_location", ""]]
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (37.2ms)
+  [1m[36mCompany Load (1.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21
+Completed 200 OK in 425ms (Views: 335.9ms | ActiveRecord: 22.5ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 11:45:51 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"システムエンジニア", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."des_occupation" = $1 AND "users"."des_location" = $2[0m  [["des_occupation", "システムエンジニア"], ["des_location", ""]]
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (10.8ms)
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21
+Completed 200 OK in 102ms (Views: 96.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 11:45:55 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"システムエンジニア", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."des_occupation" = $1 AND "users"."des_location" = $2[0m  [["des_occupation", "システムエンジニア"], ["des_location", ""]]
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (12.0ms)
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21
+Completed 200 OK in 83ms (Views: 78.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/search/member/1" for 127.0.0.1 at 2018-12-08 12:02:29 +0900
+Processing by UserPagesController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (13.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21
+  [1m[36mUser Load (51.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_pages_controller.rb:13
+  Rendering user_pages/index.html.slim within layouts/application
+  Rendered user_pages/index.html.slim within layouts/application (11.1ms)
+Completed 200 OK in 319ms (Views: 70.0ms | ActiveRecord: 207.7ms)
+
+
+Started GET "/search/member/search/member" for 127.0.0.1 at 2018-12-08 12:02:32 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/search/member/search/member"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/search/member/1" for 127.0.0.1 at 2018-12-08 12:02:33 +0900
+Processing by UserPagesController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_pages_controller.rb:13
+  Rendering user_pages/index.html.slim within layouts/application
+  Rendered user_pages/index.html.slim within layouts/application (23.0ms)
+Completed 200 OK in 130ms (Views: 116.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/search/member/search/chat" for 127.0.0.1 at 2018-12-08 12:02:55 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/search/member/search/chat"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/search/member/1" for 127.0.0.1 at 2018-12-08 12:02:57 +0900
+Processing by UserPagesController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_pages_controller.rb:13
+  Rendering user_pages/index.html.slim within layouts/application
+  Rendered user_pages/index.html.slim within layouts/application (8.8ms)
+Completed 200 OK in 79ms (Views: 68.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/chat_pages/new" for 127.0.0.1 at 2018-12-08 12:04:11 +0900
+Processing by ChatPagesController#new as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :login_required rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-12-08 12:04:11 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.slim within layouts/application
+  Rendered sessions/new.html.slim within layouts/application (3.7ms)
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21
+Completed 200 OK in 70ms (Views: 61.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-12-08 12:05:03 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pLY+4X74gjK+Zk3n1Z6y8Ilbq7B7x8kaVpLsUIsdKV16L2kr8VmE/bwt1Rqxq8E+7Y57hCjmkPM7uUJMiZWV/w==", "session"=>{"mem_info"=>"a", "password"=>"[FILTERED]"}, "commit"=>"ログインする"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."mem_info" = $1 LIMIT $2[0m  [["mem_info", "a"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10
+Redirected to http://localhost:3000/user_pages
+Completed 302 Found in 69ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/user_pages" for 127.0.0.1 at 2018-12-08 12:05:03 +0900
+Processing by UserPagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCompanyOffer Load (5.7ms)[0m  [1m[34mSELECT "company_offers".* FROM "company_offers" WHERE "company_offers"."mem_id" = $1[0m  [["mem_id", 1]]
+  ↳ app/controllers/user_pages_controller.rb:9
+  Rendering user_pages/index.html.slim within layouts/application
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21
+  Rendered user_pages/index.html.slim within layouts/application (16.7ms)
+Completed 200 OK in 111ms (Views: 69.7ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/search/member" for 127.0.0.1 at 2018-12-08 12:05:16 +0900
+  
+SyntaxError (/mnt/c/yahoo/Paris/app/controllers/search_controller.rb:15: syntax error, unexpected keyword_end
+  end
+  ^~~
+/mnt/c/yahoo/Paris/app/controllers/search_controller.rb:26: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/search_controller.rb:15: syntax error, unexpected keyword_end
+app/controllers/search_controller.rb:26: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/user_pages" for 127.0.0.1 at 2018-12-08 12:05:19 +0900
+Processing by UserPagesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCompanyOffer Load (0.4ms)[0m  [1m[34mSELECT "company_offers".* FROM "company_offers" WHERE "company_offers"."mem_id" = $1[0m  [["mem_id", 1]]
+  ↳ app/controllers/user_pages_controller.rb:9
+  Rendering user_pages/index.html.slim within layouts/application
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21
+  Rendered user_pages/index.html.slim within layouts/application (11.9ms)
+Completed 200 OK in 77ms (Views: 69.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-12-08 12:05:20 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.slim within layouts/application
+  Rendered sessions/new.html.slim within layouts/application (5.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 62ms (Views: 59.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search/member/1" for 127.0.0.1 at 2018-12-08 12:05:21 +0900
+Processing by UserPagesController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCompanyOffer Load (0.3ms)[0m  [1m[34mSELECT "company_offers".* FROM "company_offers" WHERE "company_offers"."mem_id" = $1[0m  [["mem_id", 1]]
+  ↳ app/controllers/user_pages_controller.rb:9
+  Rendering user_pages/index.html.slim within layouts/application
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21
+  Rendered user_pages/index.html.slim within layouts/application (15.0ms)
+Completed 200 OK in 78ms (Views: 68.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/chat_pages/new" for 127.0.0.1 at 2018-12-08 12:05:34 +0900
+Processing by ChatPagesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21
+  Rendering chat_pages/new.html.slim within layouts/application
+  Rendered chat_pages/new.html.slim within layouts/application (92.5ms)
+Completed 200 OK in 529ms (Views: 139.5ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/search/member/search/chat" for 127.0.0.1 at 2018-12-08 12:05:39 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/search/member/search/chat"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/search/member/1" for 127.0.0.1 at 2018-12-08 12:05:54 +0900
+Processing by UserPagesController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCompanyOffer Load (0.4ms)[0m  [1m[34mSELECT "company_offers".* FROM "company_offers" WHERE "company_offers"."mem_id" = $1[0m  [["mem_id", 1]]
+  ↳ app/controllers/user_pages_controller.rb:9
+  Rendering user_pages/index.html.slim within layouts/application
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21
+  Rendered user_pages/index.html.slim within layouts/application (19.7ms)
+Completed 200 OK in 81ms (Views: 71.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/search/member/search/chat" for 127.0.0.1 at 2018-12-08 12:06:22 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/search/member/search/chat"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/search/member/1" for 127.0.0.1 at 2018-12-08 12:06:24 +0900
+Processing by UserPagesController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCompanyOffer Load (0.3ms)[0m  [1m[34mSELECT "company_offers".* FROM "company_offers" WHERE "company_offers"."mem_id" = $1[0m  [["mem_id", 1]]
+  ↳ app/controllers/user_pages_controller.rb:9
+  Rendering user_pages/index.html.slim within layouts/application
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21
+  Rendered user_pages/index.html.slim within layouts/application (32.4ms)
+Completed 200 OK in 131ms (Views: 85.3ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/search/member/search/member" for 127.0.0.1 at 2018-12-08 12:06:40 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/search/member/search/member"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/search/member/1" for 127.0.0.1 at 2018-12-08 12:06:43 +0900
+Processing by UserPagesController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCompanyOffer Load (0.4ms)[0m  [1m[34mSELECT "company_offers".* FROM "company_offers" WHERE "company_offers"."mem_id" = $1[0m  [["mem_id", 1]]
+  ↳ app/controllers/user_pages_controller.rb:9
+  Rendering user_pages/index.html.slim within layouts/application
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21
+  Rendered user_pages/index.html.slim within layouts/application (27.1ms)
+Completed 200 OK in 92ms (Views: 81.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 12:12:09 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY t.stamp[0m
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (10.6ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedTable: ERROR:  missing FROM-clause entry for table "t"
+LINE 1: SELECT "users".* FROM "users" ORDER BY t.stamp
+                                               ^
+: SELECT "users".* FROM "users" ORDER BY t.stamp):
+    114: 
+    115:         <div id ="results">
+    116:             
+    117:                 <% @member.each do |member| %>
+    118:                     <a href = "member/<%= member.id %>" >
+    119:                         名前：<%= member.user_name%></br>
+    120:                         生年月日:<%= member.mem_birth %>
+  
+app/views/search/member.html.erb:117:in `_app_views_search_member_html_erb___1769694312388491352_70188644345180'
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 12:12:32 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY t.stamp[0m
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (12.0ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedTable: ERROR:  missing FROM-clause entry for table "t"
+LINE 1: SELECT "users".* FROM "users" ORDER BY t.stamp
+                                               ^
+: SELECT "users".* FROM "users" ORDER BY t.stamp):
+    114: 
+    115:         <div id ="results">
+    116:             
+    117:                 <% @member.each do |member| %>
+    118:                     <a href = "member/<%= member.id %>" >
+    119:                         名前：<%= member.user_name%></br>
+    120:                         生年月日:<%= member.mem_birth %>
+  
+app/views/search/member.html.erb:117:in `_app_views_search_member_html_erb___1769694312388491352_70188648757000'
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 12:15:03 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (18.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (55.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 128ms (Views: 94.1ms | ActiveRecord: 28.1ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:08:51 +0900
+  
+SyntaxError (/mnt/c/yahoo/Paris/app/controllers/search_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting ']'
+    list = ["concat("user_name","men_info") like "%?%" ",s_...
+                     ^~~~~~~~~
+/mnt/c/yahoo/Paris/app/controllers/search_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+... ["concat("user_name","men_info") like "%?%" ",s_word]
+...                       ^~~~~~~~
+/mnt/c/yahoo/Paris/app/controllers/search_controller.rb:10: syntax error, unexpected ']', expecting keyword_end
+...men_info") like "%?%" ",s_word]
+...                              ^):
+  
+app/controllers/search_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting ']'
+app/controllers/search_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+app/controllers/search_controller.rb:10: syntax error, unexpected ']', expecting keyword_end
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:12:00 +0900
+  
+SyntaxError (/mnt/c/yahoo/Paris/app/controllers/search_controller.rb:10: syntax error, unexpected ',', expecting tSTRING_DEND
+...n_info#{"}) like #{"}%?%#{"} ",s_word]
+...                              ^
+/mnt/c/yahoo/Paris/app/controllers/search_controller.rb:30: syntax error, unexpected keyword_end, expecting tSTRING_DEND
+  end
+  ^~~
+/mnt/c/yahoo/Paris/app/controllers/search_controller.rb:41: syntax error, unexpected keyword_end, expecting tSTRING_DEND):
+  
+app/controllers/search_controller.rb:10: syntax error, unexpected ',', expecting tSTRING_DEND
+app/controllers/search_controller.rb:30: syntax error, unexpected keyword_end, expecting tSTRING_DEND
+app/controllers/search_controller.rb:41: syntax error, unexpected keyword_end, expecting tSTRING_DEND
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:12:35 +0900
+  
+SyntaxError (/mnt/c/yahoo/Paris/app/controllers/search_controller.rb:11: syntax error, unexpected ',', expecting tSTRING_DEND
+...n_info#{"}) like #{"}%?%#{"} ",s_word]
+...                              ^
+/mnt/c/yahoo/Paris/app/controllers/search_controller.rb:31: syntax error, unexpected keyword_end, expecting tSTRING_DEND
+  end
+  ^~~
+/mnt/c/yahoo/Paris/app/controllers/search_controller.rb:42: syntax error, unexpected keyword_end, expecting tSTRING_DEND):
+  
+app/controllers/search_controller.rb:11: syntax error, unexpected ',', expecting tSTRING_DEND
+app/controllers/search_controller.rb:31: syntax error, unexpected keyword_end, expecting tSTRING_DEND
+app/controllers/search_controller.rb:42: syntax error, unexpected keyword_end, expecting tSTRING_DEND
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:13:40 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of String into Array):
+  
+app/controllers/search_controller.rb:20:in `concat'
+app/controllers/search_controller.rb:20:in `member'
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:15:05 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of nil into Array):
+  
+app/controllers/search_controller.rb:20:in `concat'
+app/controllers/search_controller.rb:20:in `member'
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:15:55 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of String into Array):
+  
+app/controllers/search_controller.rb:20:in `concat'
+app/controllers/search_controller.rb:20:in `member'
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:16:37 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+Completed 500 Internal Server Error in 161ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `des_loc' for #<SearchController:0x00007fac216b93e0>
+Did you mean?  @des_loc
+               des_occ):
+  
+app/controllers/search_controller.rb:25:in `member'
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:16:49 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"システムエンジニア", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+Completed 500 Internal Server Error in 142ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `des_loc' for #<SearchController:0x00007fac104ceac8>
+Did you mean?  @des_loc
+               des_occ):
+  
+app/controllers/search_controller.rb:25:in `member'
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:17:20 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"システムエンジニア", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of String into Array):
+  
+app/controllers/search_controller.rb:20:in `concat'
+app/controllers/search_controller.rb:20:in `member'
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:17:48 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"システムエンジニア", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of String into Array):
+  
+app/controllers/search_controller.rb:20:in `concat'
+app/controllers/search_controller.rb:20:in `member'
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:18:01 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"システムエンジニア", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of String into Array):
+  
+app/controllers/search_controller.rb:20:in `concat'
+app/controllers/search_controller.rb:20:in `member'
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:18:12 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"システムエンジニア", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+Completed 500 Internal Server Error in 163ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `des_occ' for #<SearchController:0x00007fac229875f8>
+Did you mean?  @des_occ
+               @des_loc):
+  
+app/controllers/search_controller.rb:18:in `member'
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:18:22 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"システムエンジニア", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+Completed 500 Internal Server Error in 158ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `des_occ' for #<SearchController:0x00007fac18085ab8>
+Did you mean?  @des_occ
+               @des_loc):
+  
+app/controllers/search_controller.rb:20:in `member'
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:18:59 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of String into Array):
+  
+app/controllers/search_controller.rb:20:in `concat'
+app/controllers/search_controller.rb:20:in `member'
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:19:13 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of nil into Array):
+  
+app/controllers/search_controller.rb:20:in `concat'
+app/controllers/search_controller.rb:20:in `member'
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:19:15 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of nil into Array):
+  
+app/controllers/search_controller.rb:20:in `concat'
+app/controllers/search_controller.rb:20:in `member'
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:22:11 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of String into Array):
+  
+app/controllers/search_controller.rb:25:in `concat'
+app/controllers/search_controller.rb:25:in `member'
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:22:47 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL) ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (30.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 93ms (Views: 79.8ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:22:52 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL) ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (9.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 69ms (Views: 64.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:22:54 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL) ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (10.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 76ms (Views: 72.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:22:55 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL) ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (11.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 71ms (Views: 67.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:22:58 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"プログラマ", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of String into Array):
+  
+app/controllers/search_controller.rb:20:in `concat'
+app/controllers/search_controller.rb:20:in `member'
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:23:36 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"プログラマ", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of String into Array):
+  
+app/controllers/search_controller.rb:20:in `concat'
+app/controllers/search_controller.rb:20:in `member'
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:23:52 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+Completed 500 Internal Server Error in 139ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `des_loc' for #<SearchController:0x00007fac10215d18>
+Did you mean?  @des_loc
+               @des_occ):
+  
+app/controllers/search_controller.rb:23:in `member'
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:24:02 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+Completed 500 Internal Server Error in 159ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `des_loc' for #<SearchController:0x00007fffcb514258>
+Did you mean?  @des_loc
+               @des_occ):
+  
+app/controllers/search_controller.rb:23:in `member'
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:24:55 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL) ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (27.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 88ms (Views: 78.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:25:03 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"プログラマ", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of String into Array):
+  
+app/controllers/search_controller.rb:20:in `concat'
+app/controllers/search_controller.rb:20:in `member'
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:27:09 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"プログラマ", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL and des_occuoation = 'プログラマ') ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (11.2ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column "des_occuoation" does not exist
+LINE 1: ...".* FROM "users" WHERE (NOT user_name IS NULL and des_occuoa...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "users.des_occupation".
+: SELECT "users".* FROM "users" WHERE (NOT user_name IS NULL and des_occuoation = 'プログラマ') ORDER BY updated_at):
+    114: 
+    115:         <div id ="results">
+    116:             
+    117:                 <% @member.each do |member| %>
+    118:                     <a href = "member/<%= member.id %>" >
+    119:                         名前：<%= member.user_name%></br>
+    120:                         生年月日:<%= member.mem_birth %>
+  
+app/views/search/member.html.erb:117:in `_app_views_search_member_html_erb___1769694312388491352_70188591589660'
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:27:41 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"プログラマ", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL AND des_occuoation = 'プログラマ') ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (11.0ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column "des_occuoation" does not exist
+LINE 1: ...".* FROM "users" WHERE (NOT user_name IS NULL AND des_occuoa...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "users.des_occupation".
+: SELECT "users".* FROM "users" WHERE (NOT user_name IS NULL AND des_occuoation = 'プログラマ') ORDER BY updated_at):
+    114: 
+    115:         <div id ="results">
+    116:             
+    117:                 <% @member.each do |member| %>
+    118:                     <a href = "member/<%= member.id %>" >
+    119:                         名前：<%= member.user_name%></br>
+    120:                         生年月日:<%= member.mem_birth %>
+  
+app/views/search/member.html.erb:117:in `_app_views_search_member_html_erb___1769694312388491352_70188645287220'
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:27:43 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"プログラマ", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL AND des_occuoation = 'プログラマ') ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (12.9ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column "des_occuoation" does not exist
+LINE 1: ...".* FROM "users" WHERE (NOT user_name IS NULL AND des_occuoa...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "users.des_occupation".
+: SELECT "users".* FROM "users" WHERE (NOT user_name IS NULL AND des_occuoation = 'プログラマ') ORDER BY updated_at):
+    114: 
+    115:         <div id ="results">
+    116:             
+    117:                 <% @member.each do |member| %>
+    118:                     <a href = "member/<%= member.id %>" >
+    119:                         名前：<%= member.user_name%></br>
+    120:                         生年月日:<%= member.mem_birth %>
+  
+app/views/search/member.html.erb:117:in `_app_views_search_member_html_erb___1769694312388491352_70188646978940'
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:28:17 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"プログラマ", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL AND des_occupation = 'プログラマ') ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (11.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 102ms (Views: 90.6ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:28:23 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"システムエンジニア", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL AND des_occupation = 'システムエンジニア') ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (9.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 71ms (Views: 63.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&des_loc=%E6%9D%B1%E4%BA%AC&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:28:27 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"システムエンジニア", "des_loc"=>"東京", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL AND des_occupation = 'システムエンジニア' AND des_location = '東京') ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (10.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 72ms (Views: 67.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&des_loc=%E5%8D%83%E8%91%89&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:28:32 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"システムエンジニア", "des_loc"=>"千葉", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL AND des_occupation = 'システムエンジニア' AND des_location = '千葉') ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (8.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 69ms (Views: 64.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&des_loc=%E8%8C%A8%E5%9F%8E&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:28:39 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"システムエンジニア", "des_loc"=>"茨城", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL AND des_occupation = 'システムエンジニア' AND des_location = '茨城') ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:117
+  Rendered search/member.html.erb within layouts/application (14.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 84ms (Views: 77.9ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2018-12-08 13:31:04 +0900
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pqtU8jwK8NVpExRbkkeTVMX4rrMuZU9KIdZtrkw3bArjOxw0hVyAkfL4tZt4Yl2gw7vgCFKzK/fFKTQaUV/FBg=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-08 13:31:04 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (3.9ms)
+Completed 200 OK in 59ms (Views: 56.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-12-08 13:31:05 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.slim within layouts/application
+  Rendered sessions/new.html.slim within layouts/application (3.9ms)
+Completed 200 OK in 63ms (Views: 60.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-12-08 13:31:07 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_form.html.slim (11.3ms)
+  Rendered users/new.html.slim within layouts/application (24.7ms)
+Completed 200 OK in 95ms (Views: 82.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&des_loc=%E8%8C%A8%E5%9F%8E&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:46:58 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"システムエンジニア", "des_loc"=>"茨城", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/search_controller.rb:28:in `member'
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&des_loc=%E8%8C%A8%E5%9F%8E&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:47:23 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"システムエンジニア", "des_loc"=>"茨城", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL AND des_occupation = 'システムエンジニア' AND des_location = '茨城') ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:123
+  Rendered search/member.html.erb within layouts/application (2463.6ms)
+Completed 200 OK in 2525ms (Views: 2514.8ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:48:12 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL) ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:123
+  Rendered search/member.html.erb within layouts/application (765.7ms)
+Completed 200 OK in 845ms (Views: 836.2ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:48:28 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL) ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:123
+  Rendered search/member.html.erb within layouts/application (732.3ms)
+Completed 200 OK in 786ms (Views: 783.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:48:53 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL) ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:123
+  Rendered search/member.html.erb within layouts/application (631.6ms)
+Completed 200 OK in 683ms (Views: 678.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:49:56 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL) ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:123
+  Rendered search/member.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 122ms (Views: 111.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:56:39 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL) ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:123
+  Rendered search/member.html.erb within layouts/application (728.2ms)
+Completed 200 OK in 783ms (Views: 776.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:57:13 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL) ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:123
+  Rendered search/member.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 67ms (Views: 63.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 13:57:17 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL) ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:123
+  Rendered search/member.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 62ms (Views: 58.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 14:00:17 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL) ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:119
+  Rendered search/member.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 65ms (Views: 60.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 14:07:12 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL) ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:121
+  Rendered search/member.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 75ms (Views: 71.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 14:07:13 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL) ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:121
+  Rendered search/member.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 64ms (Views: 60.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 14:07:44 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL) ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:118
+  Rendered search/member.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 66ms (Views: 61.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 14:07:53 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL) ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:119
+  Rendered search/member.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 68ms (Views: 62.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 14:08:03 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL) ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:120
+  Rendered search/member.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 71ms (Views: 68.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 14:09:51 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL) ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:120
+  Rendered search/member.html.erb within layouts/application (715.5ms)
+Completed 200 OK in 768ms (Views: 765.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 14:10:00 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL) ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:120
+  Rendered search/member.html.erb within layouts/application (704.0ms)
+Completed 200 OK in 756ms (Views: 752.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 14:10:45 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL) ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:120
+  Rendered search/member.html.erb within layouts/application (783.3ms)
+Completed 200 OK in 851ms (Views: 844.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 14:12:08 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL) ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:111
+  Rendered search/member.html.erb within layouts/application (790.0ms)
+Completed 200 OK in 844ms (Views: 838.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 14:12:48 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL) ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:111
+  Rendered search/member.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 132ms (Views: 116.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 14:12:57 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"システムエンジニア", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL AND des_occupation = 'システムエンジニア') ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:111
+  Rendered search/member.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 67ms (Views: 61.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 14:13:00 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"データベースエンジニア", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL AND des_occupation = 'データベースエンジニア') ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:111
+  Rendered search/member.html.erb within layouts/application (257.0ms)
+Completed 200 OK in 409ms (Views: 404.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 14:26:05 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"データベースエンジニア", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL AND des_occupation = 'データベースエンジニア') ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:111
+  Rendered search/member.html.erb within layouts/application (702.6ms)
+Completed 200 OK in 758ms (Views: 751.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 14:27:26 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL) ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:111
+  Rendered search/member.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 83ms (Views: 78.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&des_loc=&quali=&univ=&lan_exp=&authenticity_token=Dg2MNZlTxQGDZXrXskTvRU98gjt4PB91R2hOdlydwC19ERy0DqXNLhe%2F157bdCxaudjAPS5l1TMOT2f9E3QFNQ%3D%3D" for 127.0.0.1 at 2018-12-08 14:27:30 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"システムエンジニア", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>"", "authenticity_token"=>"Dg2MNZlTxQGDZXrXskTvRU98gjt4PB91R2hOdlydwC19ERy0DqXNLhe/157bdCxaudjAPS5l1TMOT2f9E3QFNQ=="}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL AND des_occupation = 'システムエンジニア') ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:111
+  Rendered search/member.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 63ms (Views: 59.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&des_loc=%E5%8D%83%E8%91%89&quali=&univ=&lan_exp=&authenticity_token=dCye71UZtceg8CWGtFvrjoaLirsb9VOgZwLVi1HIke0HMA5uwu%2B96DQqiM%2FdayiRcC%2FIvU2smeYuJfwAHiFU9Q%3D%3D" for 127.0.0.1 at 2018-12-08 14:27:36 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"システムエンジニア", "des_loc"=>"千葉", "quali"=>"", "univ"=>"", "lan_exp"=>"", "authenticity_token"=>"dCye71UZtceg8CWGtFvrjoaLirsb9VOgZwLVi1HIke0HMA5uwu+96DQqiM/dayiRcC/IvU2smeYuJfwAHiFU9Q=="}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL AND des_occupation = 'システムエンジニア' AND des_location = '千葉') ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:111
+  Rendered search/member.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 87ms (Views: 81.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/search/member?s_word=%EF%BD%9A&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=&authenticity_token=4RmCl5HyudUqSy5NiSi8vX%2BjBbY4cJ96TMYzXohGWEaSBRIWBgSx%2Br6RgwTgGH%2BiiQdHsG4pVTwF4RrVx6%2BdXg%3D%3D" for 127.0.0.1 at 2018-12-08 14:29:35 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"ｚ", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>"", "authenticity_token"=>"4RmCl5HyudUqSy5NiSi8vX+jBbY4cJ96TMYzXohGWEaSBRIWBgSx+r6RgwTgGH+iiQdHsG4pVTwF4RrVx6+dXg=="}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL) ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:111
+  Rendered search/member.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 112ms (Views: 95.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/search/member?s_word=%E3%81%82%E3%81%82%E3%81%82%E3%81%82%E3%81%82&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=&authenticity_token=w7JiZF7LfqyVjYCeKKUOrbOLbnkS98zqWE5G52xwzPywrvLlyT12gwFXLddBlc2yRS8sf0SuBqwRaW9sI5kJ5A%3D%3D" for 127.0.0.1 at 2018-12-08 14:29:40 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"あああああ", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>"", "authenticity_token"=>"w7JiZF7LfqyVjYCeKKUOrbOLbnkS98zqWE5G52xwzPywrvLlyT12gwFXLddBlc2yRS8sf0SuBqwRaW9sI5kJ5A=="}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL) ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:111
+  Rendered search/member.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 66ms (Views: 62.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-08 14:42:10 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (7.6ms)
+Completed 200 OK in 90ms (Views: 83.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companys/new" for 127.0.0.1 at 2018-12-08 14:42:11 +0900
+Processing by CompanysController#new as HTML
+  Rendering companys/new.html.slim within layouts/application
+  Rendered companys/new.html.slim within layouts/application (35.6ms)
+Completed 200 OK in 109ms (Views: 80.2ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/search/company" for 127.0.0.1 at 2018-12-08 14:48:48 +0900
+Processing by SearchController#company as HTML
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 62ms (Views: 59.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/company" for 127.0.0.1 at 2018-12-08 14:50:07 +0900
+Processing by SearchController#company as HTML
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 90ms (Views: 83.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/chat" for 127.0.0.1 at 2018-12-08 14:50:59 +0900
+Processing by SearchController#chat as HTML
+  Rendering search/chat.html.erb within layouts/application
+  Rendered search/chat.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 123ms (Views: 75.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/chat" for 127.0.0.1 at 2018-12-08 14:51:27 +0900
+Processing by SearchController#chat as HTML
+  Rendering search/chat.html.erb within layouts/application
+  Rendered search/chat.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 58ms (Views: 53.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/chat?s_word=&e_word=&authenticity_token=dprqApG2aDeVir6ZKM%2BIU2AmQxGg49W2Kukq5IpM%2BTkFhnqDBkBgGAFQE9BB%2F0tMloIBF%2Fa6H%2FBjzgNvxaU8IQ%3D%3D" for 127.0.0.1 at 2018-12-08 14:52:46 +0900
+Processing by SearchController#chat as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "authenticity_token"=>"dprqApG2aDeVir6ZKM+IU2AmQxGg49W2Kukq5IpM+TkFhnqDBkBgGAFQE9BB/0tMloIBF/a6H/BjzgNvxaU8IQ=="}
+  Rendering search/chat.html.erb within layouts/application
+  Rendered search/chat.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 90ms (Views: 83.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/chat?s_word=aa&e_word=&authenticity_token=0mQq%2BGaEdqHvPIKfRiDUZkGTRh8sUwHBGJRWIxySlruheLp58XJ%2BjnvmL9YvEBd5tzcEGXoKy4dRs3%2BoU3tTow%3D%3D" for 127.0.0.1 at 2018-12-08 14:53:41 +0900
+Processing by SearchController#chat as HTML
+  Parameters: {"s_word"=>"aa", "e_word"=>"", "authenticity_token"=>"0mQq+GaEdqHvPIKfRiDUZkGTRh8sUwHBGJRWIxySlruheLp58XJ+jnvmL9YvEBd5tzcEGXoKy4dRs3+oU3tTow=="}
+  Rendering search/chat.html.erb within layouts/application
+  Rendered search/chat.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 97ms (Views: 86.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/member" for 127.0.0.1 at 2018-12-08 14:54:32 +0900
+Processing by SearchController#member as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/search_controller.rb:18:in `member'
+Started GET "/search/member" for 127.0.0.1 at 2018-12-08 14:54:44 +0900
+Processing by SearchController#member as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/search_controller.rb:18:in `member'
+Started GET "/" for 127.0.0.1 at 2018-12-08 14:54:53 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (15.2ms)
+Completed 200 OK in 72ms (Views: 69.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/member" for 127.0.0.1 at 2018-12-08 14:55:00 +0900
+Processing by SearchController#member as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/search_controller.rb:18:in `member'
+Started GET "/" for 127.0.0.1 at 2018-12-08 14:56:15 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (6.7ms)
+Completed 200 OK in 76ms (Views: 69.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/chat" for 127.0.0.1 at 2018-12-08 14:56:18 +0900
+Processing by SearchController#chat as HTML
+  Rendering search/chat.html.erb within layouts/application
+  Rendered search/chat.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 66ms (Views: 62.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/member" for 127.0.0.1 at 2018-12-08 14:58:29 +0900
+Processing by SearchController#member as HTML
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/search_controller.rb:18:in `member'
+Started GET "/search/member" for 127.0.0.1 at 2018-12-08 15:00:03 +0900
+Processing by SearchController#member as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/search_controller.rb:17:in `member'
+Started GET "/search/member" for 127.0.0.1 at 2018-12-08 15:00:35 +0900
+Processing by SearchController#member as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/search_controller.rb:19:in `member'
+Started GET "/search/member" for 127.0.0.1 at 2018-12-08 15:00:43 +0900
+Processing by SearchController#member as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/search_controller.rb:20:in `member'
+Started GET "/search/member" for 127.0.0.1 at 2018-12-08 15:00:44 +0900
+Processing by SearchController#member as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/search_controller.rb:20:in `member'
+Started GET "/search/member" for 127.0.0.1 at 2018-12-08 15:01:01 +0900
+Processing by SearchController#member as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/search_controller.rb:25:in `member'
+Started GET "/search/member" for 127.0.0.1 at 2018-12-08 15:02:27 +0900
+Processing by SearchController#member as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/search_controller.rb:16:in `member'
+Started GET "/search/member" for 127.0.0.1 at 2018-12-08 15:03:16 +0900
+Processing by SearchController#aa as HTML
+Completed 406 Not Acceptable in 157ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (SearchController#aa is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.1) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/search/member" for 127.0.0.1 at 2018-12-08 15:04:26 +0900
+Processing by SearchController#member as HTML
+  Rendering search/member.html.erb within layouts/application
+  Rendered search/member.html.erb within layouts/application (9.7ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    108: 
+    109:         <div id ="results">
+    110:             
+    111:                 <% @member.each do |member| %>
+    112:                     <a href = "member/<%= member.id %>" >
+    113:                         名前：<%= member.user_name%></br>
+    114:                         生年月日:<%= member.mem_birth %>
+  
+app/views/search/member.html.erb:111:in `_app_views_search_member_html_erb___1769694312388491352_70188493071160'
+Started GET "/search/member" for 127.0.0.1 at 2018-12-08 15:04:52 +0900
+Processing by SearchController#member as HTML
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:111
+  Rendered search/member.html.erb within layouts/application (32.4ms)
+Completed 200 OK in 87ms (Views: 74.4ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 15:04:56 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:111
+  Rendered search/member.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 68ms (Views: 63.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 15:04:58 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:111
+  Rendered search/member.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 68ms (Views: 64.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/search/member" for 127.0.0.1 at 2018-12-08 15:06:23 +0900
+Processing by SearchController#member as HTML
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:111
+  Rendered search/member.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 117ms (Views: 108.9ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-08 15:06:26 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (8.8ms)
+Completed 200 OK in 95ms (Views: 91.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 15:06:28 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:111
+  Rendered search/member.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 90ms (Views: 85.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-08 15:07:50 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (3.5ms)
+Completed 200 OK in 59ms (Views: 55.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 15:07:53 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL) ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:111
+  Rendered search/member.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 84ms (Views: 75.1ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/search/compnay" for 127.0.0.1 at 2018-12-08 15:09:06 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/search/compnay"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/search/company" for 127.0.0.1 at 2018-12-08 15:09:12 +0900
+Processing by SearchController#company as HTML
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 67ms (Views: 64.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/company?s_word=&e_word=&occ=&loc=&system=&authenticity_token=o67A0xmN490NRLSJDuMerQuZh47PTJCUtus6jYwlcDTQslBSjnvr8pmeGcBn092y%2FT3FiJkVWtL%2FzBMGw8y1LA%3D%3D" for 127.0.0.1 at 2018-12-08 15:09:13 +0900
+Processing by SearchController#company as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "occ"=>"", "loc"=>"", "system"=>"", "authenticity_token"=>"o67A0xmN490NRLSJDuMerQuZh47PTJCUtus6jYwlcDTQslBSjnvr8pmeGcBn092y/T3FiJkVWtL/zBMGw8y1LA=="}
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 67ms (Views: 64.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/company?s_word=&e_word=&occ=&loc=&system=&authenticity_token=o67A0xmN490NRLSJDuMerQuZh47PTJCUtus6jYwlcDTQslBSjnvr8pmeGcBn092y%2FT3FiJkVWtL%2FzBMGw8y1LA%3D%3D" for 127.0.0.1 at 2018-12-08 15:10:20 +0900
+Processing by SearchController#company as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "occ"=>"", "loc"=>"", "system"=>"", "authenticity_token"=>"o67A0xmN490NRLSJDuMerQuZh47PTJCUtus6jYwlcDTQslBSjnvr8pmeGcBn092y/T3FiJkVWtL/zBMGw8y1LA=="}
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 77ms (Views: 73.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/company" for 127.0.0.1 at 2018-12-08 15:10:25 +0900
+Processing by SearchController#company as HTML
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 87ms (Views: 82.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=&authenticity_token=GXCROQJb9NvQJU3rf1HTpfbg0rXB%2B9G2%2BmmpUEBgVoVqbAG4la389ET%2F4KIWYRC6AESQs5eiG%2FCzToDbD4mTnQ%3D%3D" for 127.0.0.1 at 2018-12-08 15:10:28 +0900
+Processing by SearchController#company as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "occ"=>"", "loc"=>"", "system"=>"", "salary"=>"", "frame"=>"", "lang"=>"", "authenticity_token"=>"GXCROQJb9NvQJU3rf1HTpfbg0rXB+9G2+mmpUEBgVoVqbAG4la389ET/4KIWYRC6AESQs5eiG/CzToDbD4mTnQ=="}
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 71ms (Views: 64.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/chat" for 127.0.0.1 at 2018-12-08 15:11:18 +0900
+Processing by SearchController#chat as HTML
+  Rendering search/chat.html.erb within layouts/application
+  Rendered search/chat.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 67ms (Views: 51.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/chat?s_word=&e_word=&authenticity_token=68jybtXHmZcgyTUpTsoBku5sHFz93zhihRUMvAENEomY1GLvQjGRuLQTmGAn%2BsKNGMheWquG8iTMMiU3TuTXkQ%3D%3D" for 127.0.0.1 at 2018-12-08 15:11:19 +0900
+Processing by SearchController#chat as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "authenticity_token"=>"68jybtXHmZcgyTUpTsoBku5sHFz93zhihRUMvAENEomY1GLvQjGRuLQTmGAn+sKNGMheWquG8iTMMiU3TuTXkQ=="}
+  Rendering search/chat.html.erb within layouts/application
+  Rendered search/chat.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 62ms (Views: 59.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/chat?s_word=&e_word=&authenticity_token=68jybtXHmZcgyTUpTsoBku5sHFz93zhihRUMvAENEomY1GLvQjGRuLQTmGAn%2BsKNGMheWquG8iTMMiU3TuTXkQ%3D%3D" for 127.0.0.1 at 2018-12-08 15:13:12 +0900
+Processing by SearchController#chat as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "authenticity_token"=>"68jybtXHmZcgyTUpTsoBku5sHFz93zhihRUMvAENEomY1GLvQjGRuLQTmGAn+sKNGMheWquG8iTMMiU3TuTXkQ=="}
+  Rendering search/chat.html.erb within layouts/application
+  Rendered search/chat.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 125ms (Views: 113.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-08 15:13:18 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (5.5ms)
+Completed 200 OK in 62ms (Views: 59.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/chat" for 127.0.0.1 at 2018-12-08 15:13:19 +0900
+Processing by SearchController#chat as HTML
+  Rendering search/chat.html.erb within layouts/application
+  Rendered search/chat.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 68ms (Views: 65.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/chat?s_word=&e_word=&category=&theme=&part=&authenticity_token=Gnju2nwooJINVOtbmrGQwLWKUFpZsAqUglCsGGHsmDvk3xOOV0a%2FyBYnG4Z%2FYOun2PG9laDHj8DCfv0RWXF1Gg%3D%3D" for 127.0.0.1 at 2018-12-08 15:13:24 +0900
+Processing by SearchController#chat as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "category"=>"", "theme"=>"", "part"=>"", "authenticity_token"=>"Gnju2nwooJINVOtbmrGQwLWKUFpZsAqUglCsGGHsmDvk3xOOV0a/yBYnG4Z/YOun2PG9laDHj8DCfv0RWXF1Gg=="}
+  Rendering search/chat.html.erb within layouts/application
+  Rendered search/chat.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 74ms (Views: 71.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-08 15:27:54 +0900
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/xatayuu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (65.5ms)
+Completed 200 OK in 2563ms (Views: 2490.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=" for 127.0.0.1 at 2018-12-08 15:29:31 +0900
+Processing by SearchController#member as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "des_occ"=>"", "des_loc"=>"", "quali"=>"", "univ"=>"", "lan_exp"=>""}
+  Rendering search/member.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (NOT user_name IS NULL) ORDER BY updated_at[0m
+  ↳ app/views/search/member.html.erb:111
+  Rendered search/member.html.erb within layouts/application (224.5ms)
+Completed 200 OK in 321ms (Views: 205.5ms | ActiveRecord: 72.3ms)
+
+
+Started GET "/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=" for 127.0.0.1 at 2018-12-08 15:35:10 +0900
+Processing by SearchController#company as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "occ"=>"", "loc"=>"", "system"=>"", "salary"=>"", "frame"=>"", "lang"=>""}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/search_controller.rb:58:in `company'
+Started GET "/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=" for 127.0.0.1 at 2018-12-08 15:42:25 +0900
+Started GET "/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=" for 127.0.0.1 at 2018-12-08 15:42:36 +0900
+Processing by SearchController#company as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "occ"=>"", "loc"=>"", "system"=>"", "salary"=>"", "frame"=>"", "lang"=>""}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/search_controller.rb:59:in `company'
+Processing by SearchController#company as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "occ"=>"", "loc"=>"", "system"=>"", "salary"=>"", "frame"=>"", "lang"=>""}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/search_controller.rb:59:in `company'
+Started GET "/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=" for 127.0.0.1 at 2018-12-08 15:43:21 +0900
+Processing by SearchController#company as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "occ"=>"", "loc"=>"", "system"=>"", "salary"=>"", "frame"=>"", "lang"=>""}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/search_controller.rb:74:in `company'
+Started GET "/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=" for 127.0.0.1 at 2018-12-08 15:44:04 +0900
+Processing by SearchController#company as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "occ"=>"", "loc"=>"", "system"=>"", "salary"=>"", "frame"=>"", "lang"=>""}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/search_controller.rb:74:in `company'
+Started GET "/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=" for 127.0.0.1 at 2018-12-08 15:44:07 +0900
+Processing by SearchController#company as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "occ"=>"", "loc"=>"", "system"=>"", "salary"=>"", "frame"=>"", "lang"=>""}
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 72ms (Views: 66.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-08 15:46:09 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (3.8ms)
+Completed 200 OK in 64ms (Views: 61.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/chat?s_word=&e_word=&category=&theme=&part=" for 127.0.0.1 at 2018-12-08 15:46:10 +0900
+Processing by SearchController#chat as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "category"=>"", "theme"=>"", "part"=>""}
+  Rendering search/chat.html.erb within layouts/application
+  Rendered search/chat.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 55ms (Views: 52.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/chat?s_word=&e_word=&category=&theme=&part=" for 127.0.0.1 at 2018-12-08 15:46:32 +0900
+Processing by SearchController#chat as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "category"=>"", "theme"=>"", "part"=>""}
+  Rendering search/chat.html.erb within layouts/application
+  Rendered search/chat.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 71ms (Views: 66.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/chat?s_word=&e_word=&category=%E5%AD%A6%E7%94%9F%E5%90%8C%E5%A3%AB%E3%81%AE%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%83%81%E3%83%A3%E3%83%83%E3%83%88&theme=&part=&authenticity_token=%2Bkl%2BpR5jmDROM07r97r0GrAWsGMnHqGYVpKx3DtTENbn7wdHdc62EVlgWYhIqz4FcZLHptRSnCamdjHnKkqZiA%3D%3D" for 127.0.0.1 at 2018-12-08 16:26:53 +0900
+Processing by SearchController#chat as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "category"=>"学生同士のグループチャット", "theme"=>"", "part"=>"", "authenticity_token"=>"+kl+pR5jmDROM07r97r0GrAWsGMnHqGYVpKx3DtTENbn7wdHdc62EVlgWYhIqz4FcZLHptRSnCamdjHnKkqZiA=="}
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (Unable to autoload constant Chat_page, expected /mnt/c/yahoo/Paris/app/models/chat_page.rb to define it):
+  
+app/controllers/search_controller.rb:147:in `chat'
+Started GET "/" for 127.0.0.1 at 2018-12-08 16:28:26 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (3.4ms)
+Completed 200 OK in 73ms (Views: 70.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=" for 127.0.0.1 at 2018-12-08 16:28:27 +0900
+Processing by SearchController#company as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "occ"=>"", "loc"=>"", "system"=>"", "salary"=>"", "frame"=>"", "lang"=>""}
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 337ms (Views: 50.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=&authenticity_token=Hw%2F%2BRefLdCL3kaJveXkhi8vUpO4jkczd1uNM3G5bPLFWExFAMK31vO%2F6yBsjlVbGQ0rLF8Bqe9cIWSpRABngqg%3D%3D" for 127.0.0.1 at 2018-12-08 16:28:29 +0900
+Processing by SearchController#company as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "occ"=>"", "loc"=>"", "system"=>"", "salary"=>"", "frame"=>"", "lang"=>"", "authenticity_token"=>"Hw/+RefLdCL3kaJveXkhi8vUpO4jkczd1uNM3G5bPLFWExFAMK31vO/6yBsjlVbGQ0rLF8Bqe9cIWSpRABngqg=="}
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 59ms (Views: 56.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/company?s_word=&e_word=&occ=%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E&loc=&system=&salary=&frame=&lang=&authenticity_token=qwEbpFVxhs7O%2Bdn6z3l%2F3z7lKRGakBRa71kMhPyV3KC2p2JGPtyo69mqzplwaLXA%2F2Fe1GncKeQfvYy%2F7YxV%2Fg%3D%3D" for 127.0.0.1 at 2018-12-08 16:28:35 +0900
+Processing by SearchController#company as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "occ"=>"プログラマ", "loc"=>"", "system"=>"", "salary"=>"", "frame"=>"", "lang"=>"", "authenticity_token"=>"qwEbpFVxhs7O+dn6z3l/3z7lKRGakBRa71kMhPyV3KC2p2JGPtyo69mqzplwaLXA/2Fe1GncKeQfvYy/7YxV/g=="}
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 58ms (Views: 53.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/company?s_word=&e_word=&occ=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2&loc=&system=&salary=&frame=&lang=&authenticity_token=1fhF4jtknuTBErOHAERK15cCm6IE%2BVMjUPnuJPy2mQPIXjwAUMmwwdZBpOS%2FVYDIVobsZ%2Fe1bp2gHW4f7a8QXQ%3D%3D" for 127.0.0.1 at 2018-12-08 16:29:43 +0900
+Processing by SearchController#company as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "occ"=>"システムエンジニア", "loc"=>"", "system"=>"", "salary"=>"", "frame"=>"", "lang"=>"", "authenticity_token"=>"1fhF4jtknuTBErOHAERK15cCm6IE+VMjUPnuJPy2mQPIXjwAUMmwwdZBpOS/VYDIVobsZ/e1bp2gHW4f7a8QXQ=="}
+  Rendering search/company.html.erb within layouts/application
+  Rendered search/company.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 87ms (Views: 81.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-08 16:34:21 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.slim within layouts/application
+  Rendered tops/index.html.slim within layouts/application (3.6ms)
+Completed 200 OK in 68ms (Views: 65.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/chat?s_word=&e_word=&category=&theme=&part=" for 127.0.0.1 at 2018-12-08 17:00:19 +0900
+Processing by SearchController#chat as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "category"=>"", "theme"=>"", "part"=>""}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (Unable to autoload constant Chat_page, expected /mnt/c/yahoo/Paris/app/models/chat_page.rb to define it):
+  
+app/controllers/search_controller.rb:147:in `chat'
+Started GET "/search/chat?s_word=&e_word=&category=&theme=&part=" for 127.0.0.1 at 2018-12-08 17:01:17 +0900
+Processing by SearchController#chat as HTML
+  Parameters: {"s_word"=>"", "e_word"=>"", "category"=>"", "theme"=>"", "part"=>""}
+  Rendering search/chat.html.erb within layouts/application
+  Rendered search/chat.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 59ms (Views: 54.1ms | ActiveRecord: 0.0ms)
+
+
