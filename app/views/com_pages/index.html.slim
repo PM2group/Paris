@@ -1,31 +1,26 @@
-<<<<<<< HEAD
-=======
 li.nav-item= link_to  'ログアウト', logout_com_path, method: :delete,class: 'nav-link'
 
->>>>>>> doraemon/master
 h1 企業情報
+
+li.nav-item= link_to  '企業検索', "search/company", class: 'nav-link'
+li.nav-item= link_to  '学生検索', "search/member", class: 'nav-link'
+li.nav-item= link_to  'チャット検索', "search/chat", class: 'nav-link'
+li.nav-item= link_to  'チャット作成', new_chat_page_path, class: 'nav-link'
 
 .mb-3
 table.table.table-hover
   thead.thead-default
     tr
-<<<<<<< HEAD
       th = Company.human_attribute_name(:会社名)
       th = Company.human_attribute_name(:職種)
       th = Company.human_attribute_name(:場所)
       th = Company.human_attribute_name(:開発言語)
       th = Company.human_attribute_name(:フレームワーク)
-=======
-      th = Company.human_attribute_name(:com_name)
-      th = Company.human_attribute_name(:occupations)
-      th = Company.human_attribute_name(:location)
->>>>>>> doraemon/master
   tbody
     tr
       td= @company.com_name
       td= @company.occupations
       td= @company.location
-<<<<<<< HEAD
       td= @company.lang
       td= @company.frame
     tr
@@ -48,6 +43,4 @@ table.table.table-hover
               - elsif offer.acc_flag == FALSE
                 td= '未承認'
 
-=======
->>>>>>> doraemon/master
   = link_to '編集する',edit_company_path(current_company),class: 'btn btn-primary mr-3'

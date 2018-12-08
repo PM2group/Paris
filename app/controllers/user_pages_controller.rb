@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # coding: utf-8
 class UserPagesController < ApplicationController
   skip_before_action :login_required
@@ -8,19 +7,12 @@ class UserPagesController < ApplicationController
       @user = current_user
       @company_offers = CompanyOffer.where(mem_id: current_user)
       @company_offers.each do |company_offer|
-        @companys = Company.where(id: company_offer.com_id)
+      @companys = Company.where(id: company_offer.com_id)
       end
   elsif current_company
     @user = User.find(params[:id])
     end
     
-=======
-class UserPagesController < ApplicationController
-  
- skip_before_action :login_com_required
-  def index
-    @user = current_user
->>>>>>> doraemon/master
   end
 
   def show
@@ -31,7 +23,6 @@ class UserPagesController < ApplicationController
 
   def edit
   end
-<<<<<<< HEAD
   
   def update
     company_offer = CompanyOffer.find(params[:id])
@@ -41,6 +32,4 @@ class UserPagesController < ApplicationController
   end
 
    
-=======
->>>>>>> doraemon/master
 end

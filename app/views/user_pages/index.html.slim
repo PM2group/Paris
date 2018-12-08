@@ -1,15 +1,16 @@
-<<<<<<< HEAD
-=======
 li.nav-item= link_to  'ログアウト', logout_path, method: :delete,class: 'nav-link'
 
->>>>>>> doraemon/master
+li.nav-item= link_to  '企業検索', "search/company", class: 'nav-link'
+li.nav-item= link_to  '学生検索', "search/member", class: 'nav-link'
+li.nav-item= link_to  'チャット検索', "search/chat", class: 'nav-link'
+li.nav-item= link_to  'チャット作成', new_chat_page_path, class: 'nav-link'
+
 h1 ユーザ情報
 
 .mb-3
 table.table.table-hover
   thead.thead-default
     tr
-<<<<<<< HEAD
       th = User.human_attribute_name(:名前)
       th = User.human_attribute_name(:ユーザ名)
       th = User.human_attribute_name(:希望職)
@@ -19,19 +20,12 @@ table.table.table-hover
       th = User.human_attribute_name(:資格)
       th = User.human_attribute_name(:言語経験)
       th = User.human_attribute_name(:経験開発体制)
-=======
-      th = User.human_attribute_name(:mem_name)
-      th = User.human_attribute_name(:user_name)
-      th = User.human_attribute_name(:des_occupation)
-      th = User.human_attribute_name(:des_location)
->>>>>>> doraemon/master
   tbody
     tr
       td= @user.mem_name
       td= @user.user_name
       td= @user.des_occupation
       td= @user.des_location
-<<<<<<< HEAD
       td= @user.study
       td= @user.activity
       td= @user.qualification
@@ -65,6 +59,3 @@ table.table.table-hover
               = f.submit nil, class: 'btn btn-primary'
   - if current_user
     = link_to '編集する',edit_user_path(current_user), class: 'btn btn-primary mr-3'
-=======
-  = link_to '編集する',edit_user_path(current_user), class: 'btn btn-primary mr-3'
->>>>>>> doraemon/master
