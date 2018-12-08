@@ -25,31 +25,27 @@
 
         <div id ="condition">
         詳細条件
-        </div>
 
+            <details>
+            <summary>希望職種</summary>
+            <input type="radio" name="des_occ" value = "プログラマ"/>
+            プログラマ
+            </br>
+            <input type="radio" name="des_occ" value = "システムエンジニア"/>
+            システムエンジニア
+            </br>
+            <input type="radio" name="des_occ" value = "ネットワークエンジニア"/>
+            ネットワークエンジニア
+            </br>
+            <input type="radio" name="des_occ" value = "データベースエンジニア"/>
+            データベースエンジニア
+            </br>
+            <input type="radio" name="des_occ" value = "Webエンジニア"/>
+            Webエンジニア
+            <input type="radio" name="des_occ" value = "" checked="checked" style="display:none;" />
+            </details>
 
-            <div id ="des_occ">
-                <details>
-                <summary>希望職種</summary>
-                <input type="radio" name="des_occ" value = "プログラマ"/>
-                プログラマ
-                </br>
-                <input type="radio" name="des_occ" value = "システムエンジニア"/>
-                システムエンジニア
-                </br>
-                <input type="radio" name="des_occ" value = "ネットワークエンジニア"/>
-                ネットワークエンジニア
-                </br>
-                <input type="radio" name="des_occ" value = "データベースエンジニア"/>
-                データベースエンジニア
-                </br>
-                <input type="radio" name="des_occ" value = "Webエンジニア"/>
-                Webエンジニア
-                <input type="radio" name="des_occ" value = "" checked="checked" style="display:none;" />
-                </details>
-
-            <div id ="des_loc">
-                <details>
+            <details>
                 <summary>希望勤務地</summary>
                 <input type="radio" name="des_loc" value="東京" />
                 東京
@@ -62,7 +58,6 @@
                 <input type="radio" name="des_loc" value = "" checked="checked" style="display:none;" />
                 </details>
 
-            <div id ="quali">
                 <details>
                 <summary>持っている資格</summary>
                 <input type="radio" name="quali" value="基本情報技術者"/>
@@ -74,25 +69,21 @@
                 <input type="radio" name="quali" value = "" checked="checked" style="display:none;" />
                 </details>
 
-
-
-            <div id ="univ">
                 <details>
                 <summary>所属大学</summary>
-                <input type="radio" name="quali" value="1" value = "1"/>
+                <input type="radio" name="univ" value="1"/>
                 1
                 </br>
-                <input type="radio" name="quali" value="2" value = "2"/>
+                <input type="radio" name="univ" value="2"/>
                 2
                 </br>
-                <input type="radio" name="quali" value="3" value = "3"/>
+                <input type="radio" name="univ" value="3"/>
                 3
                 <input type="radio" name="univ" value = "" checked="checked" style="display:none;" />
                 </details>
 
 
 
-            <div id ="lan_exp">
                 <details>
                 <summary>プログラミング言語</summary>
                 <input type="radio" name="lan_exp" value="C言語"/>
@@ -113,10 +104,7 @@
                 </details>
 
             </div>
-            </div>
-            </div>
-            </div>
-            </div>
+
 
         <div id ="results">
             
@@ -131,13 +119,7 @@
         </div>
 
         <div id ="search">
-        <%= button_to "検索" , {:des_occ => @des_occ ,:des_loc => @des_loc},{method: :get}%>
-        <%= @s_word %>
+        <%= button_to "検索"%>
         </div>
 
     </form>
-
-    </br></br></br></br></br></br></br></br></br></br></br></br>
-    <p>Find me in app/views/serch/member.html.erb</p>
-    <a href = "company"> company </a>
-    <a href = "chat"> chat </a>

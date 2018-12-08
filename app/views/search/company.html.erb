@@ -10,7 +10,7 @@
 
     </div>
 
-    <form method="GET" action="/search/member">
+    <form method="GET" action="/search/company">
 
     <div id ="s_word">
 
@@ -35,213 +35,89 @@
     </div>
 
     <div id ="condition">
-
       詳細条件
 
-    </div>
-
-    <div id ="occ">
-
       <details>
-
-        <summary>職種</summary>
-
-        <input type="radio" name="occ" values = ""/>
-
+        <summary>希望職種</summary>
+        <input type="radio" name="occ" value = "プログラマ"/>
         プログラマ
-
-            </br>
-
-      <input type="radio" name="occ" />
-
-      システムエンジニア
-
-          </br>
-
-          <input type="radio" name="occ" />
-
-          ネットワークエンジニア
-
-              </br>
-
-        <input type="radio" name="category" />
-
+        </br>
+        <input type="radio" name="occ" value = "システムエンジニア"/>
+        システムエンジニア
+        </br>
+        <input type="radio" name="occ" value = "ネットワークエンジニア"/>
+        ネットワークエンジニア
+        </br>
+        <input type="radio" name="occ" value = "データベースエンジニア"/>
         データベースエンジニア
-
-            </br>
-
-            <input type="radio" name="category" />
-
-            Webエンジニア
-
-      </details>
-
-    </div>
-
-    <div id ="loc">
+        </br>
+        <input type="radio" name="occ" value = "Webエンジニア"/>
+        Webエンジニア
+        <input type="radio" name="occ" value = "" checked="checked" style="display:none;" />
+        </details>
 
       <details>
 
         <summary>勤務地</summary>
-
-        <input type="radio" name="theme" value="1" />
-
-        1
-
-            </br>
-
-      <input type="radio" name="theme" value="2" />
-
-      2
-
-          </br>
-
-          <input type="radio" name="theme" value="3" />
-
-          3
-
-      </details>
-
-    </div>
-
-    <div id ="sys">
+        <input type="radio" name="loc" value="1" />
+        1</br>
+        <input type="radio" name="loc" value="2" />
+        2</br>
+        <input type="radio" name="loc" value="3" />
+        3
+        <input type="radio" name="loc" value = "" checked="checked" style="display:none;" />
+        </dtails>
 
       <details>
 
         <summary>開発ジャンル</summary>
-
-        <input type="radio" name="theme" value="1" />
-
-        1
-
-            </br>
-
-      <input type="radio" name="theme" value="2" />
-
-      2
-
-          </br>
-
-          <input type="radio" name="theme" value="3" />
-
-          3
-
-      </details>
-
-
-
-    </div>
-
-    <div id ="salary">
+        <input type="radio" name="system" value="1" />
+        1</br>
+        <input type="radio" name="system" value="2" />
+        2</br>
+        <input type="radio" name="system" value="3" />
+        3
+        <input type="radio" name="system" value = "" checked="checked" style="display:none;" />
+        </dtails>
 
       <details>
 
         <summary>給与</summary>
-
-        <input type="radio" name="theme" value="1" />
-
-        1
-
-            </br>
-
-      <input type="radio" name="theme" value="2" />
-
-      2
-
-          </br>
-
-          <input type="radio" name="theme" value="3" />
-
-          3
-
-      </details>
-
-
-
-    </div>
-
-    <div id ="frame">
+        <input type="radio" name="salary" value="1" />
+        1</br>
+        <input type="radio" name="salary" value="2" />
+        2</br>
+        <input type="radio" name="salary" value="3" />
+        3
+        </dtails>
 
       <details>
 
         <summary>フレームワーク</summary>
+        <input type="radio" name="frame" value="1" />
+        1</br>
+        <input type="radio" name="frame" value="2" />
+        2</br>
+        <input type="radio" name="frame" value="3" />
+        3
+        </dtails>
 
-        <input type="radio" name="theme" value="1" />
-
-        1
-
-            </br>
-
-      <input type="radio" name="theme" value="2" />
-
-      2
-
-          </br>
-
-          <input type="radio" name="theme" value="3" />
-
-          3
-
-      </details>
-
-
-
-    </div>
-
-    <div id ="lang">
 
       <details>
 
         <summary>使用言語</summary>
-
-        <input type="radio" name="theme" value="1" />
-
-        1
-
-            </br>
-
-      <input type="radio" name="theme" value="2" />
-
-      2
-
-          </br>
-
-          <input type="radio" name="theme" value="3" />
-
-          3
-
-      </details>
-
-
+        <input type="radio" name="lang" value="1" />
+        1</br>
+        <input type="radio" name="lang" value="2" />
+        2</br>
+        <input type="radio" name="lang" value="3" />
+        3
+        </dtails>
 
     </div>
 
     <div id ="search">
-
-      <a href = "company">
-
-        <input type="button" name="search" value="検索" />
-
-      </a>
-
+    <%= button_to "検索"%>
     </div>
-
-    </form>
-
-    </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
-
-    <h1>Serch#company</h1>
-
-    <p>Find me in app/views/serch/company.html.erb</p>
-
-    <a href = "member">
-
-      <input type="button" name="search" value="member" style="width:320px; height:30px"/>
-
-    </a>
-
-    <a href = "chat">
-
-      <input type="button" name="search" value="chat" style="width:320px; height:30px"/>
-
-    </a>
+  
+  </form>

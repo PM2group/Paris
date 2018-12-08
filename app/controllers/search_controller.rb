@@ -11,7 +11,7 @@ class SearchController < ApplicationController
     
     des_occ = params[:des_occ]
     des_loc = params[:des_loc]
-    quali = params[:puali]
+    quali = params[:quali]
     univ = params[:univ]
     lan_exp = params[:lan_exp]
 
