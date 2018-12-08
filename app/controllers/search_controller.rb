@@ -4,8 +4,8 @@ class SearchController < ApplicationController
 
   def member
 
-    s_word = params[:s_word]
-    e_word = params[:e_word]
+    s_word = "%" + params[:s_word] + "%"
+    e_word = "%" + params[:e_word] + "%"
     list = ["NOT user_name IS NULL"]
 
     des_occ = params[:des_occ]
@@ -15,12 +15,12 @@ class SearchController < ApplicationController
     lan_exp = params[:lan_exp]
     
     unless s_word.empty? then
-      list[0].concat(" AND univercity LIKE %?% ")
+      list[0].concat(" AND univercity LIKE ? ")
       list.push(s_word)
     end
 
     unless e_word.empty? then
-      list[0].concat(" AND univercity NOT LIKE %?% ")
+      list[0].concat(" AND univercity NOT LIKE ? ")
       list.push(e_word)
     end
 
@@ -55,8 +55,8 @@ class SearchController < ApplicationController
 
   def company
 
-    s_word = params[:s_word]
-    e_word = params[:e_word]
+    s_word = "%" + params[:s_word] + "%"
+    e_word = "%" + params[:e_word] + "%"
     list = ["NOT com_name IS NULL"]
 
     occ = params[:occ]
@@ -67,12 +67,12 @@ class SearchController < ApplicationController
     lang = params[:lang]
 
     unless s_word.empty? then
-      list[0].concat(" AND com_name LIKE %?% ")
+      list[0].concat(" AND com_name LIKE ? ")
       list.push(s_word)
     end
 
     unless e_word.empty? then
-      list[0].concat(" AND com_name LIKE %?% ")
+      list[0].concat(" AND com_name LIKE ? ")
       list.push(e_word)
     end
 
@@ -106,13 +106,13 @@ class SearchController < ApplicationController
       list.push(lang)
     end
 
-    @compnay = Company.order("updated_at").where(list)
+    @company = Company.order("updated_at").where(list)
 
   end
 
   def chat
-    s_word = params[:s_word]
-    e_word = params[:e_word]
+    s_word = "%" + params[:s_word] + "%"
+    e_word = "%" + params[:e_word] + "%"
     list = ["NOT designer_name IS NULL"]
 
     category = params[:category]
@@ -120,12 +120,12 @@ class SearchController < ApplicationController
     part = params[:part]
 
     unless s_word.empty? then
-      list[0].concat(" AND theme LIKE %?% ")
+      list[0].concat(" AND theme LIKE ? ")
       list.push(s_word)
     end
 
     unless e_word.empty? then
-      list[0].concat(" AND theme NOT LIKE %?% ")
+      list[0].concat(" AND theme NOT LIKE ? ")
       list.push(e_word)
     end
 
