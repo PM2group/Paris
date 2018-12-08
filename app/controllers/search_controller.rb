@@ -55,7 +55,7 @@ class SearchController < ApplicationController
 
   def company
 
-    s_word = params[:s_word]
+    s_word = "%" + params[:s_word] + "%"
     e_word = params[:e_word]
     list = ["NOT com_name IS NULL"]
 
@@ -67,13 +67,13 @@ class SearchController < ApplicationController
     lang = params[:lang]
 
     unless s_word.empty? then
-      list[0].concat(" AND com_name LIKE %?% ")
+      list[0].concat(" AND com_name LIKE ? ")
       list.push(s_word)
     end
 
     unless e_word.empty? then
-      list[0].concat(" AND com_name LIKE %?% ")
-      list.push(e_word)
+      list[0].concat(" AND com_name LIKE ? ")
+      list.push("%"+e_word+"%")
     end
 
     unless occ.empty? then
@@ -106,7 +106,7 @@ class SearchController < ApplicationController
       list.push(lang)
     end
 
-    @compnay = Company.order("updated_at").where(list)
+    @company = Company.order("updated_at").where(list)
 
   end
 
