@@ -2,6 +2,11 @@ li.nav-item= link_to  'ログアウト', logout_com_path, method: :delete,class:
 
 h1 企業情報
 
+li.nav-item= link_to  '企業検索', "search/company", class: 'nav-link'
+li.nav-item= link_to  '学生検索', "search/member", class: 'nav-link'
+li.nav-item= link_to  'チャット検索', "search/chat", class: 'nav-link'
+li.nav-item= link_to  'チャット作成', new_chat_page_path, class: 'nav-link'
+
 .mb-3
 table.table.table-hover
   thead.thead-default

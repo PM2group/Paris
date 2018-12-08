@@ -7,7 +7,7 @@ class UserPagesController < ApplicationController
       @user = current_user
       @company_offers = CompanyOffer.where(mem_id: current_user)
       @company_offers.each do |company_offer|
-        @companys = Company.where(id: company_offer.com_id)
+      @companys = Company.where(id: company_offer.com_id)
       end
   elsif current_company
     @user = User.find(params[:id])

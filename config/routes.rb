@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'search/company/:id', to: 'user_pages#index'
-  post 'search/company/:id', to: 'company_offers#create'
+  get 'search/member/:id', to: 'user_pages#index'
+  post 'search/member/:id', to: 'company_offers#create'
   
   get 'search/member' => 'search#member'
   get 'search/company' => 'search#company'

@@ -1,5 +1,10 @@
 li.nav-item= link_to  'ログアウト', logout_path, method: :delete,class: 'nav-link'
 
+li.nav-item= link_to  '企業検索', "search/company", class: 'nav-link'
+li.nav-item= link_to  '学生検索', "search/member", class: 'nav-link'
+li.nav-item= link_to  'チャット検索', "search/chat", class: 'nav-link'
+li.nav-item= link_to  'チャット作成', new_chat_page_path, class: 'nav-link'
+
 h1 ユーザ情報
 
 .mb-3
