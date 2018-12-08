@@ -119,7 +119,7 @@
         </div>
 
         <div id ="search">
-        <%= button_to "検索"%>
+        <%= button_to "検索", {:des_occ => @des_occ ,:des_loc => @des_loc},{method: :get}%>
         </div>
 
     </form>
