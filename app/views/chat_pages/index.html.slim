@@ -5,10 +5,18 @@ table.table.table-hover
   thead.thead-default
     tr
       th チャットid
+      /#th パスワード
       th テーマ
-      th  
+      /#th　
   tbody
     - @chat_pages.each do |chat_page|
+      /#= form_with scope: :sessions_chat, url: login_chat_path, local: true do |f|
       tr
         td= chat_page.id
+          /#td
+        /#    .form-group
+            /#  = f.text_field :password, clss: 'form-control', id: 'session_password', disabled: chat_page.readable
         td= link_to chat_page.theme, chat_page
+          /#td 
+           /# .form-group
+            /#= f.submit '参加する', class: ' btn btn-primary'

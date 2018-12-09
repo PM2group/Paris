@@ -11,11 +11,13 @@ table.table.table-hover
     tr
       th 発言内容
       th 発言者
+      th
   tbody
     - @chat_states.each do |chat_state|
       tr
         td= chat_state.sentence
-        td= link_to chat_state.mem_name, user_page_path(User.find(chat_state.mem_id))
+        td= chat_state.mem_name
+        td= link_to 'マイページ', user_path(User.find(chat_state.mem_id))
 
 = form_with model: @chat_state, local: true do |f|
   .form-group

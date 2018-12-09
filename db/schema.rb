@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_06_212221) do
+ActiveRecord::Schema.define(version: 2018_12_09_000738) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chat_join_mems", force: :cascade do |t|
+    t.integer "mem_id", null: false
+    t.string "mem_name", null: false
+    t.bigint "chat_page_id", null: false
+    t.index ["chat_page_id"], name: "index_chat_join_mems_on_chat_page_id"
+  end
 
   create_table "chat_pages", force: :cascade do |t|
     t.integer "designer_id", null: false
