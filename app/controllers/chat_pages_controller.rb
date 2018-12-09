@@ -29,6 +29,7 @@ class ChatPagesController < ApplicationController
       @chat_join_mem.mem_id = @current_company.id
       @chat_join_mem.mem_name = @current_company.com_name
     end
+    @chat_page.join_mem += 1
     @chat_page.period = Date.today
     if !@chat_page.password.empty?
       @chat_page.readable = false
