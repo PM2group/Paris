@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
+  post '/login_chat', to: 'sessions_chat#create'
+
   delete '/user_pages', to: 'company_offer#destroy'
   
   root to: 'tops#index'
