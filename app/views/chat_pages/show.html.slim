@@ -23,13 +23,3 @@ table.table.table-hover
   .form-group
     = f.text_area :sentence, cols: 150, class: 'form-controll', id: 'chat_state_sentence'
   = f.submit '送信', class: 'btn btn-primary'
-
-  .mb-3
-table.table.table-hover
-  thead.thead-default
-    tr
-      th 参加者名
-  tbody
-    - @chat_join_mems.each do |chat_join_mem|
-      tr
-        td= chat_join_mem.mem_name
