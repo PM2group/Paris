@@ -8,6 +8,15 @@ class SessionsController < ApplicationController
 
   def create
     reset_session
+
+    #super_user = Super_user.all
+    #if (session_params[:mem_info] == super_user.super_user_name) && (session_params[:mem_password] == super_user.super_user_password)
+
+    #  session[:suoer_user_id] = super_user.id
+    #  redirect_to "/super_users", notice: 'ログインしました'
+
+    #end
+
     user = User.find_by(mem_info: session_params[:mem_info])
 
     if user&.authenticate(session_params[:password])

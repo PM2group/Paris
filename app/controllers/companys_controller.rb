@@ -12,7 +12,7 @@ class CompanysController < ApplicationController
     company = Company.new(company_params)
 
     if company.save
-      company.company_id = company.id + 2000000000
+      company.id = company.id + 2000000000
       company.save
       redirect_to companys_path, notice:"登録完了"
     else
