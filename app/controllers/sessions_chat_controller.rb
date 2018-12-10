@@ -10,7 +10,7 @@ class SessionsChatController < ApplicationController
         if @chat_page.password == params[:password]
           redirect_to chat_page_path(@chat_page)
         else
-         redirect_to chat_pages_path, notice: "パスワードが正しくありません"
+          redirect_back(fallback_location: root_path, notice: "パスワードが正しくありません")
         end
       end
   end
