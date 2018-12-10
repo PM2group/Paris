@@ -1,14 +1,13 @@
+    
     <%= stylesheet_link_tag "book/search", :media => "all" %>
 
+<% if current_user%>
     <div id = "mypage">
-
       <a href = "/user_pages">
-
         <input type="button" name="mypage" value="マイぺージ" />
-
       </a>
-
     </div>
+<%end%>
 
     <form method="GET" action="/search/company">
 

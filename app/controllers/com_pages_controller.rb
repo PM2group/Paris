@@ -10,6 +10,9 @@ class ComPagesController < ApplicationController
       end
     elsif current_user
       @company = Company.find(params[:id])
+      @use = CompanyOffer.find_by(mem_id: current_user)
+    else
+      @company = Company.find(params[:id])
     end
   end
 

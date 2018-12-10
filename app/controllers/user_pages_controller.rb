@@ -5,8 +5,6 @@ class UserPagesController < ApplicationController
   def index
     @chat_pages = ChatPage.all
     if current_user
-      puts current_user.id
-      puts params[:id]
       if params[:id].to_i == current_user.id || params[:id] == nil
         @user = current_user
         @company_offers = CompanyOffer.where(mem_id: current_user)
@@ -19,6 +17,8 @@ class UserPagesController < ApplicationController
       end
     elsif current_company
       @user = User.find(params[:id])
+      company_offers = CompanyOffer.where(mem_id: @user.id)
+      @com = company_offers.find_by(com_id: current_company)
     end
     
   end
@@ -37,6 +37,10 @@ class UserPagesController < ApplicationController
     company_offer.acc_flag = TRUE
     company_offer.save
     redirect_to user_pages_path, notice: "更新"
+  end
+
+  def create
+
   end
 
    

@@ -37,6 +37,8 @@ Rails.application.routes.draw do
 
   get '/com_pages/:id', to: 'com_pages#index'
   get '/user_pages/:id', to: 'user_pages#index'
+  post '/com_pages/:id', to: 'com_pages#index'
+  post '/user_pages/:id', to: 'user_pages#index'
   
   root to: 'tops#index'
   resources :users

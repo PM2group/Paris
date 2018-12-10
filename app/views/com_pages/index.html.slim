@@ -1,15 +1,20 @@
 - if current_company
-  li.nav-item= link_to  'ログアウト', logout_com_path, method: :delete,class: 'nav-link'
-- if current_company
-  li.nav-item= link_to  '学生検索', "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=", class: 'nav-link'
-- if current_company
+  = link_to  'ログアウト', logout_com_path, method: :delete,class: 'nav-link'
+  = link_to  '学生検索', "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=", class: 'nav-link'
+  = link_to  'チャット検索', "/search/chat?s_word=&e_word=&category=&theme=&part=", class: 'nav-link'
   - if params[:id] == nil || current_company.id == params[:id].to_i
-    li.nav-item= link_to  'チャット作成', new_chat_page_url, class: 'nav-link'
+    = link_to  'チャット作成', new_chat_page_url, class: 'nav-link'
     = link_to  'メッセージ受信', messages_path, class: 'nav-link'
-   
-li.nav-item= link_to  'チャット一覧', chat_pages_path, class: 'nav-link'
-- if current_user
-  = link_to  'メッセージ送信', "/search/company/message/new/" + @company.id.to_s, class: 'nav-link'
+    = link_to 'アカウント情報を編集する',edit_company_path(current_company),class: 'btn btn-primary mr-3'
+- elsif current_user
+  = link_to  'ログアウト', logout_path, method: :delete,class: 'nav-link'
+  = link_to  '企業検索', "/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=", class: 'nav-link'
+  = link_to  'チャット検索', "/search/chat?s_word=&e_word=&category=&theme=&part=", class: 'nav-link'
+  -if @use
+    - if @use.acc_flag == TRUE
+     = link_to  'メッセージ送信', "/search/company/message/new/" + @company.id.to_s, class: 'nav-link'
+- else
+  = link_to  'TOP', "/", class: 'nav-link'
 
 h1 企業情報
 
@@ -49,9 +54,6 @@ table.table.table-hover
                 td= '承認済み'
               - elsif offer.acc_flag == FALSE
                 td= '未承認'
-  - if current_company
-    = link_to '編集する',edit_company_path(current_company),class: 'btn btn-primary mr-3'
-
 
 .mb-3
 table.table.table-hover
@@ -75,4 +77,4 @@ table.table.table-hover
               td
                 |
                 input name="password" style=("width:300px; height:30px") type="text"/
-            td= button_to "チャットページへ"
+            td= button_to "チャットページへ",login_chat_path,class: 'btn btn-primary mr-3'

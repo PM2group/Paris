@@ -1,22 +1,23 @@
-h1 トップページ
+h1[style="position:absolute; top:115px; left:110px; width:300px; overflow: hhiden"] トップページ
 
 a[href=login_path]
-    input[type="button" name="login" value="学生ログイン" style="position:absolute; top:55px; left:700px;  width:150px; overflow: hidden"]
+    input[type="button" name="login" value="学生ログイン" style="position:absolute; top:115px; left:600px; width:150px; overflow: hhiden"]
 a[href=new_user_path]
-    input[type="button" name="create_acc" value="学生新規作成" style="position:absolute; top:85px; left:700px; width:150px; overflow: hidden"]
+    input[type="button" name="create_acc" value="学生新規作成" style="position:absolute; top:145px; left:600px; width:150px; overflow: hhiden"]
 a[href=login_com_path]
-    input[type="button" name="login" value="企業ログイン" style="position:absolute; top:55px; left:900px;  width:150px; overflow: hidden"]
+    input[type="button" name="login" value="企業ログイン" style="position:absolute; top:115px; left:800px;  width:150px; overflow: hhiden"]
 a[href=new_company_path]
-    input[type="button" name="create_acc" value="企業新規作成" style="position:absolute; top:85px; left:900px; width:150px; overflow: hidden"]
+    input[type="button" name="create_acc" value="企業新規作成" style="position:absolute; top:145px; left:800px; width:150px; overflow: hhiden"]
 
 a[href="/"]
-  input[type="button" name="top" value="TOP" style="position:relative; top:10px; width:300px; overflow: hidden"]
+    input[type="button" name="top" value="TOP" style="position:absolute; top:180px; left:100px; width:300px; overflow: hhiden"]
 a[href="/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang="]
-  input[type="button" name="search_com" value="企業検索" style="position:relative; top:10px; left:00px; width:300px; overflow: hidden"]
+    input[type="button" name="search_com" value="企業検索" style="position:absolute; top:180px; left:400px; width:300px; overflow: hhiden"]
 a[href="/mmmmmmm"]
-  input[type="button" name="" value="サイトについて" style="position:relative; top:10px; left:00px; width:300px; overflow: hidden"]
+    input[type="button" name="" value="サイトについて" style="position:absolute; top:180px; left:700px; width:300px; overflow: hhiden"]
 
-p[style="position:absolute; top:170px; left:230px; overflow: hidden"]
+h1[style="position:absolute; top:270px; left:250px; width:300px; overflow: hhiden"]新着企業
+p[style="position:absolute; top:330px; left:250px; overflow: hhiden"]
     - @company = Company.order("updated_at").limit(3)
     - @company.each do |company|
         a href="search/company/#{company.id}"
@@ -32,7 +33,8 @@ p[style="position:absolute; top:170px; left:230px; overflow: hidden"]
         br
         br
 
-p[style="position:absolute; top:170px; left:530px; overflow: hidden"]
+h1[style="position:absolute; top:270px; left:650px; width:300px; overflow: hhiden"] 新着チャット
+p[style="position:absolute; top:330px; left:650px; overflow: hhiden"]
     - @chat = ChatPage.order("updated_at").limit(3)
     - @chat.each do |chat|
         a href="chat_pages/#{chat.id}"

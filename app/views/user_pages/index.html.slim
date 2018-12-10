@@ -1,15 +1,20 @@
 - if current_user 
-  li.nav-item= link_to  'ログアウト', logout_path, method: :delete,class: 'nav-link'
-- if current_user
-  li.nav-item= link_to  '企業検索', "/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=", class: 'nav-link'
-li.nav-item= link_to  'チャット検索', "/search/chat?s_word=&e_word=&category=&theme=&part=", class: 'nav-link'
-- if current_user
+  = link_to  'ログアウト', logout_path, method: :delete,class: 'nav-link'
+  = link_to  '企業検索', "/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=", class: 'nav-link'
+  = link_to  'チャット検索', "/search/chat?s_word=&e_word=&category=&theme=&part=", class: 'nav-link'
   - if params[:id] == nil || current_user.id == params[:id].to_i
     li.nav-item= link_to  'チャット作成', new_chat_page_path, class: 'nav-link'
     = link_to  'メッセージ受信', messages_path, class: 'nav-link'
     = link_to '編集する',edit_user_path(current_user), class: 'btn btn-primary mr-3'
-- if current_company
-  li.nav-item= link_to  'メッセージ送信',"/search/member/message/new/" + @user.id.to_s, class: 'nav-link'
+  - if @com
+    - if @com.acc_flag == TRUE
+      li.nav-item= link_to  'メッセージ送信',"/search/member/message/new/" + @user.id.to_s, class: 'nav-link'
+- elsif current_company
+  = link_to  'ログアウト', logout_path, method: :delete,class: 'nav-link'
+  = link_to  '学生検索', "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=", class: 'nav-link'
+  = link_to  'チャット検索', "/search/chat?s_word=&e_word=&category=&theme=&part=", class: 'nav-link'
+- else
+  = link_to  'TOP', "/", class: 'nav-link'
 
 h1 ユーザ情報
 
@@ -59,10 +64,11 @@ table.table.table-hover
                 td= '承認済み'
               td= link_to '企業ページへ', com_page_path(offer.com_id),class: 'btn btn-primary mr-3'
       - if current_company
+        - if @com.nil?
           = form_with model: @company_offer, local: true do |f|
             .form-group
-              = f.label :message
-              = f.text_field :message, class: 'form-control'
+              = f.label :オファー内容
+              = f.text_area :message, {class: 'form-control', rows: "5",maxlength: "250"}
               = f.submit "送信", class: 'btn btn-primary'
 
 

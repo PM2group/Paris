@@ -1,10 +1,12 @@
     <%= stylesheet_link_tag "book/search", :media => "all" %>
 
+<% if current_company%>
     <div id = "mypage">
-    <a href = "/com_pages">
-    <input type="button" name="mypage" value="マイぺージ" />
-    </a>
+        <a href = "/com_pages">
+            <input type="button" name="mypage" value="マイぺージ" />
+        </a>
     </div>
+<%end%>
 
     <form method="GET" action="/search/member">
 
@@ -128,6 +130,7 @@
                         希望職種:<%= member.des_occupation %></br>
                         希望勤務地:<%= member.des_location %></br>
                         プログラミング言語:<%= member.lang_ex %></br>
+                        </br>
                         </a>
                 <% end %>
                 </br>
