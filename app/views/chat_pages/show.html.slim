@@ -35,7 +35,7 @@ table.table.table-hover
          td= link_to 'マイページ', com_page_path(chat_state.mem_id)
        - else
          td マイページ
-       - unless (current_user && current_user.id == chat_state.mem_id) || (current_company && current_company.id == chat_state.mem_id)
+       - if (current_user && current_user.id != chat_state.mem_id) || (current_company && current_company.id != chat_state.mem_id)
          form action=reports_path method="POST"
            td
              |

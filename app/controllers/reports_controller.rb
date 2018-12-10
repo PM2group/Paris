@@ -2,6 +2,7 @@ class ReportsController < ApplicationController
   skip_before_action :login_required
   skip_before_action :login_com_required
   skip_before_action :login_super_user_required
+  protect_from_forgery :except => ["create"]
   # GET /reports
   # GET /reports.json
   def index
@@ -25,16 +26,14 @@ class ReportsController < ApplicationController
   # POST /reports
   # POST /reports.json
   def create
-    @report = Report.new(report_params)
-
-    respond_to do |format|
-      if @report.save
-        format.html { redirect_to @report, notice: 'Report was successfully created.' }
-        format.json { render :show, status: :created, location: @report }
-      else
-        format.html { render :new }
-        format.json { render json: @report.errors, status: :unprocessable_entity }
-      end
+    @report = Report.new
+    @report.report_chat = params[:report_chat]
+    @report.report_man = params[:report_man]
+    @report.reported_man = params[:reported_man]
+    if @report.save
+      redirect_to chat_page_path(@report.report_chat)
+    else
+      redirect_to chat_page_path(@report.report_chat)
     end
   end
 

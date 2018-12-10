@@ -5,8 +5,8 @@ class SuperUsersController < ApplicationController
   def index
     
     @report = Report.all
-
-    @report.each
+    @company = Company.all
+    #@report.each 通報崎のurlしてい
     
   end
 
