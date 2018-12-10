@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Report chat:
+  = @report.report_chat
+p
+  strong Reported man:
+  = @report.reported_man
+p
+  strong Report man:
+  = @report.report_man
+
+=> link_to 'Edit', edit_report_path(@report)
+'|
+=< link_to 'Back', reports_path

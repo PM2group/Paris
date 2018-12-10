@@ -1,12 +1,17 @@
-li.nav-item= link_to  'ログアウト', logout_com_path, method: :delete,class: 'nav-link'
-li.nav-item= link_to  'チャット作成', new_chat_page_path, class: 'nav-link'
+- if current_company
+  li.nav-item= link_to  'ログアウト', logout_com_path, method: :delete,class: 'nav-link'
+- if current_company
+  li.nav-item= link_to  '学生検索', "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=", class: 'nav-link'
+- if current_company
+  - if params[:id] == nil || current_company.id == params[:id].to_i
+    li.nav-item= link_to  'チャット作成', new_chat_page_url, class: 'nav-link'
+    = link_to  'メッセージ受信', messages_path, class: 'nav-link'
+    = link_to '編集する',edit_company_path(current_company),class: 'btn btn-primary mr-3'
+li.nav-item= link_to  'チャット一覧', chat_pages_path, class: 'nav-link'
+- if current_user
+  = link_to  'メッセージ送信', "/search/company/message/new/" + @company.id.to_s, class: 'nav-link'
 
 h1 企業情報
-
-li.nav-item= link_to  '企業検索', "search/company", class: 'nav-link'
-li.nav-item= link_to  '学生検索', "search/member", class: 'nav-link'
-li.nav-item= link_to  'チャット検索', "search/chat", class: 'nav-link'
-li.nav-item= link_to  'チャット作成', new_chat_page_path, class: 'nav-link'
 
 .mb-3
 table.table.table-hover
@@ -30,18 +35,44 @@ table.table.table-hover
     tr
       td= @company.appeal
       - if @company_offers
-        - @company_offers.each do |offer| 
+        - @company_offers.each do |offer|
           tr
             th = CompanyOffer.human_attribute_name(:相手)
             th = CompanyOffer.human_attribute_name(:メッセージ)
           tbody
             tr
-              td= offer.mem_id
+              - user = User.find(offer.mem_id)
+              td= user.mem_name
               td= offer.message
-              td= link_to '学生ページへ', company_offer_path(offer),class: 'btn btn-primary mr-3'
+              td= link_to '学生ページへ', user_page_path(offer.mem_id),class: 'btn btn-primary mr-3'
               - if offer.acc_flag == TRUE
-                td= '承認済み' 
+                td= '承認済み'
               - elsif offer.acc_flag == FALSE
                 td= '未承認'
+  - if current_company
+    = link_to '編集する',edit_company_path(current_company),class: 'btn btn-primary mr-3'
 
-  = link_to '編集する',edit_company_path(current_company),class: 'btn btn-primary mr-3'
+
+.mb-3
+table.table.table-hover
+  thead.thead-default
+    tr
+      th 作成したディスカッション一覧
+      th パスワード
+      th
+  tbody
+    - @chat_pages.each do |chat_page|
+      - if chat_page.designer_name == @company.com_name
+        form action=login_chat_path method="GET"
+          tr
+            |
+            input name="id" type="hidden" value="#{chat_page.id}"/ 
+            td
+              | #{chat_page.theme}
+            - if chat_page.readable
+              td　未設定
+            - else
+              td
+                |
+                input name="password" style=("width:300px; height:30px") type="text"/
+            td= button_to "チャットページへ"

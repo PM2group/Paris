@@ -1,0 +1,5 @@
+h1 メッセージ送信
+
+= form_with model: @message do |f|
+  = f.text_field :mess, placeholder: "メッセージ"
+  = f.submit "送信", class: "btn btn-primary"

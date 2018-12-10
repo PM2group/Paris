@@ -4,6 +4,7 @@ class CreateChatStates < ActiveRecord::Migration[5.2]
       t.date :remark_date, null: false
       t.integer :mem_id, null: false
       t.string :mem_name, null: false
+      t.string :mem_val, null: false
       t.text :sentence, null: false, limit: 500
       t.timestamps
     end

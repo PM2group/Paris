@@ -13,6 +13,7 @@ class CreateCompanies < ActiveRecord::Migration[5.2]
       t.string :adoption
       t.text :appeal
       t.string :system
+      t.integer :company_id
 
       t.timestamps
     end

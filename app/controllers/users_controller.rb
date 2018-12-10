@@ -11,6 +11,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+        @user.mem_id = @user.id + 1000000000
+        @user.save
         redirect_to users_path, notice:"登録完了"
     else
       render :new

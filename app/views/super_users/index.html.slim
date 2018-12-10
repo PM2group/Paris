@@ -1,0 +1,21 @@
+h1 管理者のページ
+br
+br
+br
+p 通報一覧
+.mb-3
+table.table.table-hover
+  thead.thead-default
+    tr
+      th = Report.human_attribute_name(:通報ID)
+      th = Report.human_attribute_name(:通報した人)
+      th = Report.human_attribute_name(:通報された人)
+      th = Report.human_attribute_name(:通報が起きたチャット)
+  tbody
+    - @report.each do |report|
+      tr
+        td = report.id
+        td= report.report_man
+        td= report.reported_man
+        td= report.report_chat
+        td= link_to '確認', report, method: :delete, data: { confirm:"通報#{report.id}をデータベースから削除します。よろしいですか？"}, type:'button', class: 'btn btn-sm btn-danger'

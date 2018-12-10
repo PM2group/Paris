@@ -3,14 +3,22 @@ class UserPagesController < ApplicationController
   skip_before_action :login_required
   skip_before_action :login_com_required
   def index
+    @chat_pages = ChatPage.all
     if current_user
-      @user = current_user
-      @company_offers = CompanyOffer.where(mem_id: current_user)
-      @company_offers.each do |company_offer|
-      @companys = Company.where(id: company_offer.com_id)
+      puts current_user.id
+      puts params[:id]
+      if params[:id].to_i == current_user.id || params[:id] == nil
+        @user = current_user
+        @company_offers = CompanyOffer.where(mem_id: current_user)
+        
+        @company_offers.each do |company_offer|
+          @companys = Company.where(id: company_offer.com_id)
+        end
+      else
+        @user = User.find(params[:id])
       end
-  elsif current_company
-    @user = User.find(params[:id])
+    elsif current_company
+      @user = User.find(params[:id])
     end
     
   end

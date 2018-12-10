@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+    reset_session
     user = User.find_by(mem_info: session_params[:mem_info])
 
     if user&.authenticate(session_params[:password])

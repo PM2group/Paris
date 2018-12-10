@@ -1,13 +1,83 @@
 h1 トップページ
 
+a[href=login_path]
+    input[type="button" name="login" value="学生ログイン" style="position:absolute; top:55px; left:700px;  width:150px; overflow: hidden"]
+a[href=new_user_path]
+    input[type="button" name="create_acc" value="学生新規作成" style="position:absolute; top:85px; left:700px; width:150px; overflow: hidden"]
+a[href=login_com_path]
+    input[type="button" name="login" value="企業ログイン" style="position:absolute; top:55px; left:900px;  width:150px; overflow: hidden"]
+a[href=new_company_path]
+    input[type="button" name="create_acc" value="企業新規作成" style="position:absolute; top:85px; left:900px; width:150px; overflow: hidden"]
+
+a[href="/"]
+  input[type="button" name="top" value="TOP" style="position:relative; top:10px; width:300px; overflow: hidden"]
+a[href="/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang="]
+  input[type="button" name="search_com" value="企業検索" style="position:relative; top:10px; left:00px; width:300px; overflow: hidden"]
+a[href="/mmmmmmm"]
+  input[type="button" name="" value="サイトについて" style="position:relative; top:10px; left:00px; width:300px; overflow: hidden"]
+
+p[style="position:absolute; top:170px; left:230px; overflow: hidden"]
+    - @company = Company.order("updated_at").limit(3)
+    - @company.each do |company|
+        a href="search/company/#{company.id}"
+            | 名前：#{company.com_name}
+            br
+            | 業種:#{company.occupations}
+            br
+            | 所在地:#{company.location}
+            br
+            | 使用言語:#{company.lang}
+            br
+            | 給与:#{company.salary}
+        br
+        br
+
+p[style="position:absolute; top:170px; left:530px; overflow: hidden"]
+    - @chat = ChatPage.order("updated_at").limit(3)
+    - @chat.each do |chat|
+        a href="chat_pages/#{chat.id}"
+            | 作成者：#{chat.designer_name}
+            br
+            | テーマ:#{chat.theme}
+            br
+            | 参加人数:#{chat.join_mem}
+            br
+            | 開催日:#{chat.start_date}
+        br
+        br
+
+
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
 li.nav-item= link_to  '学生でログイン', login_path, class: 'nav-link'
 li.nav-item= link_to  '企業でログイン', login_com_path, class: 'nav-link'
 li.nav-item= link_to  '学生で新規登録', new_user_path, class: 'nav-link'
 li.nav-item= link_to  '企業で新規登録', new_company_path, class: 'nav-link'
-li.nav-item= link_to  '企業検索', "search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=", class: 'nav-link'
-li.nav-item= link_to  '学生検索', "search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=", class: 'nav-link'
+li.nav-item= link_to  '企業検索', "/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=", class: 'nav-link'
+li.nav-item= link_to  '学生検索', "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=", class: 'nav-link'
 li.nav-item= link_to  'チャット検索', "search/chat?s_word=&e_word=&category=&theme=&part=", class: 'nav-link'
 li.nav-item= link_to  'チャット作成', new_chat_page_path, class: 'nav-link'
 li.nav-item= link_to  'チャット一覧', chat_pages_path, class: 'nav-link'
-
-p とりあえずのトップページ。企業情報とかを羅列するだけなら結構簡単に行けるよ

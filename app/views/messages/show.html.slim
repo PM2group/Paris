@@ -1,0 +1,10 @@
+h1 メッセージ詳細
+
+.nav_.justify-content-end
+  = link_to '戻る', messages_path, class: 'nav-link'
+table.table.table-hover
+  tbody
+    tr
+      th = Message.human_attribute_name(:詳細)
+      td = simple_format(h(@messages.mess) , {}, sanitize: false, wrapper_tag: "div")
+

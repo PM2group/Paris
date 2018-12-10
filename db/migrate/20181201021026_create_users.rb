@@ -20,6 +20,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :lang_ex
       t.string :system_ex, limit: 50
       t.string :flame_ex, limit: 50
+      t.integer :mem_id
 
       t.timestamps
     end

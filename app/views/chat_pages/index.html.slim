@@ -1,22 +1,28 @@
 h1 チャット一覧
 
+
 .mb-3
 table.table.table-hover
   thead.thead-default
     tr
       th チャットid
-      /#th パスワード
       th テーマ
-      /#th　
+      th パスワード
+      th　      
   tbody
-    - @chat_pages.each do |chat_page|
-      /#= form_with scope: :sessions_chat, url: login_chat_path, local: true do |f|
-      tr
-        td= chat_page.id
-          /#td
-        /#    .form-group
-            /#  = f.text_field :password, clss: 'form-control', id: 'session_password', disabled: chat_page.readable
-        td= link_to chat_page.theme, chat_page
-          /#td 
-           /# .form-group
-            /#= f.submit '参加する', class: ' btn btn-primary'
+    - @chat_pages.each do |chat|
+      form action=login_chat_path method="GET"
+        tr
+          td
+            | #{chat.id}
+            input name="id" type="hidden" value="#{chat.id}"/ 
+          - if chat.readable 
+            td
+              | #{chat.theme}
+            td　未設定
+          - else
+            td 非公開
+            td
+              |
+              input name="password" style=("width:300px; height:30px") type="text"/
+          td= button_to "参加する"

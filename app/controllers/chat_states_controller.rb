@@ -1,19 +1,27 @@
 class ChatStatesController < ApplicationController
+  skip_before_action :login_required
+  skip_before_action :login_com_required
   def create
     @chat_page = ChatPage.find(session[:chat_page_id])
     @chat_join_mem =  @chat_page.chat_join_mems.new
     @chat_state = @chat_page.chat_states.new(chat_state_params)
     
-    if @current_user != nil
-      @user = @current_user
+    if @chat_page.start_date > Date.today || @chat_page.finish_date < Date.today
+      redirect_to chat_page_path(@chat_page), notice: "書き込み可能期間ではありません" and return
+    end
+
+    if current_user != nil
+      @user = current_user
       @chat_state.mem_id = @user.id
       @chat_state.mem_name = @user.user_name
+      @chat_state.mem_val = "user"
       @chat_join_mem.mem_id = @user.id
       @chat_join_mem.mem_name = @user.user_name
-    elsif @current_company != nil
-      @com = @current_company
+    elsif current_company != nil
+      @com = current_company
       @chat_state.mem_id = @com.id
       @chat_state.mem_name = @com.com_name
+      @chat_state.mem_val = "com"
       @chat_join_mem.mem_id = @com.id
       @chat_join_mem.mem_name = @com.com_name
     end
@@ -28,6 +36,9 @@ class ChatStatesController < ApplicationController
           @new_mem = false
         end
       elsif @com != nil
+        if @chat_page.designer_val == "user"
+          redirect_to chat_page_path(@chat_page), notice: "企業は学生が作成したチャットページには発言できません" and return
+        end
         if @com.com_name == chat_join_mem.mem_name
           @new_mem = false
         end

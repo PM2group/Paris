@@ -2,9 +2,9 @@
 
     <div id = "mypage">
 
-      <a href = "company">
+      <a href = "/user_pages">
 
-        <input type="button" name="search" value="マイぺージ" />
+        <input type="button" name="mypage" value="マイぺージ" />
 
       </a>
 
@@ -65,42 +65,60 @@
         千葉</br>
         <input type="radio" name="loc" value="東京" />
         東京
+        </br>
+        <input type="radio" name="loc" value="埼玉" />
+        埼玉
+        </br>
+        <input type="radio" name="loc" value="神奈川"/>
+        神奈川
+        </br>
+        <input type="radio" name="loc" value="群馬" />
+        群馬
+        </br>
+        <input type="radio" name="loc" value="栃木" />
+        栃木
         <input type="radio" name="loc" value = "" checked="checked" style="display:none;" />
       </details>
 
       <details>
 
         <summary>開発ジャンル</summary>
-        <input type="radio" name="system" value="1" />
-        1</br>
-        <input type="radio" name="system" value="2" />
-        2</br>
-        <input type="radio" name="system" value="3" />
-        3
+        <input type="radio" name="system" value="ウォーターフォール" />
+        ウォーターフォール</br>
+        <input type="radio" name="system" value="プロトタイプ" />
+        プロトタイプ</br>
+        <input type="radio" name="system" value="スパイラル" />
+        スパイラル</br>
+        <input type="radio" name="system" value="アジャイル" />
+        アジャイル
         <input type="radio" name="system" value = "" checked="checked" style="display:none;" />
       </details>
 
       <details>
 
         <summary>給与</summary>
-        <input type="radio" name="salary" value="1" />
-        1</br>
-        <input type="radio" name="salary" value="2" />
-        2</br>
-        <input type="radio" name="salary" value="3" />
-        3
+        <input type="radio" name="salary" value="150000" />
+        15万以上</br>
+        <input type="radio" name="salary" value="200000" />
+        20万以上</br>
+        <input type="radio" name="salary" value="250000" />
+        25万以上
         <input type="radio" name="salary" value = "" checked="checked" style="display:none;" />
       </details>
 
       <details>
 
         <summary>フレームワーク</summary>
-        <input type="radio" name="frame" value="1" />
-        1</br>
-        <input type="radio" name="frame" value="2" />
-        2</br>
-        <input type="radio" name="frame" value="3" />
-        3
+        <input type="radio" name="frame" value="Ruby on rails" />
+        Ruby on rails</br>
+        <input type="radio" name="frame" value="CakePHP" />
+        CakePHP</br>
+        <input type="radio" name="frame" value="Spring" />
+        Spring</br>
+        <input type="radio" name="frame" value="JQuiry" />
+        JQuiry</br>
+        <input type="radio" name="frame" value="Bootstrap" />
+        Bootstrap
         <input type="radio" name="frame" value = "" checked="checked" style="display:none;" />
       </details>
 
@@ -108,28 +126,35 @@
       <details>
 
         <summary>使用言語</summary>
-        <input type="radio" name="lang" value="1" />
-        1</br>
-        <input type="radio" name="lang" value="2" />
-        2</br>
-        <input type="radio" name="lang" value="3" />
-        3
+        <input type="radio" name="lang" value="C言語" />
+        C言語</br>
+        <input type="radio" name="lang" value="JAVA" />
+        JAVA</br>
+        <input type="radio" name="lang" value="C++" />
+        C++</br>
+        <input type="radio" name="lang" value="Python" />
+        Python</br>
+        <input type="radio" name="lang" value="Ruby" />
+        Ruby
         <input type="radio" name="lang" value = "" checked="checked" style="display:none;" />
         </details>
 
     </div>
 
-    <div id ="results">
-            
+
+  <div id ="results">
     <% @company.each do |company| %>
         <a href = "company/<%= company.id %>" >
             名前：<%= company.com_name%></br>
-            生年月日:<%= company.occupations %>
-            </br>
+            業種:<%= company.occupations%></br>
+            所在地:<%= company.location%></br>
+            使用言語:<%= company.lang%></br>
+            給与:<%= company.salary%></br>
             </a>
+        </br>
     <% end %>
 
-</div>
+  </div>
 
     <div id ="search">
     <%= button_to "検索"%>

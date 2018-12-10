@@ -6,6 +6,7 @@ class SessionsComController < ApplicationController
   end
 
   def create
+    reset_session
     company = Company.find_by(com_info: session_params[:com_info])
 
     if company&.authenticate(session_params[:password])

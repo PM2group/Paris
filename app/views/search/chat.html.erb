@@ -1,10 +1,14 @@
 <%= stylesheet_link_tag "book/search", :media => "all" %>
 
+
+
 <div id = "mypage">
-
-  <a href = "company">
-
-    <input type="button" name="search" value="マイぺージ" />
+<%if current_user%>
+  <a href = "/user_pages">
+<%elsif current_company%>
+  <a href = "/com_pages">
+<%end%>
+    <input type="button" name="mypage" value="マイぺージ" />
 
   </a>
 
@@ -39,36 +43,35 @@
     詳細条件
 
 
-
   <details>
 
     <summary>カテゴリ</summary>
 
-    <input type="radio" name="category" value="学生同士のグループチャット" />
+    <input type="radio" name="category" value="1" />
 
     学生同士のグループチャット
 
         </br>
 
-  	<input type="radio" name="category" value="学生同士のディスカッション" />
+  	<input type="radio" name="category" value="1" />
 
 	    学生同士のディスカッション
 
 	    </br>
 
-	    <input type="radio" name="category" value="企業説明のチャット" />
+	    <input type="radio" name="category" value="2" />
 
 	    企業説明のチャット
 
 	        </br>
 
-		<input type="radio" name="category" value="企業の終了ディスカッション" />
+		<input type="radio" name="category" value="21" />
 
 		企業の終了ディスカッション
 
 		    </br>
 
-		    <input type="radio" name="category" value="企業の開催前ディスカッション" />
+		    <input type="radio" name="category" value="22" />
 
 		    企業の開催前ディスカッション
 
@@ -79,12 +82,12 @@
   <details>
 
     <summary>テーマ</summary>
-    <input type="radio" name="theme" value="1" />
-    1</br>
-	  <input type="radio" name="theme" value="2" />
-    2</br>
-    <input type="radio" name="theme" value="3" />
-    3
+    <input type="radio" name="theme" value="就職" />
+    就職</br>
+	  <input type="radio" name="theme" value="雑談" />
+    雑談</br>
+    <input type="radio" name="theme" value="説明" />
+    説明
     <input type="radio" name="theme" value = "" checked="checked" style="display:none;" />
   </details>
 
@@ -92,16 +95,31 @@
 
     <summary>参加人数</summary>
 
-    <input type="radio" name="part" value="1" />
-    1
+    <input type="radio" name="part" value="5" />
+    5人以下
     </br>
-	  <input type="radio" name="part" value="2" />
-    2
+	  <input type="radio" name="part" value="10" />
+    10人以下
     </br>
-	    <input type="radio" name="part" value="3" />
-    3
+	  <input type="radio" name="part" value="20" />
+    20人以下
     <input type="radio" name="part" value = "" checked="checked" style="display:none;" />
   </details>
+  </div>
+
+  <div id ="results">
+            
+    <% @chat.each do |chat| %>
+        <a href = "/chat_pages/<%= chat.id %>" >
+            作成者：<%= chat.designer_name%></br>
+            テーマ:<%= chat.theme%></br>
+            参加人数:<%= chat.join_mem%></br>
+            開催日:<%= chat.start_date%>
+            </br>
+            </a>
+            </br>
+    <% end %>
+
   </div>
 
   <div id ="search">

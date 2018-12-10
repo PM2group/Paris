@@ -2,31 +2,31 @@
 
 = form_with model: user, local: true do |f|
   .form-group
-    = f.label :mem_name
+    = f.label :"名前(必須)"
     = f.text_field :mem_name, class: 'form-control'
   .form-group
-    = f.label :user_name
+    = f.label :"ユーザ名(必須)"
     = f.text_field :user_name, class: 'form-control'
   .form-group
-    = f.label :mem_info
+    = f.label :"メールアドレス(必須)"
     = f.text_field :mem_info, class: 'form-control'
   .form-group
-    = f.label :"生年"
-    = f.select :mem_birth,[["1997年","1997年"],["1998年","1998年"],["1996年","1996年"],["1995年","1995年"]]
+    = f.label :"誕生年(必須)"
+    = f.select :mem_birth,[["1995年","1995年"],["1996年","1996年"],["1997年","1997年"],["1998年","1998年"]]
   .form-group
-    = f.label :"卒業年(下二桁)"
+    = f.label :"卒業年下二桁(必須)"
     = f.select :mem_gra,[["18","2018年3月27日"],["19","2019年3月27日"],["20","2020年3月27日"]]
   .form-group
-    = f.label :"希望職種"
-    = f.select :des_occupation,[["システムエンジニア","システムエンジニア"],["ゲームクリエイター","ゲームクリエイター"],["Webデザイナー","Webデザイナー"],["アプリケーションエンジニア","アプリケーションエンジニア"]]
+    = f.label :"希望職種(必須)"
+    = f.select :des_occupation,[["システムエンジニア","システムエンジニア"],["プログラマ","プログラマ"],["Webエンジニア","Webエンジニア"],["データベースエンジニア","データベースエンジニア"]]
   .form-group
-    = f.label :"希望勤務地"
-    = f.select :des_location,[["千葉","千葉"],["茨城","茨城"]]
+    = f.label :"希望勤務地(必須)"
+    = f.select :des_location,[["千葉","千葉"],["茨城","茨城"],["東京","東京"],["埼玉","埼玉"],["神奈川","神奈川"],["群馬","群馬"],["栃木","栃木"]]
   .form-group
-    = f.label :password, 'パスワード'
+    = f.label :password, 'パスワード(必須)'
     = f.password_field :password, class: 'form-control'
   .form-group
-    = f.label :password_confirmation, 'パスワード確認'
+    = f.label :password_confirmation, 'パスワード確認(必須)'
     = f.password_field :password_confirmation, class: 'form-control'
   .form-group
     = f.label :"所属学校"
@@ -47,16 +47,16 @@
     = f.label :"学外活動"
     = f.text_field :activity, class: 'form-control'
   .form-group
-    = f.label :"経験開発体制"
-    = f.text_field :system_ex, class: 'form-control'
+    = f.label :"主な経験開発体制"
+    = f.select :system_ex,[["-",""],["ウォーターフォールモデル","ウォーターフォールモデル"],["プロトタイピングモデル","プロトタイピングモデル"],["スパイラルモデル","スパイラルモデル"],["アジャイル開発モデル","アジャイル開発モデル"]]
   .form-group
-    = f.label :"経験フレームワーク"
-    = f.text_field :flame_ex, class: 'form-control'
+    = f.label :"主な経験フレームワーク"
+    = f.select :flame_ex,[["-",""],["Ruby on Rails","Ruby on Rails"],["CakePHP","CakePHP"],["Spring","Spring"],["jQuiry","jQuiry"],["Bootstrap","Bootstrap"]]
   .form-group
     = f.label :"資格"
-    = f.select :qualification,[["-",""],["基本情報技術者","基本情報技術者"],["応用情報技術者","応用情報技術者"],]
+    = f.select :qualification,[["-",""],["基本情報技術者","基本情報技術者"],["応用情報技術者","応用情報技術者"],["データベーススペシャリスト"],["ネットワークスペシャリスト","ネットワークスペシャリスト"],["プロジェクトマネージャ","プロジェクトマネージャ"]]
   .form-group
     = f.label :"言語経験"
     = f.select :lang_ex,[["-",""],["C言語","C言語"],["Java","Java"],["C++","C++"],["Ruby","Ruby"],["Python","Python"]]
-    
+
   = f.submit nil, class: 'btn btn-primay'

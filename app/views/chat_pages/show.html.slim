@@ -1,9 +1,13 @@
 h1= @chat_page.theme
-
-=link_to 'トップページ', tops_path
-
 p 参加人数
 = @chat_page.join_mem
+  
+p 上限人数
+= @chat_page.max_mem
+
+p 日付
+= Date.today
+
 
 .mb-3
 table.table.table-hover
@@ -17,8 +21,12 @@ table.table.table-hover
       tr
         td= chat_state.sentence
         td= chat_state.mem_name
-        td= link_to 'マイページ', user_path(User.find(chat_state.mem_id))
-
+        - if chat_state.mem_val == "user"
+          td= link_to 'マイページ', user_page_path(chat_state.mem_id)
+        - elsif current_user || chat_state.mem_name == current_company.com_name
+          td= link_to 'マイページ', com_page_path(chat_state.mem_id) 
+        - else
+          td マイページ
 = form_with model: @chat_state, local: true do |f|
   .form-group
     = f.text_area :sentence, cols: 150, class: 'form-controll', id: 'chat_state_sentence'
