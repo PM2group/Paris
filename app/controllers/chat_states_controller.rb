@@ -1,13 +1,18 @@
 class ChatStatesController < ApplicationController
   skip_before_action :login_required
   skip_before_action :login_com_required
+  skip_before_action :login_super_user_required
   def create
     @chat_page = ChatPage.find(session[:chat_page_id])
     @chat_join_mem =  @chat_page.chat_join_mems.new
     @chat_state = @chat_page.chat_states.new(chat_state_params)
     
-    if @chat_page.start_date > Date.today || @chat_page.finish_date < Date.today
+    if @chat_page.start_date > Date.today || (!@chat_page.finish_date.nil? && @chat_page.finish_date < Date.today)
       redirect_to chat_page_path(@chat_page), notice: "書き込み可能期間ではありません" and return
+    end
+
+    if current_company && @chat_page.designer_val == "user"
+      redirect_to chat_page_path(@chat_page), notice: "企業は学生が作成したチャットページには発言できません" and return
     end
 
     if current_user != nil
@@ -36,18 +41,18 @@ class ChatStatesController < ApplicationController
           @new_mem = false
         end
       elsif @com != nil
-        if @chat_page.designer_val == "user"
-          redirect_to chat_page_path(@chat_page), notice: "企業は学生が作成したチャットページには発言できません" and return
-        end
         if @com.com_name == chat_join_mem.mem_name
           @new_mem = false
         end
       end
-    end
+      end
     
     if @new_mem
       if @chat_page.join_mem < @chat_page.max_mem
         @chat_page.join_mem += 1
+        if @chat_page.join_mem >= @chat_page.max_mem
+          @chat_page.rec = false
+        end
         @chat_page.save
       else
         redirect_to chat_page_path(@chat_page), notice: "上限人数です" and return

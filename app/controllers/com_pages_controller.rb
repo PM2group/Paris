@@ -1,6 +1,7 @@
 class ComPagesController < ApplicationController
   skip_before_action :login_required
   skip_before_action :login_com_required
+  skip_before_action :login_super_user_required
   def index
     @chat_pages = ChatPage.all
     if current_company

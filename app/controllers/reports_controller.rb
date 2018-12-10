@@ -1,6 +1,7 @@
 class ReportsController < ApplicationController
   skip_before_action :login_required
   skip_before_action :login_com_required
+  skip_before_action :login_super_user_required
   # GET /reports
   # GET /reports.json
   def index

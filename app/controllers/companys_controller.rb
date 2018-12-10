@@ -4,6 +4,7 @@
 class CompanysController < ApplicationController
   skip_before_action :login_required
   skip_before_action :login_com_required
+  skip_before_action :login_super_user_required
   def new
     @company = Company.new
   end
@@ -16,7 +17,7 @@ class CompanysController < ApplicationController
       company.save
       redirect_to companys_path, notice:"登録完了"
     else
-      render :new
+      redirect_to new_company_path, notice:"項目に誤りがあります"
     end
   end
 

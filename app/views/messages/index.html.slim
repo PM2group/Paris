@@ -10,7 +10,7 @@ p 受信メッセージ
 table.table.table-hover
   thead.thead-default
     tr
-      th = Message.human_attribute_name(:送信者)
+      th = Message.human_attribute_name(:送信元)
       th = Message.human_attribute_name(:内容)
       th = Message.human_attribute_name(:受信日時)
   tbody
@@ -20,23 +20,22 @@ table.table.table-hover
         td= messages.mess.first(5) + " ..."
         td= messages.send_date
         td= link_to '詳細', messages, type:'button', class: 'btn btn-sm btn-primary'
-/
-  ↓未実装のゴミ
-  br
-  br
-  br
-  p 送信メッセージ
-  table.table.table-hover
-    thead.thead-default
+
+br
+br
+br
+p 送信メッセージ
+table.table.table-hover
+  thead.thead-default
+    tr
+      th = Message.human_attribute_name(:送信先)
+      th = Message.human_attribute_name(:内容)
+      th = Message.human_attribute_name(:受信日時)
+  tbody
+    - @messages2.each do |messages2|
       tr
-        th = Message.human_attribute_name(:送信先)
-        th = Message.human_attribute_name(:内容)
-        th = Message.human_attribute_name(:受信日時)
-    tbody
-      - @messages.each do |messages2|
-        tr
-          td= messages2.reception_id
-          td= messages2.mess.first(5) + " ..."
-          td= messages2.send_date
-          td= link_to '詳細', messages2, type:'button', class: 'btn btn-sm btn-primary'
+        td= messages2.send_id
+        td= messages2.mess.first(5) + " ..."
+        td= messages2.send_date
+        td= link_to '詳細', messages2, type:'button', class: 'btn btn-sm btn-primary'
 

@@ -7,7 +7,7 @@ class CreateChatPages < ActiveRecord::Migration[5.2]
       t.date :period
       t.integer :max_mem, null:false
       t.integer :join_mem, default:0
-      t.boolean :rec, null:false, default:true
+      t.boolean :rec, default:true
       t.date :start_date
       t.date :finish_date
       t.string :theme, limit:200, null:false

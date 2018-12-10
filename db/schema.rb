@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2018_12_09_000738) do
     t.date "period"
     t.integer "max_mem", null: false
     t.integer "join_mem", default: 0
-    t.boolean "rec", default: true, null: false
+    t.boolean "rec", default: true
     t.date "start_date"
     t.date "finish_date"
     t.string "theme", limit: 200, null: false
@@ -100,18 +100,16 @@ ActiveRecord::Schema.define(version: 2018_12_09_000738) do
 
   create_table "super_users", force: :cascade do |t|
     t.integer "super_user_id"
-    t.text "super_user_password"
+    t.string "password_digest"
     t.integer "super_user_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string "mem_name", limit: 20, null: false
     t.string "user_name", limit: 10, null: false
     t.string "mem_info", limit: 30, null: false
-    t.string "mem_birth", null: false
-    t.string "mem_gra", null: false
+    t.date "mem_birth", null: false
+    t.date "mem_gra", null: false
     t.string "des_occupation", limit: 100, null: false
     t.string "des_location", limit: 50, null: false
     t.string "password_digest", null: false

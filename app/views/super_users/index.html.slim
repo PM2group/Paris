@@ -2,6 +2,7 @@ h1 管理者のページ
 = link_to  '企業検索', "/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=", {class: 'nav-link', style: 'position:relative; top:0%; left:90%; overflow: hidden'}
 = link_to  '学生検索', "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=",  {class: 'nav-link', style: 'position:relative; top:10%; left:90%; overflow: hidden'}
 = link_to  'チャット検索', "/search/chat?s_word=&e_word=&category=&theme=&part=",  {class: 'nav-link', style: 'position:relative; top:20%; left:90%; overflow: hidden'}
+= link_to  'ログアウト', logout_path, method: :delete,class: 'nav-link'
 br
 br
 br
@@ -19,7 +20,7 @@ table.table.table-hover
     - @report.each do |report|
       tr
         td= report.id
-        td= link_to report.report_man, "/search/member/#{report.report_man}"
-        td= link_to report.reported_man, "/search/company/#{report.reported_man}"
+        td= link_to report.report_man, "/search/#{}/#{report.report_man}"
+        td= link_to report.reported_man, "/search/#{}/#{report.reported_man}"
         td= link_to report.report_chat, "/search/chat/#{report.report_chat}"
         td= link_to '確認', report, method: :delete, data: { confirm:"通報#{report.id}をデータベースから削除します。よろしいですか？"}, type:'button', class: 'btn btn-sm btn-danger'

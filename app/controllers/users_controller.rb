@@ -2,7 +2,7 @@
 class UsersController < ApplicationController
   skip_before_action :login_required
   skip_before_action :login_com_required
-  
+  skip_before_action :login_super_user_required
   def new
     @user = User.new
   end
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
         @user.save
         redirect_to users_path, notice:"登録完了"
     else
-      render :new
+      redirect_to new_user_path, notice:"項目に誤りがあります"
     end
   end
   

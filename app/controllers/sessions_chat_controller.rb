@@ -1,6 +1,7 @@
 class SessionsChatController < ApplicationController
   skip_before_action :login_required
   skip_before_action :login_com_required
+  skip_before_action :login_super_user_required
   def create
     @chat_page = ChatPage.find(params[:id])
       if @chat_page.readable

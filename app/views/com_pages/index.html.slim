@@ -4,7 +4,7 @@
   = link_to  'チャット検索', "/search/chat?s_word=&e_word=&category=&theme=&part=", class: 'nav-link'
   - if params[:id] == nil || current_company.id == params[:id].to_i
     = link_to  'チャット作成', new_chat_page_url, class: 'nav-link'
-    = link_to  'メッセージ受信', messages_path, class: 'nav-link'
+    = link_to  'メッセージ一覧', messages_path, class: 'nav-link'
     = link_to 'アカウント情報を編集する',edit_company_path(current_company),class: 'btn btn-primary mr-3'
 - elsif current_user
   = link_to  'ログアウト', logout_path, method: :delete,class: 'nav-link'
@@ -64,7 +64,7 @@ table.table.table-hover
       th
   tbody
     - @chat_pages.each do |chat_page|
-      - if chat_page.designer_name == @company.com_name
+      - if chat_page.designer_id == @company.id
         form action=login_chat_path method="GET"
           tr
             |
