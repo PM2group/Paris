@@ -2,10 +2,12 @@
 class SessionsComController < ApplicationController
   skip_before_action :login_required
   skip_before_action :login_com_required
+  skip_before_action :login_super_user_required
   def new
   end
 
   def create
+    reset_session
     company = Company.find_by(com_info: session_params[:com_info])
 
     if company&.authenticate(session_params[:password])

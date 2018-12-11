@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Super user:
+  = @super_user.super_user_id
+p
+  strong Super user password:
+  = @super_user.super_user_password
+p
+  strong Super user name:
+  = @super_user.super_user_name
+
+=> link_to 'Edit', edit_super_user_path(@super_user)
+'|
+=< link_to 'Back', super_users_path

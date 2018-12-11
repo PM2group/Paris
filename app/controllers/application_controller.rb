@@ -1,8 +1,10 @@
 class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :current_company
+  helper_method :current_super_user
   before_action :login_required
   before_action :login_com_required
+  before_action :login_super_user_required
   private
 
   def current_user
@@ -16,9 +18,17 @@ class ApplicationController < ActionController::Base
   def login_com_required
     redirect_to login_com_path unless current_company
   end
+
+  def login_super_user_required
+    redirect_to login_path unless current_super_user
+  end
   
   def current_company
     @current_company ||= Company.find_by(id: session[:company_id]) if session[:company_id]
+  end
+
+  def current_super_user
+    @current_super_user ||= SuperUser.find_by(id: session[:super_user_id]) if session[:super_user_id]
   end
 
 end

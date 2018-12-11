@@ -3,10 +3,11 @@ class CreateChatPages < ActiveRecord::Migration[5.2]
     create_table :chat_pages do |t|
       t.integer :designer_id, null: false
       t.string :designer_name, limit:50, null:false
+      t.string :designer_val, null: false
       t.date :period
       t.integer :max_mem, null:false
       t.integer :join_mem, default:0
-      t.boolean :rec, null:false, default:true
+      t.boolean :rec, default:true
       t.date :start_date
       t.date :finish_date
       t.string :theme, limit:200, null:false

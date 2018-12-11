@@ -25,10 +25,11 @@ ActiveRecord::Schema.define(version: 2018_12_09_000738) do
   create_table "chat_pages", force: :cascade do |t|
     t.integer "designer_id", null: false
     t.string "designer_name", limit: 50, null: false
+    t.string "designer_val", null: false
     t.date "period"
     t.integer "max_mem", null: false
     t.integer "join_mem", default: 0
-    t.boolean "rec", default: true, null: false
+    t.boolean "rec", default: true
     t.date "start_date"
     t.date "finish_date"
     t.string "theme", limit: 200, null: false
@@ -44,6 +45,7 @@ ActiveRecord::Schema.define(version: 2018_12_09_000738) do
     t.date "remark_date", null: false
     t.integer "mem_id", null: false
     t.string "mem_name", null: false
+    t.string "mem_val", null: false
     t.text "sentence", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -64,6 +66,7 @@ ActiveRecord::Schema.define(version: 2018_12_09_000738) do
     t.string "adoption"
     t.text "appeal"
     t.string "system"
+    t.integer "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -78,12 +81,35 @@ ActiveRecord::Schema.define(version: 2018_12_09_000738) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.integer "send_id"
+    t.integer "reception_id"
+    t.text "mess"
+    t.date "send_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reports", force: :cascade do |t|
+    t.integer "report_chat"
+    t.integer "reported_man"
+    t.integer "report_man"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "super_users", force: :cascade do |t|
+    t.integer "super_user_id"
+    t.string "password_digest"
+    t.integer "super_user_name"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "mem_name", limit: 20, null: false
     t.string "user_name", limit: 10, null: false
     t.string "mem_info", limit: 30, null: false
-    t.string "mem_birth", null: false
-    t.string "mem_gra", null: false
+    t.date "mem_birth", null: false
+    t.date "mem_gra", null: false
     t.string "des_occupation", limit: 100, null: false
     t.string "des_location", limit: 50, null: false
     t.string "password_digest", null: false
@@ -98,6 +124,7 @@ ActiveRecord::Schema.define(version: 2018_12_09_000738) do
     t.string "lang_ex"
     t.string "system_ex", limit: 50
     t.string "flame_ex", limit: 50
+    t.integer "mem_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

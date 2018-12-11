@@ -1,51 +1,50 @@
 class SearchController < ApplicationController
   skip_before_action :login_required
   skip_before_action :login_com_required
-
+  skip_before_action :login_super_user_required
   def member
 
-    s_word = params[:s_word]
-    e_word = params[:e_word]
     list = ["NOT user_name IS NULL"]
-
-    des_occ = params[:des_occ]
-    des_loc = params[:des_loc]
-    quali = params[:quali]
-    univ = params[:univ]
-    lan_exp = params[:lan_exp]
     
-    unless s_word.empty? then
-      list[0].concat(" AND univercity LIKE %?% ")
+    unless params[:s_word].empty? then
+      list[0].concat(" AND univercity LIKE ?")
+      s_word = "%" + params[:s_word] + "%"
       list.push(s_word)
     end
 
-    unless e_word.empty? then
-      list[0].concat(" AND univercity NOT LIKE %?% ")
+    unless params[:e_word].empty? then
+      list[0].concat(" AND univercity NOT LIKE ?")
+      e_word = "%" + params[:e_word] + "%"
       list.push(e_word)
     end
 
-    unless des_occ.empty? then
+    unless params[:des_occ].empty? then
       list[0].concat(" AND des_occupation = ?")
+      des_occ = params[:des_occ]
       list.push(des_occ)
     end
 
-    unless des_loc.empty? then
+    unless params[:des_loc].empty? then
       list[0].concat(" AND des_location = ?")
+      des_loc = params[:des_loc]
       list.push(des_loc)
     end
     
-    unless quali.empty? then
+    unless params[:quali].empty? then
       list[0].concat(" AND qualification = ?")
+      quali = params[:quali]
       list.push(quali)
     end
 
-    unless univ.empty? then
-      list[0].concat(" AND univercity = ?")
+    unless params[:univ].empty? then
+      list[0].concat(" AND univercity LIKE ?")
+      univ = "%" + params[:univ] + "%"
       list.push(univ)
     end
     
-    unless lan_exp.empty? then
-      list[0].concat(" AND lang_ex = ?")
+    unless params[:lan_exp].empty? then
+      list[0].concat(" AND lang_ex LIKE ?")
+      lan_exp = "%" + params[:lan_exp] + "%"
       list.push(lan_exp)
     end
 
@@ -55,54 +54,53 @@ class SearchController < ApplicationController
 
   def company
 
-    s_word = "%" + params[:s_word] + "%"
-    e_word = params[:e_word]
     list = ["NOT com_name IS NULL"]
 
-    occ = params[:occ]
-    loc = params[:loc]
-    system = params[:system]
-    salary = params[:salary]
-    frame = params[:frame]
-    lang = params[:lang]
-
-    unless s_word.empty? then
-      list[0].concat(" AND com_name LIKE ? ")
+    unless params[:s_word].empty? then
+      list[0].concat(" AND concat(com_name,appeal) LIKE ?")
+      s_word = "%" + params[:s_word] + "%"
       list.push(s_word)
     end
 
-    unless e_word.empty? then
-      list[0].concat(" AND com_name LIKE ? ")
-      list.push("%"+e_word+"%")
+    unless params[:e_word].empty? then
+      list[0].concat(" AND concat(com_name,appeal) NOT LIKE ?")
+      e_word = "%" + params[:e_word] + "%"
+      list.push(e_word)
     end
 
-    unless occ.empty? then
+    unless params[:occ].empty? then
       list[0].concat(" AND occupations = ?")
+      occ = params[:occ]
       list.push(occ)
     end
 
-    unless loc.empty? then
+    unless params[:loc].empty? then
       list[0].concat(" AND location = ?")
+      loc = params[:loc]
       list.push(loc)
     end
     
-    unless system.empty? then
-      list[0].concat(" AND system = ?")
+    unless params[:system].empty? then
+      list[0].concat(" AND system LIKE ?")
+      system = "%" + params[:system] + "%"
       list.push(system)
     end
 
-    unless salary.empty? then
-      list[0].concat(" AND salary = ?")
-      list.push(salary)
+    unless params[:salary].empty? then
+      list[0].concat(" AND salary >= ?")
+      salary = params[:salary]
+      list.push(salary.to_i)
     end
   
-    unless frame.empty? then
-      list[0].concat(" AND frame = ?")
+    unless params[:frame].empty? then
+      list[0].concat(" AND frame LIKE ?")
+      frame = "%" + params[:frame] + "%"
       list.push(frame)
     end
     
-    unless lang.empty? then
-      list[0].concat(" AND lang = ?")
+    unless params[:lang].empty? then
+      list[0].concat(" AND lang LIKE ?")
+      lang = "%" + params[:lang] + "%"
       list.push(lang)
     end
 
@@ -111,37 +109,37 @@ class SearchController < ApplicationController
   end
 
   def chat
-    s_word = params[:s_word]
-    e_word = params[:e_word]
-    list = ["NOT designer_name IS NULL"]
+    list = ["readable IS true AND NOT designer_name IS NULL"]
 
-    category = params[:category]
-    theme = params[:theme]
-    part = params[:part]
-
-    unless s_word.empty? then
-      list[0].concat(" AND theme LIKE %?% ")
+    unless  params[:s_word].empty? then
+      list[0].concat(" AND concat(designer_name,theme) LIKE ?")
+      s_word = "%" + params[:s_word] + "%"
       list.push(s_word)
     end
 
-    unless e_word.empty? then
-      list[0].concat(" AND theme NOT LIKE %?% ")
+    unless  params[:e_word].empty? then
+      list[0].concat(" AND concat(designer_name,theme) NOT LIKE ?")
+      e_word = "%" + params[:e_word] + "%"
       list.push(e_word)
     end
 
-    unless category.empty? then
-      list[0].concat(" AND desginer_id LIKE ?%")
-      list.push(category)
+    unless  params[:category].empty? then
+      list[0].concat(" AND designer_id  BETWEEN ?000000000 AND ?999999999")
+      category = params[:category] +"%"
+      list.push(category.to_i)
+      list.push(category.to_i)
     end
 
-    unless theme.empty? then
-      list[0].concat(" AND theme LIKE %?%")
+    unless  params[:theme].empty? then
+      list[0].concat(" AND theme LIKE ?")
+      theme = "%" + params[:theme] + "%"
       list.push(theme)
     end
     
-    unless part.empty? then
-      list[0].concat(" AND join_men < ?")
-      list.push(part)
+    unless  params[:part].empty? then
+      list[0].concat(" AND join_mem <= ?")
+      part = params[:part]
+      list.push(part.to_i)
     end
 
     @chat = ChatPage.order("updated_at").where(list)

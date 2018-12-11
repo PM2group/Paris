@@ -1,13 +1,85 @@
-h1 トップページ
+h1[style="position:absolute; top:115px; left:110px; width:300px; overflow: hhiden"] トップページ
 
-li.nav-item= link_to  '学生でログイン', login_path, class: 'nav-link'
-li.nav-item= link_to  '企業でログイン', login_com_path, class: 'nav-link'
-li.nav-item= link_to  '学生で新規登録', new_user_path, class: 'nav-link'
-li.nav-item= link_to  '企業で新規登録', new_company_path, class: 'nav-link'
-li.nav-item= link_to  '企業検索', "search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=", class: 'nav-link'
-li.nav-item= link_to  '学生検索', "search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=", class: 'nav-link'
-li.nav-item= link_to  'チャット検索', "search/chat?s_word=&e_word=&category=&theme=&part=", class: 'nav-link'
-li.nav-item= link_to  'チャット作成', new_chat_page_path, class: 'nav-link'
-li.nav-item= link_to  'チャット一覧', chat_pages_path, class: 'nav-link'
+a[href=login_path]
+    input[type="button" name="login" value="学生ログイン" style="position:absolute; top:115px; left:600px; width:150px; overflow: hhiden"]
+a[href=new_user_path]
+    input[type="button" name="create_acc" value="学生新規作成" style="position:absolute; top:145px; left:600px; width:150px; overflow: hhiden"]
+a[href=login_com_path]
+    input[type="button" name="login" value="企業ログイン" style="position:absolute; top:115px; left:800px;  width:150px; overflow: hhiden"]
+a[href=new_company_path]
+    input[type="button" name="create_acc" value="企業新規作成" style="position:absolute; top:145px; left:800px; width:150px; overflow: hhiden"]
 
-p とりあえずのトップページ。企業情報とかを羅列するだけなら結構簡単に行けるよ
+a[href="/"]
+    input[type="button" name="top" value="TOP" style="position:absolute; top:180px; left:100px; width:300px; overflow: hhiden"]
+a[href="/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang="]
+    input[type="button" name="search_com" value="企業検索" style="position:absolute; top:180px; left:400px; width:300px; overflow: hhiden"]
+a[href="/mmmmmmm"]
+    input[type="button" name="" value="サイトについて" style="position:absolute; top:180px; left:700px; width:300px; overflow: hhiden"]
+
+h1[style="position:absolute; top:270px; left:250px; width:300px; overflow: hhiden"]新着企業
+p[style="position:absolute; top:330px; left:250px; overflow: hhiden"]
+    - @company = Company.order("updated_at").limit(3)
+    - @company.each do |company|
+        a href="search/company/#{company.id}"
+            | 名前：#{company.com_name}
+            br
+            | 業種:#{company.occupations}
+            br
+            | 所在地:#{company.location}
+            br
+            | 使用言語:#{company.lang}
+            br
+            | 給与:#{company.salary}
+        br
+        br
+
+h1[style="position:absolute; top:270px; left:650px; width:300px; overflow: hhiden"] 新着チャット
+p[style="position:absolute; top:330px; left:650px; overflow: hhiden"]
+    - @chat = ChatPage.order("updated_at").limit(3)
+    - @chat.each do |chat|
+        a href="chat_pages/#{chat.id}"
+            | 作成者：#{chat.designer_name}
+            br
+            | テーマ:#{chat.theme}
+            br
+            | 参加人数:#{chat.join_mem}
+            br
+            | 開催日:#{chat.start_date}
+        br
+        br
+
+/
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    li.nav-item= link_to  '学生でログイン', login_path, class: 'nav-link'
+    li.nav-item= link_to  '企業でログイン', login_com_path, class: 'nav-link'
+    li.nav-item= link_to  '学生で新規登録', new_user_path, class: 'nav-link'
+    li.nav-item= link_to  '企業で新規登録', new_company_path, class: 'nav-link'
+    li.nav-item= link_to  '企業検索', "/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=", class: 'nav-link'
+    li.nav-item= link_to  '学生検索', "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=", class: 'nav-link'
+    li.nav-item= link_to  'チャット検索', "search/chat?s_word=&e_word=&category=&theme=&part=", class: 'nav-link'
+    li.nav-item= link_to  'チャット作成', new_chat_page_path, class: 'nav-link'
+    li.nav-item= link_to  'チャット一覧', chat_pages_path, class: 'nav-link'

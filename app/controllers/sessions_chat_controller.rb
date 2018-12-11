@@ -1,17 +1,17 @@
 class SessionsChatController < ApplicationController
+  skip_before_action :login_required
+  skip_before_action :login_com_required
+  skip_before_action :login_super_user_required
   def create
     @chat_page = ChatPage.find(params[:id])
-    session[:chat_page_id] = @chat_page.id
-
-    if @chat_page.password.empty?
+      if @chat_page.readable
         redirect_to chat_page_path(@chat_page)
-    else
+      else
         if @chat_page.password == params[:password]
-            redirect_to chat_page_path(@chat_page)
+          redirect_to chat_page_path(@chat_page)
         else
-            redirect_to chat_pages_path
+          redirect_back(fallback_location: root_path, notice: "パスワードが正しくありません")
         end
-    end
+      end
   end
-
 end

@@ -1,7 +1,7 @@
 class CompanyOffersController < ApplicationController
   skip_before_action :login_required
   skip_before_action :login_com_required
-
+  skip_before_action :login_super_user_required
   
   def new
     @company_offer = CompanyOffer.new

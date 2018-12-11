@@ -1,9 +1,20 @@
-li.nav-item= link_to  'ログアウト', logout_path, method: :delete,class: 'nav-link'
-
-li.nav-item= link_to  '企業検索', "search/company", class: 'nav-link'
-li.nav-item= link_to  '学生検索', "search/member", class: 'nav-link'
-li.nav-item= link_to  'チャット検索', "search/chat", class: 'nav-link'
-li.nav-item= link_to  'チャット作成', new_chat_page_path, class: 'nav-link'
+- if current_user 
+  = link_to  'ログアウト', logout_path, method: :delete,class: 'nav-link'
+  = link_to  '企業検索', "/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=", class: 'nav-link'
+  = link_to  'チャット検索', "/search/chat?s_word=&e_word=&category=&theme=&part=", class: 'nav-link'
+  - if params[:id] == nil || current_user.id == params[:id].to_i
+    li.nav-item= link_to  'チャット作成', new_chat_page_path, class: 'nav-link'
+    = link_to  'メッセージ受信', messages_path, class: 'nav-link'
+    = link_to '編集する',edit_user_path(current_user), class: 'btn btn-primary mr-3'
+- elsif current_company
+  = link_to  'ログアウト', logout_path, method: :delete,class: 'nav-link'
+  = link_to  '学生検索', "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=", class: 'nav-link'
+  = link_to  'チャット検索', "/search/chat?s_word=&e_word=&category=&theme=&part=", class: 'nav-link'
+  - if @com
+    - if @com.acc_flag == TRUE
+      li.nav-item= link_to  'メッセージ送信',"/search/member/message/new/" + @user.id.to_s, class: 'nav-link'
+- else
+  = link_to  'TOP', "/", class: 'nav-link'
 
 h1 ユーザ情報
 
@@ -42,20 +53,45 @@ table.table.table-hover
             th = CompanyOffer.human_attribute_name(:オファー先)
           tbody
             tr
-              td= offer.com_id
+              - company = Company.find(offer.com_id)
+              td= company.com_name
               td= offer.message
               - if offer.acc_flag == FALSE
                 td
-                  = link_to '辞退', offer,method: :delete, data: {confirm: "削除"},class: 'btn btn-danger' 
+                  = link_to '辞退', offer,method: :delete, data: {confirm: "削除"},class: 'btn btn-danger'
                   = link_to '承認', user_page_path(offer),method: :PATCH, data:{ confirm:"登録"},class: 'btn btn-primary mr-3'
               - if offer.acc_flag == TRUE
                 td= '承認済み'
-              td= link_to '企業ページへ', company_offer_path(offer),class: 'btn btn-primary mr-3'
+              td= link_to '企業ページへ', com_page_path(offer.com_id),class: 'btn btn-primary mr-3'
       - if current_company
+        - if @com.nil?
           = form_with model: @company_offer, local: true do |f|
             .form-group
-              = f.label :message
-              = f.text_field :message, class: 'form-control'
-              = f.submit nil, class: 'btn btn-primary'
-  - if current_user
-    = link_to '編集する',edit_user_path(current_user), class: 'btn btn-primary mr-3'
+              = f.label :オファー内容
+              = f.text_area :message, {class: 'form-control', rows: "5",maxlength: "250"}
+              = f.submit "送信", class: 'btn btn-primary'
+
+
+.mb-3
+table.table.table-hover
+  thead.thead-default
+    tr
+      th 参加したチャット
+      th パスワード
+  tbody
+    - @chat_pages.each do |chat_page|
+      - chat_page.chat_join_mems.each do |join_mem|
+        - if join_mem.mem_id == @user.id
+          form action=login_chat_path method="GET"
+            tr
+              |
+              input name="id" type="hidden" value="#{chat_page.id}"/ 
+              td
+                | #{chat_page.theme}
+              - if chat_page.readable
+                td　未設定
+              - else
+                td
+                  |
+                  input name="password" style=("width:300px; height:30px") type="text"/
+              td= button_to "チャットページへ"

@@ -1,25 +1,50 @@
-h1= @chat_page.theme
+- if current_user
+  = button_to 'マイページ', user_page_path(current_user.id),class: 'btn btn-primary mr-3'
+- elsif current_company
+  = button_to 'マイページ', com_page_path(current_company.id),class: 'btn btn-primary mr-3'
 
-=link_to 'トップページ', tops_path
+h1= @chat_page.theme
 
 p 参加人数
 = @chat_page.join_mem
+  
+p 上限人数
+= @chat_page.max_mem
+
+p 日付
+= Date.today
+
 
 .mb-3
 table.table.table-hover
-  thead.thead-default
-    tr
-      th 発言内容
-      th 発言者
-      th
-  tbody
-    - @chat_states.each do |chat_state|
-      tr
-        td= chat_state.sentence
-        td= chat_state.mem_name
-        td= link_to 'マイページ', user_path(User.find(chat_state.mem_id))
-
-= form_with model: @chat_state, local: true do |f|
-  .form-group
-    = f.text_area :sentence, cols: 150, class: 'form-controll', id: 'chat_state_sentence'
-  = f.submit '送信', class: 'btn btn-primary'
+ thead.thead-default
+   tr[style="width 900px"]
+     th 発言内容
+     th 発言者
+ tbody
+   - @chat_states.each do |chat_state|
+     tr
+       td= chat_state.sentence
+       td= chat_state.mem_name
+       - if !current_user && !current_company
+         - if chat_state.mem_val == "com"
+           td= link_to 'マイページ', com_page_path(chat_state.mem_id)
+       - elsif chat_state.mem_val == "user"
+         td= link_to 'マイページ', user_page_path(chat_state.mem_id)
+       - elsif current_user || chat_state.mem_name == current_company.com_name
+         td= link_to 'マイページ', com_page_path(chat_state.mem_id)
+       - else
+         td マイページ
+       - if (current_user && current_user.id != chat_state.mem_id) || (current_company && current_company.id != chat_state.mem_id)
+         form action=reports_path method="POST"
+           td
+             |
+             input name="report_chat" type="hidden" value="#{@chat_page.id}"/
+             input name="report_man" type="hidden" value="#{@report_man}"/
+             input name="reported_man" type="hidden" value="#{chat_state.mem_id}"/
+           td= button_to "通報する"
+- if current_company || current_user
+ = form_with model: @chat_state, local: true do |f|
+   .form-group
+     = f.text_area :sentence, cols: 150, class: 'form-controll', id: 'chat_state_sentence'
+   = f.submit '送信', class: 'btn btn-primary'
