@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 2018_12_09_000738) do
     t.text "appeal"
     t.string "system"
     t.integer "company_id"
+    t.integer "balance", default: 30
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

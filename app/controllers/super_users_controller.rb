@@ -1,3 +1,4 @@
+# coding: utf-8
 class SuperUsersController < ApplicationController
   skip_before_action :login_required
   skip_before_action :login_com_required
@@ -7,6 +8,9 @@ class SuperUsersController < ApplicationController
     @report = Report.all
     @company = Company.all
     #@report.each 通報崎のurlしてい
+
+    @additions = Company.where(balance: 0)  
+    
     
   end
 
@@ -20,6 +24,8 @@ class SuperUsersController < ApplicationController
     @messages = Message.new
   end
 
+  
   def delete
   end
+
 end
