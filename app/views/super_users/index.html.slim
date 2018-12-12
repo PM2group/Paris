@@ -34,3 +34,15 @@ table.table.table-hover
      tr
        td= link_to company.com_name,"/search/company/#{company.id}"
        td= link_to '確認完了',company, type:'button', class: 'btn btn-sm btn-primary'
+
+table.table.table-hover
+  thead.thead-default
+    tr
+      th = Company.human_attribute_name(:オファー残高が０の企業ID)
+      th = Company.human_attribute_name(:企業名) 
+  tbody
+    - @additions.each do |addition|
+      tr
+        td= addition.id
+        td= addition.com_name
+        td= link_to 'オファー追加',edit_company_offer_path(addition),data:{ confirm:"オファーを追加しますか?"},class: 'btn btn-primary mr-3'
