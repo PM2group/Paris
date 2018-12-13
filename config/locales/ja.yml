@@ -7,56 +7,56 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
-  models:
-    user: 学生
-    company: 企業
-    company_offer: オファー
+    models:
+      user: 学生
+      company: 企業
+      company_offer: オファー
     
-  attributes:
-    chat_page: チャットページ
+    attributes:
+      chat_page: チャットページ
 
-    user:
-      mem_id: 学生ID
-      mem_name: 名前
-      user_name: ユーザ名
-      mem_info: メールアドレス
-      mem_birth: 生年
-      mem_gra: 卒業予定日
-      des_occupation: 希望職種
-      des_location: 希望勤務地
-      password: パスワード
-      password_confirmation: パスワード確認
-      pic: 写真
-      univercity: 所属学校
-      circle: 所属サークル
-      labo: 所属研究室
-      study: 研究内容
-      deliver: 成果物
-      activity: 学外活動
-      qualification: 資格
-      lang_ex: 言語経験
-      flame_ex: 経験フレームワーク
-      updated_at: ログイン日時
+      user:
+        mem_id: 学生ID
+        mem_name: 名前
+        user_name: ユーザ名
+        mem_info: メールアドレス
+        mem_birth: 生年
+        mem_gra: 卒業予定日
+        des_occupation: 希望職種
+        des_location: 希望勤務地
+        password: パスワード
+        password_congirmation: パスワード確認
+        pic: 写真
+        univercity: 所属学校
+        circle: 所属サークル
+        labo: 所属研究室
+        study: 研究内容
+        deliver: 成果物
+        activity: 学外活動
+        qualification: 資格
+        lang_ex: 言語経験
+        flame_ex: 経験フレームワーク
+        updated_at: ログイン日時
 
-    company:
-      com_id: 企業ID
-      com_name: 企業名
-      ocuupations: 職種
-      location: 勤務地
-      com_info: 連絡先
-      condition: 労働条件
-      salary: 初任給
-      password: パスワード
-      password_confirmation: パスワード(確認)
-      frame: フレームワーク
-      lang: 使用言語
-      adoption: 採用ページのURL
-      appeal: アピールポイント
-      system: 開発体制
-      updated_at: ログイン日時
+      company:
+        com_id: 企業ID
+        com_name: 企業名
+        ocuupations: 職種
+        location: 勤務地
+        com_info: 連絡先
+        condition: 労働条件
+        salary: 初任給
+        password: パスワード
+        password_confirmation: パスワード(確認)
+        frame: フレームワーク
+        lang: 使用言語
+        adoption: 採用ページのURL
+        appeal: アピールポイント
+        system: 開発体制
+        updated_at: ログイン日時
 
-    company_offer:
-      message: 文章
+      company_offer:
+        message: 文章
 
   date:
     abbr_day_names:
