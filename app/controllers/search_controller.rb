@@ -6,6 +6,8 @@ class SearchController < ApplicationController
 
     list = ["NOT user_name IS NULL"]
     
+    @param = params
+
     unless params[:s_word].empty? then
       list[0].concat(" AND univercity LIKE ?")
       s_word = "%" + params[:s_word] + "%"
@@ -55,6 +57,8 @@ class SearchController < ApplicationController
   def company
 
     list = ["NOT com_name IS NULL"]
+    
+    @param = params
 
     unless params[:s_word].empty? then
       list[0].concat(" AND concat(com_name,appeal) LIKE ?")
@@ -110,6 +114,8 @@ class SearchController < ApplicationController
 
   def chat
     list = ["readable IS true AND NOT designer_name IS NULL"]
+
+    @param = params
 
     unless  params[:s_word].empty? then
       list[0].concat(" AND concat(designer_name,theme) LIKE ?")

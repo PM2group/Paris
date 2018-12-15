@@ -3,7 +3,7 @@
   = link_to  '企業検索', "/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=", class: 'nav-link'
   = link_to  'チャット検索', "/search/chat?s_word=&e_word=&category=&theme=&part=", class: 'nav-link'
   - if params[:id] == nil || current_user.id == params[:id].to_i
-    li.nav-item= link_to  'チャット作成', new_chat_page_path, class: 'nav-link'
+    = link_to  'チャット作成', new_chat_page_path, class: 'nav-link'
     = link_to  'メッセージ受信', messages_path, class: 'nav-link'
     = link_to '編集する',edit_user_path(current_user), class: 'btn btn-primary mr-3'
 - elsif current_company
@@ -12,7 +12,7 @@
   = link_to  'チャット検索', "/search/chat?s_word=&e_word=&category=&theme=&part=", class: 'nav-link'
   - if @com
     - if @com.acc_flag == TRUE
-      li.nav-item= link_to  'メッセージ送信',"/search/member/message/new/" + @user.id.to_s, class: 'nav-link'
+      = link_to  'メッセージ送信',"/search/member/message/new/" + @user.id.to_s, class: 'nav-link'
 - else
   = link_to  'TOP', "/", class: 'nav-link'
 

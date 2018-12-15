@@ -17,7 +17,8 @@
 
     検索ワード
 
-    <input type="text" name="s_word" style="width:300px; height:30px"/>
+    <input type="text" name="s_word" style="width:300px; height:30px" value = <%=@param[:s_word]%> >
+    </input>
 
   </div>
 
@@ -25,8 +26,8 @@
 
     除外ワード
 
-    <input type="text" name="e_word" style="width:300px; height:30px"/>
-
+    <input type="text" name="e_word" style="width:300px; height:30px" value = <%=@param[:e_word]%> >
+    </input>
   </div>
 
   <div id ="result">
@@ -62,13 +63,13 @@
 
 	        </br>
 
-		<input type="radio" name="category" value="21" />
+		<input type="radio" name="category" value="2" />
 
 		企業の終了ディスカッション
 
 		    </br>
 
-		    <input type="radio" name="category" value="22" />
+		    <input type="radio" name="category" value="2" />
 
 		    企業の開催前ディスカッション
 

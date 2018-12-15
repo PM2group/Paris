@@ -5,9 +5,10 @@ class InquiryMailer < ApplicationMailer
         mail(
           from: 'send.mail.0420@gmail.com',
           to:   'send.mail.0420@gmail.com',
-          #to:   'manager@example.com',
-          subject: 'お問い合わせ通知'
+          
+          subject: 'アカウント登録について'
         )
     end
+      
 
 end
