@@ -6,12 +6,12 @@
 <%elsif current_company%>
   <a href = "/com_pages">
 <%end%>
-    <input type="button" name="mypage" value="マイぺージ" />
+    <input type="button" name="mypage" value="マイぺージ" class = "btn btn-primary"/>
   </a>
 
 </div>
 
-<form method="GET" action="/search/chat">
+<form method="GET" action="/search/chat" >
 
   <div id ="s_word">
 
@@ -122,7 +122,7 @@
   </div>
 
   <div id ="search">
-  <%= button_to "検索"%>
+  <input type="submit" value="検索" class = "btn btn-primary"/>
   </div>
 
 </form>

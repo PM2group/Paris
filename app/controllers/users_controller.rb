@@ -13,8 +13,12 @@ class UsersController < ApplicationController
     if @user.save
         @user.id = @user.id + 1000000000
         @user.save
-        InquiryMailer.send_mail(@user).deliver_now
-        redirect_to users_path, notice:"登録完了"
+        begin
+          InquiryMailer.send_mail(@user).deliver_now
+          redirect_to users_path, notice:"登録完了"
+        rescue
+          redirect_to new_user_path, notice:"メールが送れませんでした"
+        end
     else
       redirect_to new_user_path, notice:"項目に誤りがあります"
     end
