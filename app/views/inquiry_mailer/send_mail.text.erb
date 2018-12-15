@@ -1,7 +1,25 @@
+<% if (@inquiry.id / 1000000000) == 1%>
+
 <%= @inquiry.mem_name %>様へ
 
 ご利用ありがとうございます
 
 アカウント登録を完了するために以下のリンクに飛んでください
 
-http://localhost:3000/
+http://localhost:3000/user_pages?id=<%=@inquiry.id%>
+
+一度TOPページに戻ったあと、改めてログインしてください
+
+<%else%>
+
+<%= @inquiry.com_name %>様へ
+
+ご利用ありがとうございます
+
+アカウント登録を完了するために以下のリンクに飛んでください
+
+http://localhost:3000/com_pages?id=<%=@inquiry.id%>
+
+一度TOPページに戻ったあと、改めてログインしてください
+
+<%end%>

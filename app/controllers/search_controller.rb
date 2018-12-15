@@ -148,8 +148,13 @@ class SearchController < ApplicationController
       list.push(part.to_i)
     end
 
-    @chat = ChatPage.order("updated_at").where(list)
-
+    if params[:sort] == 0
+      @chat = ChatPage.order("updated_at").where(list)
+    elsif params[:sort] == 1
+      @chat = ChatPage.order("join_mem").where(list)
+    else
+      @chat = ChatPage.order("max_mem").where(list)
+    end
   end
 
 end
