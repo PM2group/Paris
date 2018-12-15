@@ -10,6 +10,7 @@
   = link_to  'ログアウト', logout_path, method: :delete,class: 'btn btn-primary'
   = link_to  '企業検索', "/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=", class: 'btn btn-primary'
   = link_to  'チャット検索', "/search/chat?s_word=&e_word=&category=&theme=&part=", class: 'btn btn-primary'
+  = link_to  'マイページ', "/user_pages", class: 'btn btn-primary'
   -if @use
     - if @use.acc_flag == TRUE
      = link_to  'メッセージ送信', "/search/company/message/new/" + @company.id.to_s, class: 'btn btn-primary'

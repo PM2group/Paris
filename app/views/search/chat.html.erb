@@ -114,6 +114,11 @@
             上限人数:<%= chat.max_mem%></br>
             参加人数:<%= chat.join_mem%></br>
             開催日:<%= chat.start_date%>
+            <%if  #{chat.designer_id/1000000000} == 1%>
+            企業書き込み不可
+            <% else %>
+            企業書き込み可
+            <% end %>
             </br>
             </a>
             </br>

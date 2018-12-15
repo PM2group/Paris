@@ -10,6 +10,7 @@
   = link_to  'ログアウト', logout_path, method: :delete,class: 'btn btn-primary'
   = link_to  '学生検索', "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=", class: 'btn btn-primary'
   = link_to  'チャット検索', "/search/chat?s_word=&e_word=&category=&theme=&part=", class: 'btn btn-primary'
+  = link_to  'マイページ', "/com_pages",class: 'btn btn-primary'
   - if @com
     - if @com.acc_flag == TRUE
       = link_to  'メッセージ送信',"/search/member/message/new/" + @user.id.to_s, class: 'btn btn-primary'
