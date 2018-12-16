@@ -40,25 +40,22 @@ table.table.table-hover
   tbody
     tr
       td= @company.appeal
-    tr
-      th = User.human_attribute_name(:オファー一覧)
       - if @company_offers
         - @company_offers.each do |offer|
           tr
-            th = CompanyOffer.human_attribute_name(:送ったオファー情報)
+            th = CompanyOffer.human_attribute_name(:相手)
+            th = CompanyOffer.human_attribute_name(:メッセージ)
           tbody
             tr
               - user = User.find(offer.mem_id)
               td= user.mem_name
-              - if offer.acc_flag == TRUE && offer.reaction == TRUE
+              td= offer.message
+              td= link_to '学生ページへ', user_page_path(offer.mem_id),class: 'btn btn-primary mr-3'
+              - if offer.acc_flag == TRUE
                 td= '承認済み'
-                td= link_to '学生ページへ', user_page_path(offer.mem_id),class: 'btn btn-primary mr-3'
-              - if offer.acc_flag == TRUE && offer.reaction == FALSE
-                td= '辞退されました'
-              - if offer.acc_flag == FALSE
+              - elsif offer.acc_flag == FALSE
                 td= '未承認'
-                td= link_to '学生ページへ', user_page_path(offer.mem_id),class: 'btn btn-primary mr-3'
-          
+
 .mb-3
 table.table.table-hover
   thead.thead-default

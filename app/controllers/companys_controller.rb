@@ -10,7 +10,8 @@ class CompanysController < ApplicationController
   end
 
   def create
-    @company = Company.new(company_params)
+    company = Company.new(company_params)
+
 
     if @company.save
       @company.id = @company.id + 2000000000
@@ -22,7 +23,7 @@ class CompanysController < ApplicationController
         redirect_to new_company_path, notice:"メールが送れませんでした"
       end
     else
-      render :new, notice:"項目に誤りがあります"
+      redirect_to new_company_path, notice:"項目に誤りがあります"
     end
   end
 
@@ -32,12 +33,9 @@ class CompanysController < ApplicationController
   end
 
   def update
-    @company = current_company
-    if @company.update(company_params)
-      redirect_to com_pages_path, notice: "更新完了"
-    else
-      render :edit
-    end
+    company = current_company
+    company.update!(company_params)
+    redirect_to com_pages_path, notice:"更新完了"
   end
 
   def show
