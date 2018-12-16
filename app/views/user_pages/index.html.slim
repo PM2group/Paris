@@ -48,28 +48,22 @@ table.table.table-hover
       - if @company_offers
         - @company_offers.each do |offer|
           tr
-            th = CompanyOffer.human_attribute_name(:オファー相手)
+            th = CompanyOffer.human_attribute_name(:相手)
+            th = CompanyOffer.human_attribute_name(:メッセージ)
             th = CompanyOffer.human_attribute_name(:オファー状態)
             th = CompanyOffer.human_attribute_name(:オファー先)
           tbody
             tr
               - company = Company.find(offer.com_id)
               td= company.com_name
+              td= offer.message
               - if offer.acc_flag == FALSE
                 td
                   = link_to '辞退', offer,method: :delete, data: {confirm: "削除"},class: 'btn btn-danger'
                   = link_to '承認', user_page_path(offer),method: :PATCH, data:{ confirm:"登録"},class: 'btn btn-primary mr-3'
-                  td = link_to '企業ページへ', com_page_path(offer.com_id),class: 'btn btn-primary mr-3'
-                tr
-                  th = CompanyOffer.human_attribute_name(:オファーメッセージ)
-                tr
-                  td= offer.message 
-              - if offer.acc_flag == TRUE && offer.reaction == TRUE
+              - if offer.acc_flag == TRUE
                 td= '承認済み'
-                td= link_to '企業ページへ', com_page_path(offer.com_id),class: 'btn btn-primary mr-3'
-              - if offer.acc_flag == TRUE && offer.reaction == FALSE
-                td= '辞退済み'
-
+              td= link_to '企業ページへ', com_page_path(offer.com_id),class: 'btn btn-primary mr-3'
       - if current_company
         - if @com.nil?
           = form_with model: @company_offer, local: true do |f|
@@ -103,3 +97,4 @@ table.table.table-hover
                   input name="password" style=("width:300px; height:30px") type="text"/
               td
                 input type="submit" value="検索" class="btn btn-primary" /
+
