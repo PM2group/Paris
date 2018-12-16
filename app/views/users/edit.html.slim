@@ -3,4 +3,58 @@ h1 アカウント修正
 .nav.justify-content-end
   = link_to 'マイページへ',user_pages_path, class: 'btn btn-primary'
 
-= render partial: 'form', locals: { user: @user}
+- if @user.errors.present?
+  ul#error_explanation
+    - @user.errors.full_messages.each do |message|
+      li = message
+p= @user.mem_name
+p= @user.mem_birth
+
+= form_with model: @user, local: true do |f|
+  .form-group
+    = f.label :"メールアドレス(必須)"
+    = f.text_field :mem_info, class: 'form-control'
+  .form-group
+    = f.label :"誕生年(必須)"
+    = f.date_field :mem_birth
+  .form-group
+    = f.label :"卒業年下二桁(必須)"
+    = f.date_field :mem_gra
+  .form-group
+    = f.label :"希望職種(必須)"
+    = f.select :des_occupation,[["システムエンジニア","システムエンジニア"],["プログラマ","プログラマ"],["Webエンジニア","Webエンジニア"],["データベースエンジニア","データベースエンジニア"]]
+  .form-group
+    = f.label :"希望勤務地(必須)"
+    = f.select :des_location,[["千葉","千葉"],["茨城","茨城"],["東京","東京"],["埼玉","埼玉"],["神奈川","神奈川"],["群馬","群馬"],["栃木","栃木"]]
+  .form-group
+    = f.label :"所属学校"
+    = f.text_field :univercity, class: 'form-control'
+  .form-group
+    = f.label :"所属サークル"
+    = f.text_field :circle, class: 'form-control'
+  .form-group
+    = f.label :"所属研究室"
+    = f.text_field :labo, class: 'form-control'
+  .form-group
+    = f.label :"研究内容"
+    = f.text_field :study, class: 'form-control'
+  .form-group
+    = f.label :"成果物URL"
+    = f.text_field :deliver, class: 'form-control'
+  .form-group
+    = f.label :"学外活動"
+    = f.text_field :activity, class: 'form-control'
+  .form-group
+    = f.label :"主な経験開発体制"
+    = f.select :system_ex,[["-",""],["ウォーターフォールモデル","ウォーターフォールモデル"],["プロトタイピングモデル","プロトタイピングモデル"],["スパイラルモデル","スパイラルモデル"],["アジャイル開発モデル","アジャイル開発モデル"]]
+  .form-group
+    = f.label :"主な経験フレームワーク"
+    = f.select :flame_ex,[["-",""],["Ruby on Rails","Ruby on Rails"],["CakePHP","CakePHP"],["Spring","Spring"],["jQuiry","jQuiry"],["Bootstrap","Bootstrap"]]
+  .form-group
+    = f.label :"最新取得資格"
+    = f.select :qualification,[["-",""],["基本情報技術者","基本情報技術者"],["応用情報技術者","応用情報技術者"],["データベーススペシャリスト"],["ネットワークスペシャリスト","ネットワークスペシャリスト"],["プロジェクトマネージャ","プロジェクトマネージャ"]]
+  .form-group
+    = f.label :"最も得意な言語"
+    = f.select :lang_ex,[["-",""],["C言語","C言語"],["Java","Java"],["C++","C++"],["Ruby","Ruby"],["Python","Python"]]
+
+= f.submit nil, class: 'btn btn-primay'

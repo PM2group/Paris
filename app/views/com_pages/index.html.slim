@@ -40,6 +40,8 @@ table.table.table-hover
   tbody
     tr
       td= @company.appeal
+      tr
+      th = User.human_attribute_name(:オファー一覧)
       - if @company_offers
         - @company_offers.each do |offer|
           tr
@@ -49,12 +51,13 @@ table.table.table-hover
             tr
               - user = User.find(offer.mem_id)
               td= user.mem_name
-              td= offer.message
-              td= link_to '学生ページへ', user_page_path(offer.mem_id),class: 'btn btn-primary mr-3'
-              - if offer.acc_flag == TRUE
+              - if offer.acc_flag == TRUE && offer.reaction == TRUE
+
+
                 td= '承認済み'
               - elsif offer.acc_flag == FALSE
                 td= '未承認'
+                td= link_to '学生ページへ', user_page_path(offer.mem_id),class: 'btn btn-primary mr-3'
 
 .mb-3
 table.table.table-hover
@@ -79,3 +82,4 @@ table.table.table-hover
                 |
                 input name="password" style=("width:300px; height:30px") type="text"/
             td= button_to "チャットページへ",login_chat_path,class: 'btn btn-primary mr-3'
+            

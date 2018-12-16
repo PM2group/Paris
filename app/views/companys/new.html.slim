@@ -1,3 +1,8 @@
+- if @company.errors.present?
+  ul#error_explanation
+  - @company.errors.full_messages.each do |message|
+    li = message
+
 h1 企業登録画面
 = link_to 'TOPページへ',"/", class: 'btn btn-primary'
 = form_with model: @company, url: companys_path, local: true do |f|
