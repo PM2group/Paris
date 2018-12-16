@@ -1,3 +1,9 @@
+- if user.errors.present?
+  ul#error_explanation
+    - user.errors.full_messages.each do |message|
+      li = message
+
+
 = link_to 'TOPページへ',"/", class: 'btn btn-primary'
 
 = form_with model: user, local: true do |f|
