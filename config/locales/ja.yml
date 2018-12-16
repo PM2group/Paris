@@ -25,7 +25,7 @@ ja:
         des_occupation: 希望職種
         des_location: 希望勤務地
         password: パスワード
-        password_congirmation: パスワード確認
+        password_confirmation: パスワード確認
         pic: 写真
         univercity: 所属学校
         circle: 所属サークル

@@ -1,6 +1,6 @@
 - if user.errors.present?
   ul#error_explanation
-    - user.errors.full_messages.each do |message|
+  - user.errors.full_messages.each do |message|
       li = message
 
 
@@ -47,7 +47,7 @@
     = f.label :"研究内容"
     = f.text_field :study, class: 'form-control'
   .form-group
-    = f.label :"成果物URL"
+    = f.label :"成果物"
     = f.text_field :deliver, class: 'form-control'
   .form-group
     = f.label :"学外活動"
@@ -59,10 +59,10 @@
     = f.label :"主な経験フレームワーク"
     = f.select :flame_ex,[["-",""],["Ruby on Rails","Ruby on Rails"],["CakePHP","CakePHP"],["Spring","Spring"],["jQuiry","jQuiry"],["Bootstrap","Bootstrap"]]
   .form-group
-    = f.label :"最新取得資格"
+    = f.label :"資格"
     = f.select :qualification,[["-",""],["基本情報技術者","基本情報技術者"],["応用情報技術者","応用情報技術者"],["データベーススペシャリスト"],["ネットワークスペシャリスト","ネットワークスペシャリスト"],["プロジェクトマネージャ","プロジェクトマネージャ"]]
   .form-group
-    = f.label :"最も得意な言語"
+    = f.label :"言語経験"
     = f.select :lang_ex,[["-",""],["C言語","C言語"],["Java","Java"],["C++","C++"],["Ruby","Ruby"],["Python","Python"]]
 
   = f.submit nil, class: 'btn btn-primay'

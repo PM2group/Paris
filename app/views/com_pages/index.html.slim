@@ -51,6 +51,8 @@ table.table.table-hover
               - user = User.find(offer.mem_id)
               td= user.mem_name
               - if offer.acc_flag == TRUE && offer.reaction == TRUE
+
+
                 td= '承認済み'
                 td= link_to '学生ページへ', user_page_path(offer.mem_id),class: 'btn btn-primary mr-3'
               - if offer.acc_flag == TRUE && offer.reaction == FALSE
@@ -58,7 +60,7 @@ table.table.table-hover
               - if offer.acc_flag == FALSE
                 td= '未承認'
                 td= link_to '学生ページへ', user_page_path(offer.mem_id),class: 'btn btn-primary mr-3'
-          
+
 .mb-3
 table.table.table-hover
   thead.thead-default

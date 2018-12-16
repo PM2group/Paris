@@ -55,6 +55,7 @@ table.table.table-hover
             tr
               - company = Company.find(offer.com_id)
               td= company.com_name
+             
               - if offer.acc_flag == FALSE
                 td
                   = link_to '辞退', offer,method: :delete, data: {confirm: "削除"},class: 'btn btn-danger'
@@ -63,7 +64,7 @@ table.table.table-hover
                 tr
                   th = CompanyOffer.human_attribute_name(:オファーメッセージ)
                 tr
-                  td= offer.message 
+                  td= offer.message
               - if offer.acc_flag == TRUE && offer.reaction == TRUE
                 td= '承認済み'
                 td= link_to '企業ページへ', com_page_path(offer.com_id),class: 'btn btn-primary mr-3'
@@ -103,3 +104,4 @@ table.table.table-hover
                   input name="password" style=("width:300px; height:30px") type="text"/
               td
                 input type="submit" value="検索" class="btn btn-primary" /
+
