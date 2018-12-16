@@ -78,7 +78,6 @@ ActiveRecord::Schema.define(version: 2018_12_09_000738) do
     t.date "senddate"
     t.boolean "acc_flag"
     t.string "message"
-    t.boolean "reaction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
