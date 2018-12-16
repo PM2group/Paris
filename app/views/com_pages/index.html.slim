@@ -45,8 +45,7 @@ table.table.table-hover
       - if @company_offers
         - @company_offers.each do |offer|
           tr
-            th = CompanyOffer.human_attribute_name(:相手)
-            th = CompanyOffer.human_attribute_name(:メッセージ)
+            th = CompanyOffer.human_attribute_name(:送ったオファー情報)
           tbody
             tr
               - user = User.find(offer.mem_id)
@@ -55,7 +54,10 @@ table.table.table-hover
 
 
                 td= '承認済み'
-              - elsif offer.acc_flag == FALSE
+                td= link_to '学生ページへ', user_page_path(offer.mem_id),class: 'btn btn-primary mr-3'
+              - if offer.acc_flag == TRUE && offer.reaction == FALSE
+                td= '辞退されました'
+              - if offer.acc_flag == FALSE
                 td= '未承認'
                 td= link_to '学生ページへ', user_page_path(offer.mem_id),class: 'btn btn-primary mr-3'
 

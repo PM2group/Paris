@@ -10,8 +10,7 @@ class CompanysController < ApplicationController
   end
 
   def create
-    company = Company.new(company_params)
-
+    @company = Company.new(company_params)
 
     if @company.save
       @company.id = @company.id + 2000000000

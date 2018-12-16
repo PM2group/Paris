@@ -7,13 +7,13 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
-  models:
-    user: 学生
-    company: 企業
-    company_offer: オファー
+    models:
+      user: 学生
+      company: 企業
+      company_offer: オファー
     
-  attributes:
-    chat_page: チャットページ
+    attributes:
+      chat_page: チャットページ
 
         user:
           mem_id: 学生ID
@@ -38,25 +38,25 @@ ja:
           flame_ex: 経験フレームワーク
           updated_at: ログイン日時
 
-    company:
-      com_id: 企業ID
-      com_name: 企業名
-      ocuupations: 職種
-      location: 勤務地
-      com_info: 連絡先
-      condition: 労働条件
-      salary: 初任給
-      password: パスワード
-      password_confirmation: パスワード(確認)
-      frame: フレームワーク
-      lang: 使用言語
-      adoption: 採用ページのURL
-      appeal: アピールポイント
-      system: 開発体制
-      updated_at: ログイン日時
+      company:
+        com_id: 企業ID
+        com_name: 企業名
+        ocuupations: 職種
+        location: 勤務地
+        com_info: 連絡先
+        condition: 労働条件
+        salary: 初任給
+        password: パスワード
+        password_confirmation: パスワード(確認)
+        frame: フレームワーク
+        lang: 使用言語
+        adoption: 採用ページのURL
+        appeal: アピールポイント
+        system: 開発体制
+        updated_at: ログイン日時
 
-    company_offer:
-      message: 文章
+      company_offer:
+        message: 文章
 
   date:
     abbr_day_names:

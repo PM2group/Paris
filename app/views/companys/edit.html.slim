@@ -25,12 +25,6 @@ h1 企業修正画面
     = f.label :"アピールポイント(必須)"
     = f.text_area :appeal, class: 'form-control', id: 'company_appeal'
   .form-group
-    = f.label :"パスワード(必須項目)"
-    = f.password_field :password, class: 'form-control', id: 'company_password'
-  .form-group
-    = f.label :"パスワード確認(必須項目)"
-    = f.password_field :password_confirmation, class: 'form-control', id: 'company_password_confirmation'
-  .form-group
     = f.label :"主な開発言語"
     = f.select :lang,[["-",""],["C言語","C言語"],["Java","Java"],["C++","C++"],["Ruby","Ruby"],["Python","Python"]]
   .form-group

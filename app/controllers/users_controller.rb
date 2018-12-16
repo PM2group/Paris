@@ -20,7 +20,7 @@ class UsersController < ApplicationController
           redirect_to new_user_path, notice:"メールが送れませんでした"
         end
     else
-      redirect_to new_user_path, notice:"項目に誤りがあります"
+      render :new
     end
   end
   
@@ -29,9 +29,12 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = current_user
-    user.update!(user_params)
-    redirect_to user_pages_path, notice: "更新完了"
+    @user = current_user
+    if @user.update(user_params)
+      redirect_to user_pages_path, notice: "更新完了"
+    else
+      render :edit
+    end
   end
   
   def show
