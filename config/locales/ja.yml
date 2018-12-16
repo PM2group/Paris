@@ -15,28 +15,28 @@ ja:
     attributes:
       chat_page: チャットページ
 
-      user:
-        mem_id: 学生ID
-        mem_name: 名前
-        user_name: ユーザ名
-        mem_info: メールアドレス
-        mem_birth: 生年
-        mem_gra: 卒業予定日
-        des_occupation: 希望職種
-        des_location: 希望勤務地
-        password: パスワード
-        password_confirmation: パスワード確認
-        pic: 写真
-        univercity: 所属学校
-        circle: 所属サークル
-        labo: 所属研究室
-        study: 研究内容
-        deliver: 成果物
-        activity: 学外活動
-        qualification: 資格
-        lang_ex: 言語経験
-        flame_ex: 経験フレームワーク
-        updated_at: ログイン日時
+        user:
+          mem_id: 学生ID
+          mem_name: 名前
+          user_name: ユーザ名
+          mem_info: メールアドレス
+          mem_birth: 生年
+          mem_gra: 卒業予定日
+          des_occupation: 希望職種
+          des_location: 希望勤務地
+          password: パスワード
+          password_confirmation: パスワード確認
+          pic: 写真
+          univercity: 所属学校
+          circle: 所属サークル
+          labo: 所属研究室
+          study: 研究内容
+          deliver: 成果物
+          activity: 学外活動
+          qualification: 資格
+          lang_ex: 言語経験
+          flame_ex: 経験フレームワーク
+          updated_at: ログイン日時
 
       company:
         com_id: 企業ID

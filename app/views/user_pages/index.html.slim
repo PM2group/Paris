@@ -67,10 +67,10 @@ table.table.table-hover
                   td= offer.message
               - if offer.acc_flag == TRUE && offer.reaction == TRUE
                 td= '承認済み'
-                td= link_to '企業ページへ', com_page_path(offer.com_id),class: 'btn btn-primary mr-3'
+              td= link_to '企業ページへ', com_page_path(offer.com_id),class: 'btn btn-primary mr-3'
               - if offer.acc_flag == TRUE && offer.reaction == FALSE
                 td= '辞退済み'
-
+ 
       - if current_company
         - if @com.nil?
           = form_with model: @company_offer, local: true do |f|

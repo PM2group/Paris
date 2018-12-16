@@ -40,7 +40,7 @@ table.table.table-hover
   tbody
     tr
       td= @company.appeal
-    tr
+      tr
       th = User.human_attribute_name(:オファー一覧)
       - if @company_offers
         - @company_offers.each do |offer|
@@ -84,3 +84,4 @@ table.table.table-hover
                 |
                 input name="password" style=("width:300px; height:30px") type="text"/
             td= button_to "チャットページへ",login_chat_path,class: 'btn btn-primary mr-3'
+            
