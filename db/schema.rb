@@ -78,9 +78,11 @@ ActiveRecord::Schema.define(version: 2018_12_15_130332) do
     t.date "senddate"
     t.boolean "acc_flag"
     t.string "message"
+    t.boolean "reaction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
 
   create_table "inquiries", force: :cascade do |t|
     t.string "name"

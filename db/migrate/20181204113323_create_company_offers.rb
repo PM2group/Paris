@@ -6,8 +6,10 @@ class CreateCompanyOffers < ActiveRecord::Migration[5.2]
       t.date :senddate
       t.boolean :acc_flag
       t.string :message
-
+      t.boolean :reaction
       t.timestamps
     end
   end
 end
+
+

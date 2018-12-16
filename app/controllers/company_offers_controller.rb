@@ -21,6 +21,7 @@ class CompanyOffersController < ApplicationController
       company_offer.com_id = current_company.id
       company_offer.mem_id = params[:id]
       company_offer.acc_flag = FALSE
+      company_offer.reaction = TRUE
       company_offer.save!
       company.balance -= 1
       company.save!
@@ -43,7 +44,9 @@ class CompanyOffersController < ApplicationController
     
   def destroy
     company_offer = CompanyOffer.find(params[:id])
-    company_offer.destroy
+    company_offer.reaction = FALSE
+    company_offer.acc_flag = TRUE
+    company_offer.save!
     redirect_to user_pages_path
   end
 
