@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   has_secure_password
   validates :mem_name, presence: true, length: {maximum: 20}
-  validates :user_name, presence: true,uniqueness: true, length: {maximum: 10}
-  validates :mem_info, presence: true, length: {maximum: 30}, uniqueness: true,format: {with:/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+  validates :user_name, presence: true, length: {maximum: 10}
+  validates :mem_info, presence: true, length: {maximum: 30}
   validates :mem_birth, presence: true 
   validates :mem_gra, presence: true
   validates :des_occupation, presence: true, length: {maximum: 100}
