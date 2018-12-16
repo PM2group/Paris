@@ -4,8 +4,10 @@ br
 br
 p 受信メッセージ
 .mb-3
-
-= link_to "←戻る",:back
+- if current_user 
+  = link_to  'マイページ', "/user_pages", class: 'btn btn-primary'
+- elsif current_company
+  = link_to  'マイページ', "/com_pages",class: 'btn btn-primary'
 
 table.table.table-hover
   thead.thead-default

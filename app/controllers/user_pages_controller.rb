@@ -20,6 +20,8 @@ class UserPagesController < ApplicationController
       @user = User.find(params[:id])
       company_offers = CompanyOffer.where(mem_id: @user.id)
       @com = company_offers.find_by(com_id: current_company)
+    else
+      @user = User.find(params[:id])
     end
     
   end

@@ -12,10 +12,16 @@ class CompanysController < ApplicationController
   def create
     company = Company.new(company_params)
 
-    if company.save
-      company.id = company.id + 2000000000
-      company.save
-      redirect_to companys_path, notice:"登録完了"
+
+    if @company.save
+      @company.id = @company.id + 2000000000
+      @company.save
+      begin
+        InquiryMailer.send_mail(@company).deliver_now
+        redirect_to companys_path, notice:"登録完了"
+      rescue
+        redirect_to new_company_path, notice:"メールが送れませんでした"
+      end
     else
       redirect_to new_company_path, notice:"項目に誤りがあります"
     end
