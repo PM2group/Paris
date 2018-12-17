@@ -22,6 +22,10 @@ class UserPagesController < ApplicationController
       @com = company_offers.find_by(com_id: current_company)
     else
       @user = User.find(params[:id])
+      if @user.admit == FALSE
+        @user.admit = TRUE
+        @user.save!
+      end   
     end
     
   end
