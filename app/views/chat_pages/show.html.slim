@@ -43,8 +43,17 @@ table.table.table-hover
              input name="report_man" type="hidden" value="#{@report_man}"/
              input name="reported_man" type="hidden" value="#{chat_state.mem_id}"/
            td= button_to "通報する"
+
 - if current_company || current_user
- = form_with model: @chat_state, local: true do |f|
-   .form-group
-     = f.text_area :sentence, cols: 150, class: 'form-controll', id: 'chat_state_sentence'
-   = f.submit '送信', class: 'btn btn-primary'
+  - if@new_mem
+    form action=chat_page_path method="GET"
+      td
+        |
+        input name="join_chat" type="hidden" value="true"/
+      td= button_to "参加する"
+  - else 
+    = form_with model: @chat_state, local: true do |f|
+      .form-group
+      = f.text_area :sentence, cols: 150, class: 'form-controll', id: 'chat_state_sentence'
+      = f.submit '送信', class: 'btn btn-primary'
+             
