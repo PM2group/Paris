@@ -1,8 +1,9 @@
 h1 管理者のページ
-= link_to  '企業検索', "/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=", {class: 'nav-link', style: 'position:relative; top:0%; left:90%; overflow: hidden'}
-= link_to  '学生検索', "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=",  {class: 'nav-link', style: 'position:relative; top:10%; left:90%; overflow: hidden'}
-= link_to  'チャット検索', "/search/chat?s_word=&e_word=&category=&theme=&part=",  {class: 'nav-link', style: 'position:relative; top:20%; left:90%; overflow: hidden'}
-= link_to  'ログアウト', logout_path, method: :delete,class: 'nav-link'
+= link_to  'ログアウト', logout_path, method: :delete,  class: 'btn btn-primary', style: 'position:relative; top:-10%; left:50%; overflow: hidden'
+= link_to  '企業検索', "/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=", {class: 'btn btn-primary', style: 'position:relative; top:0%; left:50%; overflow: hidden'}
+= link_to  '学生検索', "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=",  {class: 'btn btn-primary', style: 'position:relative; top:10%; left:50%; overflow: hidden'}
+= link_to  'チャット検索', "/search/chat?s_word=&e_word=&category=&theme=&part=",  {class: 'btn btn-primary', style: 'position:relative; top:20%; left:50%; overflow: hidden'}
+
 br
 br
 br
@@ -20,9 +21,16 @@ table.table.table-hover
     - @report.each do |report|
       tr
         td= report.id
-        td= link_to report.report_man, "/search/#{}/#{report.report_man}"
-        td= link_to report.reported_man, "/search/#{}/#{report.reported_man}"
-        td= link_to report.report_chat, "/search/chat/#{report.report_chat}"
+        -if (report.report_man.to_i / 1000000000)==1
+          td= link_to report.report_man, "/search/member/#{report.report_man}"
+        -else
+          td= link_to report.report_man, "/search/company/#{report.report_man}"          
+        -if (report.reported_man.to_i / 1000000000)==1
+          td= link_to report.reported_man, "/search/member/#{report.reported_man}"
+        -else
+          td= link_to report.reported_man, "/search/company/#{report.reported_man}"          
+        td= link_to report.report_chat, "/chat_pages/#{report.report_chat}"
+        td= link_to report.report_chat, "/chat_pages/#{report.report_chat}"
         td= link_to '確認', report, method: :delete, data: { confirm:"通報#{report.id}をデータベースから削除します。よろしいですか？"}, type:'button', class: 'btn btn-sm btn-danger'
 
 table.table.table-hover
@@ -34,3 +42,15 @@ table.table.table-hover
      tr
        td= link_to company.com_name,"/search/company/#{company.id}"
        td= link_to '確認完了',company, type:'button', class: 'btn btn-sm btn-primary'
+
+table.table.table-hover
+  thead.thead-default
+    tr
+      th = Company.human_attribute_name(:オファー残高が０の企業ID)
+      th = Company.human_attribute_name(:企業名) 
+  tbody
+    - @additions.each do |addition|
+      tr
+        td= addition.id
+        td= addition.com_name
+        td= link_to 'オファー追加',edit_company_offer_path(addition),data:{ confirm:"オファーを追加しますか?"},class: 'btn btn-primary mr-3'

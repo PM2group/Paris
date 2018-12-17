@@ -37,14 +37,19 @@ table.table.table-hover
          td マイページ
        - if (current_user && current_user.id != chat_state.mem_id) || (current_company && current_company.id != chat_state.mem_id)
          form action=reports_path method="POST"
-           td
-             |
-             input name="report_chat" type="hidden" value="#{@chat_page.id}"/
-             input name="report_man" type="hidden" value="#{@report_man}"/
-             input name="reported_man" type="hidden" value="#{chat_state.mem_id}"/
-           td= button_to "通報する"
+           td= link_to '通報', reports_path(report_chat: @chat_page.id, report_man: @report_man, reported_man: chat_state.mem_id), method: :create, data: { confirm:"通報します。よろしいですか？"}, type:'button', class: 'btn btn-sm btn-danger'
+
+
 - if current_company || current_user
- = form_with model: @chat_state, local: true do |f|
-   .form-group
-     = f.text_area :sentence, cols: 150, class: 'form-controll', id: 'chat_state_sentence'
-   = f.submit '送信', class: 'btn btn-primary'
+  - if@new_mem
+    form action=chat_page_path method="GET"
+      td
+        |
+        input name="join_chat" type="hidden" value="true"/
+      td= button_to "参加する"
+  - else 
+    = form_with model: @chat_state, local: true do |f|
+      .form-group
+      = f.text_area :sentence, cols: 150, class: 'form-controll', id: 'chat_state_sentence'
+      = f.submit '送信', class: 'btn btn-primary'
+             

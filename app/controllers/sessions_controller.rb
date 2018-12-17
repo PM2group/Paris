@@ -13,8 +13,12 @@ class SessionsController < ApplicationController
     super_user = SuperUser.find_by(super_user_name: session_params[:mem_info])
  
     if user&.authenticate(session_params[:password])
-      session[:user_id] = user.id
-      redirect_to user_pages_path, notice: 'ログインしました'
+      if user.admit == TRUE
+        session[:user_id] = user.id
+        redirect_to user_pages_path, notice: 'ログインしました'
+      elsif user.admit == FALSE
+        render :new
+      end
     elsif  super_user&.authenticate(session_params[:password])
       session[:super_user_id] = super_user.id
       redirect_to super_users_path, notice: 'ログインしました'

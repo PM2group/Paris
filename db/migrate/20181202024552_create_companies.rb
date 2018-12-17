@@ -14,6 +14,9 @@ class CreateCompanies < ActiveRecord::Migration[5.2]
       t.text :appeal
       t.string :system
       t.integer :company_id
+      t.integer :balance,default: 30
+      t.boolean :admit
+
 
       t.timestamps
     end

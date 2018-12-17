@@ -1,4 +1,6 @@
 # coding: utf-8
+
+# coding: utf-8
 class UsersController < ApplicationController
   skip_before_action :login_required
   skip_before_action :login_com_required
@@ -11,11 +13,18 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-        @user.id = @user.id + 1000000000
-        @user.save
-        redirect_to users_path, notice:"登録完了"
+      @user.id = @user.id + 1000000000
+      @user.admit = FALSE
+      @user.save
+      begin
+        InquiryMailer.send_mail(@user).deliver_now
+        redirect_to users_path, notice:"メールが送信されました。内容を確認してください"
+      rescue
+        User.where("id = ?", @user.id.to_i).delete_all
+        redirect_to new_user_path, notice:"メールが送れませんでした"
+      end
     else
-      redirect_to new_user_path, notice:"項目に誤りがあります"
+      render :new
     end
   end
   
@@ -24,9 +33,12 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = current_user
-    user.update!(user_params)
-    redirect_to user_pages_path, notice: "更新完了"
+    @user = current_user
+    if @user.update(user_params)
+      redirect_to user_pages_path, notice: "更新完了"
+    else
+      render :edit
+    end
   end
   
   def show

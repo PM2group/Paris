@@ -4,7 +4,6 @@ br
 br
 p 受信メッセージ
 .mb-3
-
 - if current_user
   = link_to "戻る",user_pages_path
   table.table.table-hover
@@ -20,7 +19,10 @@ p 受信メッセージ
           td= messages.mess.first(5) + " ..."
           td= messages.send_date
           td= link_to '詳細', messages, type:'button', class: 'btn btn-sm btn-primary'
-
+- if current_user 
+  = link_to  'マイページ', "/user_pages", class: 'btn btn-primary'
+- elsif current_company
+  = link_to  'マイページ', "/com_pages",class: 'btn btn-primary'
   br
   br
   br

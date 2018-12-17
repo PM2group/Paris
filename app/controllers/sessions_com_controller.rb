@@ -11,8 +11,12 @@ class SessionsComController < ApplicationController
     company = Company.find_by(com_info: session_params[:com_info])
 
     if company&.authenticate(session_params[:password])
-      session[:company_id] = company.id
-      redirect_to com_pages_path, notice: 'ログインしました'
+      if company.admit == TRUE
+        session[:company_id] = company.id
+        redirect_to com_pages_path, notice: 'ログインしました'
+      elsif company.admit == FALSE
+        render :new
+      end
     else
       render :new
     end

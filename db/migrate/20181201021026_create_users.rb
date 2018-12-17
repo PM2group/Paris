@@ -2,7 +2,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
   def change
     create_table :users do |t|
       t.string :mem_name,null: false,limit: 20
-      t.string :user_name,null: false,limit: 10
+      t.string :user_name,null: false,limit: 10, unique: true
       t.string :mem_info, null: false,unique: true,limit: 30
       t.date :mem_birth,null: false
       t.date :mem_gra,null: false
@@ -21,7 +21,8 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :system_ex, limit: 50
       t.string :flame_ex, limit: 50
       t.integer :mem_id
-
+      t.boolean :admit
+      
       t.timestamps
     end
   end
