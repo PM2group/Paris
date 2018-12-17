@@ -21,7 +21,8 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :system_ex, limit: 50
       t.string :flame_ex, limit: 50
       t.integer :mem_id
-
+      t.boolean :admit
+      
       t.timestamps
     end
   end

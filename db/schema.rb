@@ -83,7 +83,6 @@ ActiveRecord::Schema.define(version: 2018_12_15_130332) do
     t.datetime "updated_at", null: false
   end
 
-
   create_table "inquiries", force: :cascade do |t|
     t.string "name"
     t.string "message"
@@ -133,6 +132,7 @@ ActiveRecord::Schema.define(version: 2018_12_15_130332) do
     t.string "system_ex", limit: 50
     t.string "flame_ex", limit: 50
     t.integer "mem_id"
+    t.boolean "admit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
