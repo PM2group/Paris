@@ -8,4 +8,10 @@ class TopsController < ApplicationController
     @chat = ChatPage.order("updated_at DESC").limit(3)
 
   end
+
+  def description
+
+
+    
+  end
 end

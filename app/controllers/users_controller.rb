@@ -1,3 +1,4 @@
+# coding: utf-8
 
 # coding: utf-8
 class UsersController < ApplicationController
@@ -12,14 +13,16 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-        @user.id = @user.id + 1000000000
-        @user.save
-        begin
-          InquiryMailer.send_mail(@user).deliver_now
-          redirect_to users_path, notice:"登録完了"
-        rescue
-          redirect_to new_user_path, notice:"メールが送れませんでした"
-        end
+      @user.id = @user.id + 1000000000
+      @user.admit = FALSE
+      @user.save
+      begin
+        InquiryMailer.send_mail(@user).deliver_now
+        redirect_to users_path, notice:"メールが送信されました。内容を確認してください"
+      rescue
+        User.where("id = ?", @user.id.to_i).delete_all
+        redirect_to new_user_path, notice:"メールが送れませんでした"
+      end
     else
       render :new
     end

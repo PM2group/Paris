@@ -15,6 +15,10 @@ class ComPagesController < ApplicationController
     else
       begin
         @company = Company.find(params[:id])
+        if @company.admit == FALSE
+          @company.admit = TRUE
+          @company.save!
+        end
       rescue
         redirect_back(fallback_location: root_path)
       end

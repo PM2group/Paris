@@ -149,7 +149,7 @@ class SearchController < ApplicationController
     end
 
     if params[:sort] == 0
-      @chat = ChatPage.order("updated_at").where(list)
+      @chat = ChatPage.order("updated_at DESC").where(list)
     elsif params[:sort] == 1
       @chat = ChatPage.order("join_mem").where(list)
     else

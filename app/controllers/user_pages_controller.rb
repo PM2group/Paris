@@ -27,10 +27,14 @@ class UserPagesController < ApplicationController
     else
       begin
         @user = User.find(params[:id])
+        if @user.admit == FALSE
+          @user.admit = TRUE
+          @user.save!
+        end 
       rescue
         redirect_back(fallback_location: root_path)
       end
-    end
+   end
     
   end
 
