@@ -1,3 +1,4 @@
+
 # coding: utf-8
 class UsersController < ApplicationController
   skip_before_action :login_required
@@ -13,7 +14,12 @@ class UsersController < ApplicationController
     if @user.save
         @user.id = @user.id + 1000000000
         @user.save
-        redirect_to users_path, notice:"登録完了"
+        begin
+          InquiryMailer.send_mail(@user).deliver_now
+          redirect_to users_path, notice:"登録完了"
+        rescue
+          redirect_to new_user_path, notice:"メールが送れませんでした"
+        end
     else
       render :new
     end

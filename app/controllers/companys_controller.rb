@@ -15,9 +15,14 @@ class CompanysController < ApplicationController
     if @company.save
       @company.id = @company.id + 2000000000
       @company.save
-      redirect_to companys_path, notice:"登録完了"
+      begin
+        InquiryMailer.send_mail(@company).deliver_now
+        redirect_to companys_path, notice:"登録完了"
+      rescue
+        redirect_to new_company_path, notice:"メールが送れませんでした"
+      end
     else
-      render :new, notice:"項目に誤りがあります"
+      render :new, notice:"項目に誤りがあります"  
     end
   end
 
@@ -31,7 +36,7 @@ class CompanysController < ApplicationController
     if @company.update(company_params)
       redirect_to com_pages_path, notice: "更新完了"
     else
-      render :edit
+      render :edit    
     end
   end
 

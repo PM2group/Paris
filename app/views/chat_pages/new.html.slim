@@ -1,5 +1,9 @@
 h1 チャット作成
-
+- if current_user 
+  = link_to  'マイページ', "/user_pages", class: 'btn btn-primary'
+- elsif current_company
+  = link_to  'マイページ', "/com_pages",class: 'btn btn-primary'
+  
 = form_with model: @chat_page, local: true do |f|
   .form-group
     = f.label :max_mem, '上限人数（必須）'

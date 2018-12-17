@@ -1,15 +1,7 @@
-- if @company.errors.present?
-  ul#error_explanation
-  - @company.errors.full_messages.each do |message|
-      li = message
-
-
-
-
 
 h1 企業修正画面
 .nav.justify-content-end
-  =link_to 'マイページへ',com_pages_path, class: 'nav-link'
+  =link_to 'マイページへ',com_pages_path, class: 'btn btn-primary'
 
 = form_with model: @company,local: true do |f|
   .form-group

@@ -1,5 +1,5 @@
 h1 メッセージ送信
-= link_to "←戻る",:back
+= link_to "←戻る",:back,class: 'btn btn-primary'
 p メッセージは1文字以上500文字以内で入力してください
 = form_with model: @message do |f|
   = f.text_area :mess, placeholder: "メッセージ", rows: 4, cols: 50

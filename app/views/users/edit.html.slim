@@ -1,7 +1,7 @@
 h1 アカウント修正
 
 .nav.justify-content-end
-  = link_to 'マイページへ',user_pages_path, class: 'nav-link'
+  = link_to 'マイページへ',user_pages_path, class: 'btn btn-primary'
 
 - if @user.errors.present?
   ul#error_explanation
@@ -57,4 +57,4 @@ p= @user.mem_birth
     = f.label :"最も得意な言語"
     = f.select :lang_ex,[["-",""],["C言語","C言語"],["Java","Java"],["C++","C++"],["Ruby","Ruby"],["Python","Python"]]
 
-  = f.submit nil, class: 'btn btn-primay'
+= f.submit nil, class: 'btn btn-primay'

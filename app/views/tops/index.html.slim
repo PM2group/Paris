@@ -1,24 +1,24 @@
 h1[style="position:absolute; top:115px; left:110px; width:300px; overflow: hhiden"] トップページ
 
 a[href=login_path]
-    input[type="button" name="login" value="学生ログイン" style="position:absolute; top:115px; left:600px; width:150px; overflow: hhiden"]
+    input[type="button" name="login" value="学生ログイン" style="position:absolute; top:115px; left:600px; width:150px; height:30px; overflow: hhiden" class = "btn btn-primary"]
 a[href=new_user_path]
-    input[type="button" name="create_acc" value="学生新規作成" style="position:absolute; top:145px; left:600px; width:150px; overflow: hhiden"]
+    input[type="button" name="create_acc" value="学生新規作成" style="position:absolute; top:150px; left:600px; width:150px; height:30px; overflow: hhiden" class = "btn btn-primary"]
 a[href=login_com_path]
-    input[type="button" name="login" value="企業ログイン" style="position:absolute; top:115px; left:800px;  width:150px; overflow: hhiden"]
+    input[type="button" name="login" value="企業ログイン" style="position:absolute; top:115px; left:800px;  width:150px; height:30px; overflow: hhiden" class = "btn btn-primary"]
 a[href=new_company_path]
-    input[type="button" name="create_acc" value="企業新規作成" style="position:absolute; top:145px; left:800px; width:150px; overflow: hhiden"]
+    input[type="button" name="create_acc" value="企業新規作成" style="position:absolute; top:150px; left:800px; width:150px; height:30px; overflow: hhiden" class = "btn btn-primary"]
 
 a[href="/"]
-    input[type="button" name="top" value="TOP" style="position:absolute; top:180px; left:100px; width:300px; overflow: hhiden"]
+    input[type="button" name="top" value="TOP" style="position:absolute; top:190px; left:100px; width:300px; overflow: hhiden" class = "btn btn-primary"]
 a[href="/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang="]
-    input[type="button" name="search_com" value="企業検索" style="position:absolute; top:180px; left:400px; width:300px; overflow: hhiden"]
-a[href="/mmmmmmm"]
-    input[type="button" name="" value="サイトについて" style="position:absolute; top:180px; left:700px; width:300px; overflow: hhiden"]
+    input[type="button" name="search_com" value="企業検索" style="position:absolute; top:190px; left:400px; width:300px; overflow: hhiden" class = "btn btn-primary"]
+a[href="/description"]
+    input[type="button" name="" value="サイトについて" style="position:absolute; top:190px; left:700px; width:300px; overflow: hhiden" class = "btn btn-primary"]
 
 h1[style="position:absolute; top:270px; left:250px; width:300px; overflow: hhiden"]新着企業
 p[style="position:absolute; top:330px; left:250px; overflow: hhiden"]
-    - @company = Company.order("updated_at").limit(3)
+    - @company = Company.order("updated_at DESC").limit(3)
     - @company.each do |company|
         a href="search/company/#{company.id}"
             | 名前：#{company.com_name}
@@ -35,7 +35,7 @@ p[style="position:absolute; top:330px; left:250px; overflow: hhiden"]
 
 h1[style="position:absolute; top:270px; left:650px; width:300px; overflow: hhiden"] 新着チャット
 p[style="position:absolute; top:330px; left:650px; overflow: hhiden"]
-    - @chat = ChatPage.order("updated_at").limit(3)
+    - @chat = ChatPage.order("updated_at DESC").limit(3)
     - @chat.each do |chat|
         a href="chat_pages/#{chat.id}"
             | 作成者：#{chat.designer_name}
@@ -45,41 +45,18 @@ p[style="position:absolute; top:330px; left:650px; overflow: hhiden"]
             | 参加人数:#{chat.join_mem}
             br
             | 開催日:#{chat.start_date}
-        br
-        br
+            br
+            - if chat.rec
+                | 参加募集:募集中
+            - else
+                | 参加募集:締め切り
+            br
+            - if (designer_id / 1000000000)==1
+                | 企業書き込み不可
+            - else
+                | 企業書き込み可
+            br
 
-/
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    li.nav-item= link_to  '学生でログイン', login_path, class: 'nav-link'
-    li.nav-item= link_to  '企業でログイン', login_com_path, class: 'nav-link'
-    li.nav-item= link_to  '学生で新規登録', new_user_path, class: 'nav-link'
-    li.nav-item= link_to  '企業で新規登録', new_company_path, class: 'nav-link'
-    li.nav-item= link_to  '企業検索', "/search/company?s_word=&e_word=&occ=&loc=&system=&salary=&frame=&lang=", class: 'nav-link'
-    li.nav-item= link_to  '学生検索', "/search/member?s_word=&e_word=&des_occ=&des_loc=&quali=&univ=&lan_exp=", class: 'nav-link'
-    li.nav-item= link_to  'チャット検索', "search/chat?s_word=&e_word=&category=&theme=&part=", class: 'nav-link'
-    li.nav-item= link_to  'チャット作成', new_chat_page_path, class: 'nav-link'
-    li.nav-item= link_to  'チャット一覧', chat_pages_path, class: 'nav-link'
+
+        br
+        br

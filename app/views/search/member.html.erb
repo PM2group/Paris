@@ -3,7 +3,7 @@
 <% if current_company%>
     <div id = "mypage">
         <a href = "/com_pages">
-            <input type="button" name="mypage" value="マイぺージ" />
+            <input type="button" name="mypage" value="マイぺージ"  class = "btn btn-primary"/>
         </a>
     </div>
 <%end%>
@@ -12,13 +12,14 @@
 
         <div id ="s_word">
         検索ワード
-        <input type="text" name="s_word" style="width:300px; height:30px"/>
-
+        <input type="text" name="s_word" style="width:300px; height:30px" value = <%=@param[:s_word]%> >
+        </input>
         </div>
 
         <div id ="e_word">
         除外ワード
-        <input type="text" name="e_word" style="width:300px; height:30px"/>
+        <input type="text" name="e_word" style="width:300px; height:30px" value = <%=@param[:e_word]%> >
+        </input>
         </div>
 
         <div id ="result">
@@ -137,7 +138,7 @@
         </div>
 
         <div id ="search">
-        <%= button_to "検索" %>
+        <input type="submit" value="検索" class = "btn btn-primary"/>
         </div>
 
     </form>

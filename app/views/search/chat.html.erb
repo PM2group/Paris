@@ -6,18 +6,19 @@
 <%elsif current_company%>
   <a href = "/com_pages">
 <%end%>
-    <input type="button" name="mypage" value="マイぺージ" />
+    <input type="button" name="mypage" value="マイぺージ" class = "btn btn-primary"/>
   </a>
 
 </div>
 
-<form method="GET" action="/search/chat">
+<form method="GET" action="/search/chat" >
 
   <div id ="s_word">
 
     検索ワード
 
-    <input type="text" name="s_word" style="width:300px; height:30px"/>
+    <input type="text" name="s_word" style="width:300px; height:30px" value = <%=@param[:s_word]%> >
+    </input>
 
   </div>
 
@@ -25,8 +26,8 @@
 
     除外ワード
 
-    <input type="text" name="e_word" style="width:300px; height:30px"/>
-
+    <input type="text" name="e_word" style="width:300px; height:30px" value = <%=@param[:e_word]%> >
+    </input>
   </div>
 
   <div id ="result">
@@ -62,13 +63,13 @@
 
 	        </br>
 
-		<input type="radio" name="category" value="21" />
+		<input type="radio" name="category" value="2" />
 
 		企業の終了ディスカッション
 
 		    </br>
 
-		    <input type="radio" name="category" value="22" />
+		    <input type="radio" name="category" value="2" />
 
 		    企業の開催前ディスカッション
 
@@ -113,6 +114,11 @@
             上限人数:<%= chat.max_mem%></br>
             参加人数:<%= chat.join_mem%></br>
             開催日:<%= chat.start_date%>
+            <%if  #{chat.designer_id/1000000000} == 1%>
+            企業書き込み不可
+            <% else %>
+            企業書き込み可
+            <% end %>
             </br>
             </a>
             </br>
@@ -120,8 +126,15 @@
 
   </div>
 
+  <select name="sort" style="position:absolute;top:90px;left:700px;overflow: hidden;">
+  <option value="0" checked="checked">更新日時</option>
+  <option value="1">参加人数</option>
+  <option value="2">上限人数</option>
+  </select>
+
+
   <div id ="search">
-  <%= button_to "検索"%>
+  <input type="submit" value="検索" class = "btn btn-primary"/>
   </div>
 
 </form>
