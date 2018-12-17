@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :super_users
   resources :reports
   #URLをcompanyから変更
+
+  get '/description', to: 'tops#description'
+
   get 'search/member/:id', to: 'user_pages#index'
   post 'search/member/:id', to: 'company_offers#create'
   
