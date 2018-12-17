@@ -5,12 +5,17 @@ class MessagesController < ApplicationController
   def index
     if current_user
       @user = current_user
+      @messages = Message.where(reception_id: @user.id)
+      @messages2 = Message.where(send_id: @user.id)
+      @sender = Company.where(id: @messages.pluck(:send_id))
+      @sender2 = Company.where(id: @messages2.pluck(:reception_id))
     else
       @user = current_company
+      @messages = Message.where(reception_id: @user.id)
+      @messages2 = Message.where(send_id: @user.id)
+      @sender = User.where(id: @messages.pluck(:send_id))
+      @sender2 = User.where(id: @messages2.pluck(:reception_id))
     end
-    
-    @messages = Message.where(reception_id: @user.id)
-    @messages2 = Message.where(send_id: @user.id)
   end
 
   def show
