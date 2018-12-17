@@ -14,6 +14,10 @@ class ComPagesController < ApplicationController
       @use = CompanyOffer.find_by(mem_id: current_user)
     else
       @company = Company.find(params[:id])
+      if @company.admit == FALSE
+      @company.admit = TRUE
+      @company.save!
+      end
     end
   end
 

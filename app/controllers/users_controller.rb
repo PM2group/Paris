@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       @user.save
       begin
         InquiryMailer.send_mail(@user).deliver_now
-        redirect_to users_path, notice:"登録完了"
+        redirect_to users_path, notice:"メールが送信されました。内容を確認してください"
       rescue
         redirect_to new_user_path, notice:"メールが送れませんでした"
       end

@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 2018_12_15_130332) do
     t.string "system"
     t.integer "company_id"
     t.integer "balance", default: 30
+    t.boolean "admit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
