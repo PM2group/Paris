@@ -36,6 +36,8 @@ class ChatPagesController < ApplicationController
         end
         @chat_page.save
         redirect_to chat_page_path(@chat_page), notice: "チャットに参加しました" and return
+      else
+        redirect_to chat_page_path(@chat_page), notice: "上限人数です" and return
       end
     end
 
@@ -65,13 +67,19 @@ class ChatPagesController < ApplicationController
 
     @chat_page = ChatPage.new(chat_page_params)
 
+    if @chat_page.max_mem.nil?
+      redirect_to new_chat_page_path, notice: "上限人数が入力されていません" and return
+    end 
+
     if @chat_page.start_date.nil?
       redirect_to new_chat_page_path, notice: "開催日時が入力されていません" and return
     end
 
-    if @chat_page.max_mem.nil?
-      redirect_to new_chat_page_path, notice: "最大人数が入力されていません" and return
-    end 
+    unless @chat_page.finish_date.nil?
+      if @chat_page.start_date > @chat_page.finish_date
+          redirect_to new_chat_page_path, notice: "終了日時が開催日時より前になっています" and return
+      end
+    end
     
     if @chat_page.theme.empty?
       redirect_to new_chat_page_path, notice: "テーマが入力されていません" and return

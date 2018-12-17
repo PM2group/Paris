@@ -13,7 +13,11 @@ class ComPagesController < ApplicationController
       @company = Company.find(params[:id])
       @use = CompanyOffer.find_by(mem_id: current_user)
     else
-      @company = Company.find(params[:id])
+      begin
+        @company = Company.find(params[:id])
+      rescue
+        redirect_back(fallback_location: root_path)
+      end
     end
   end
 
