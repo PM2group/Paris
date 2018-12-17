@@ -14,19 +14,27 @@ class UserPagesController < ApplicationController
           @companys = Company.where(id: company_offer.com_id)
         end
       else
-        @user = User.find(params[:id])
+        begin
+          @user = User.find(params[:id])
+        rescue
+          redirect_back(fallback_location: root_path)
+        end
       end
     elsif current_company
       @user = User.find(params[:id])
       company_offers = CompanyOffer.where(mem_id: @user.id)
       @com = company_offers.find_by(com_id: current_company)
     else
-      @user = User.find(params[:id])
-      if @user.admit == FALSE
-        @user.admit = TRUE
-        @user.save!
-      end   
-    end
+      begin
+        @user = User.find(params[:id])
+        if @user.admit == FALSE
+          @user.admit = TRUE
+          @user.save!
+        end 
+      rescue
+        redirect_back(fallback_location: root_path)
+      end
+   end
     
   end
 

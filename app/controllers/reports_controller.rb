@@ -31,7 +31,7 @@ class ReportsController < ApplicationController
     @report.report_man = params[:report_man]
     @report.reported_man = params[:reported_man]
     if @report.save
-      redirect_to chat_page_path(@report.report_chat)
+      redirect_to chat_page_path(@report.report_chat), notice:"通報しました"
     else
       redirect_to chat_page_path(@report.report_chat)
     end

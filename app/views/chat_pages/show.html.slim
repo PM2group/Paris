@@ -37,12 +37,8 @@ table.table.table-hover
          td マイページ
        - if (current_user && current_user.id != chat_state.mem_id) || (current_company && current_company.id != chat_state.mem_id)
          form action=reports_path method="POST"
-           td
-             |
-             input name="report_chat" type="hidden" value="#{@chat_page.id}"/
-             input name="report_man" type="hidden" value="#{@report_man}"/
-             input name="reported_man" type="hidden" value="#{chat_state.mem_id}"/
-           td= button_to "通報する"
+           td= link_to '通報', reports_path(report_chat: @chat_page.id, report_man: @report_man, reported_man: @reported_man), method: :create, data: { confirm:"通報します。よろしいですか？"}, type:'button', class: 'btn btn-sm btn-danger'
+
 
 - if current_company || current_user
   - if@new_mem
