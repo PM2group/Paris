@@ -30,9 +30,11 @@ table.table.table-hover
     tr
       th = Company.human_attribute_name(:会社名)
       th = Company.human_attribute_name(:職種)
-      th = Company.human_attribute_name(:場所)
+      th = Company.human_attribute_name(:勤務地)
       th = Company.human_attribute_name(:開発言語)
       th = Company.human_attribute_name(:フレームワーク)
+      th = Company.human_attribute_name(:開発体制)
+      th = Company.human_attribute_name(:初任給)
   tbody
     tr
       td= @company.com_name
@@ -40,6 +42,14 @@ table.table.table-hover
       td= @company.location
       td= @company.lang
       td= @company.frame
+      td= @company.system
+      td= @company.salary
+    tr
+      th = Company.human_attribute_name(:労働条件)
+  tbody
+    tr
+      td= @company.condition
+    
     tr
       th = Company.human_attribute_name(:アピールポイント)
   tbody
@@ -90,3 +100,8 @@ table.table.table-hover
                 input name="password" style=("width:300px; height:30px") type="text"/
             td= button_to "チャットページへ",login_chat_path,class: 'btn btn-primary mr-3'
             
+    tr
+      th = Company.human_attribute_name(:採用ページurl)
+  tbody
+    tr
+      td= @company.adoption
