@@ -5,9 +5,7 @@ class InquiryMailer < ApplicationMailer
         if inquiry.com_info.nil?
         mail(
           from: 'send.mail.0420@gmail.com',
-          to:   inquiry.mem_info,
-
-          
+          to:   inquiry.mem_info,      
           subject: 'アカウント登録について'
         )
         else
