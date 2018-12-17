@@ -18,6 +18,7 @@ class UsersController < ApplicationController
           InquiryMailer.send_mail(@user).deliver_now
           redirect_to users_path, notice:"登録完了"
         rescue
+          User.where("id = ?", @user.id.to_i).delete_all
           redirect_to new_user_path, notice:"メールが送れませんでした"
         end
     else
