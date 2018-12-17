@@ -27,26 +27,64 @@ h1 ユーザ情報
 table.table.table-hover
   thead.thead-default
     tr
-      th = User.human_attribute_name(:名前)
       th = User.human_attribute_name(:ユーザ名)
       th = User.human_attribute_name(:希望職)
       th = User.human_attribute_name(:志望勤務地)
-      th = User.human_attribute_name(:研究内容)
-      th = User.human_attribute_name(:学外活動)
-      th = User.human_attribute_name(:資格)
-      th = User.human_attribute_name(:言語経験)
-      th = User.human_attribute_name(:経験開発体制)
+      th = User.human_attribute_name(:学校名)
+      th = User.human_attribute_name(:所属サークル)
+      th = User.human_attribute_name(:卒業予定日)
+
   tbody
     tr
-      td= @user.mem_name
       td= @user.user_name
       td= @user.des_occupation
       td= @user.des_location
-      td= @user.study
-      td= @user.activity
+      td= @user.univercity
+      td= @user.circle
+      td= @user.mem_gra
+
+    
+
+    tr
+      th = User.human_attribute_name(:資格)
+      th = User.human_attribute_name(:言語経験)
+      th = User.human_attribute_name(:経験開発体制)
+      th = User.human_attribute_name(:経験フレームワーク)
+  tbody
+    tr
       td= @user.qualification
       td= @user.lang_ex
       td= @user.system_ex
+      td= @user.flame_ex
+    
+    br
+
+    tr
+      th = User.human_attribute_name(:所属研究室)
+  tbody
+    tr
+      td= @user.labo
+
+    tr  
+      th = User.human_attribute_name(:研究内容)
+  tbody
+    tr
+      td= @user.study
+
+    tr
+      th = User.human_attribute_name(:学外活動)
+  tbody
+    tr
+      td= @user.activity
+
+
+    tr
+      th = User.human_attribute_name(:成果物url)
+  tbody
+    tr
+      td= @user.deliver
+
+
     tr
       th = User.human_attribute_name(:オファー一覧)
       - if @company_offers
