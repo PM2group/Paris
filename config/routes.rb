@@ -10,12 +10,12 @@ Rails.application.routes.draw do
   get 'search/member/:id', to: 'user_pages#index'
   post 'search/member/:id', to: 'company_offers#create'
   
+  get 'search/company/:id', to: 'com_pages#index'
+
   get 'search/member/message/new/:id', to: 'messages#new'
   post 'search/member/message/new/:id', to: 'messages#create'
   get 'search/company/message/new/:id', to: 'messages#new'
   post 'search/company/message/new/:id', to: 'messages#create'
-
-  get 'search/company/:id', to: 'com_pages#index'
   
   get 'search/member' => 'search#member'
   get 'search/company' => 'search#company'
