@@ -20,6 +20,7 @@ class CompanysController < ApplicationController
         InquiryMailer.send_mail(@company).deliver_now
         redirect_to companys_path, notice:"メールが送信されました。内容を確認してください"
       rescue
+        Company.where("id = ?", @company.id.to_i).delete_all
         redirect_to new_company_path, notice:"メールが送れませんでした"
       end
     else
