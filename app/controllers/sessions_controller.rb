@@ -17,13 +17,13 @@ class SessionsController < ApplicationController
         session[:user_id] = user.id
         redirect_to user_pages_path, notice: 'ログインしました'
       elsif user.admit == FALSE
-        render :new
+        redirect_to ({:action => 'new'}), :notice => 'メールアドレス、パスワードに誤りがあります'
       end
     elsif  super_user&.authenticate(session_params[:password])
       session[:super_user_id] = super_user.id
       redirect_to super_users_path, notice: 'ログインしました'
     else
-      render :new
+       redirect_to ({:action => 'new'}), :notice => 'メールアドレス、パスワードに誤りがあります'
     end
   end
 

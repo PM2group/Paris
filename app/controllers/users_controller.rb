@@ -11,6 +11,14 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    unless @user.mem_birth.nil?
+      unless @user.mem_gra.nil? 
+        if @user.mem_birth > @user.mem_gra.years_ago(23) 
+          redirect_to new_user_path, notice:"誕生日と卒業年に誤りがあります"and return
+        end
+      end
+    end
+
 
     if @user.save
       @user.id = @user.id + 1000000000

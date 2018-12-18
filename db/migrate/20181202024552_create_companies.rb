@@ -12,10 +12,11 @@ class CreateCompanies < ActiveRecord::Migration[5.2]
       t.string :lang
       t.string :adoption
       t.text :appeal
-      t.string :system
+      t.string :system_ex
       t.integer :company_id
       t.integer :balance,default: 30
       t.boolean :admit
+      t.string :bank,null: false
       t.boolean :commitment
 
 

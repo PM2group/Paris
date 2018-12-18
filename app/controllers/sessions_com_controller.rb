@@ -15,10 +15,10 @@ class SessionsComController < ApplicationController
         session[:company_id] = company.id
         redirect_to com_pages_path, notice: 'ログインしました'
       elsif company.admit == FALSE
-        render :new
+        redirect_to ({:action => 'new'}), :notice => 'メールアドレス、パスワードに誤りがあります'
       end
     else
-      render :new
+      redirect_to ({:action => 'new'}), :notice => 'メールアドレス、パスワードに誤りがあります'
     end
   end
 
