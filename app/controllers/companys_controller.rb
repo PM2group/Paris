@@ -16,6 +16,7 @@ class CompanysController < ApplicationController
       @company.id = @company.id + 2000000000
       @company.admit = FALSE
       @company.save
+
       begin
         InquiryMailer.send_mail(@company).deliver_now
         redirect_to companys_path, notice:"メールが送信されました。内容を確認してください"

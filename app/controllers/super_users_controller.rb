@@ -6,7 +6,7 @@ class SuperUsersController < ApplicationController
   def index
     
     @report = Report.all
-    @company = Company.all
+    @company = Company.where("admit = TRUE")
     #@report.each 通報崎のurlしてい
 
     @additions = Company.where(balance: 0)  

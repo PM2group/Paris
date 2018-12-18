@@ -41,7 +41,7 @@ table.table.table-hover
    - @company.each do |company|
      tr
        td= link_to company.com_name,"/search/company/#{company.id}"
-       td= link_to '確認完了',company, type:'button', class: 'btn btn-sm btn-primary'
+       td= link_to '確認完了',"/super_users", type:'button', class: 'btn btn-sm btn-primary'
 
 table.table.table-hover
   thead.thead-default
