@@ -33,7 +33,7 @@ table.table.table-hover
       th = Company.human_attribute_name(:勤務地)
       th = Company.human_attribute_name(:開発言語)
       th = Company.human_attribute_name(:フレームワーク)
-      th = Company.human_attribute_name(:開発体制)
+      /th = Company.human_attribute_name(:開発体制)
       th = Company.human_attribute_name(:初任給)
   tbody
     tr
@@ -42,7 +42,7 @@ table.table.table-hover
       td= @company.location
       td= @company.lang
       td= @company.frame
-      td= @company.system
+      /td= @company.system
       td= @company.salary
     tr
       th = Company.human_attribute_name(:労働条件)
