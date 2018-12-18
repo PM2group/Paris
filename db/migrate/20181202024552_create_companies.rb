@@ -16,7 +16,7 @@ class CreateCompanies < ActiveRecord::Migration[5.2]
       t.integer :company_id
       t.integer :balance,default: 30
       t.boolean :admit
-      t.string :bank
+      t.string :bank,null: false
 
 
       t.timestamps
