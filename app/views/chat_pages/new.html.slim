@@ -7,22 +7,18 @@ h1 チャット作成
 = form_with model: @chat_page, local: true do |f|
   .form-group
     = f.label :max_mem, '上限人数（必須）'
-    = f.text_field :max_mem, class: 'form-controll', id: 'chat_page_max_mem'
+    = f.number_field :max_mem, class: 'form-controll', id: 'chat_page_max_mem'
   .form-group
     = f.label :start_date, '開催日時（必須）'
     = f.date_field :start_date, class: 'form-controll', id: 'chat_page_start_date'
   .form-group
     = f.label :finish_date, '終了日時'
     = f.date_field :finish_date, class: 'form-controll', id: 'chat_page_finish_date'
-  .form-group
-    = f.label :password, 'パスワード'
-    = f.text_field :password, class: 'form-controll', id: 'chat_page_password'
-  .form-check
-    = f.radio_button :readable, true, class: 'form-check-input', id: 'chat_page_max_mem'
-    = f.label :readable, '公開', class: 'form-check-label'
-  .form-check
-    = f.radio_button :readable, false, class: 'form-check-input', id: 'chat_page_max_mem'
-    = f.label :readable, '非公開', class: 'form-check-label'    
+  - if current_company
+    .form-group
+      = f.label :password, 'パスワード'
+      = f.text_field :password, class: 'form-controll', placeholder: '半角英数字・記号のみ', id: 'chat_page_password'
+
   .form-group
     = f.label :theme, 'テーマ（必須）'
     = f.text_area :theme, rows: 3, cols: 40, class: 'form-controll', id: 'chat_page_theme'

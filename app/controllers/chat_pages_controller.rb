@@ -110,11 +110,11 @@ class ChatPagesController < ApplicationController
 
     @chat_page.period = Date.today
 
-    if !@chat_page.password.empty?
+    if !@chat_page.password.blank?
       @chat_page.readable = false
     end
 
-    @chat_page.update = Date.today
+    @chat_page.update_date = Date.today
 
     unless @chat_page.finish_date.nil?
       if @chat_page.start_date > @chat_page.finish_date

@@ -15,6 +15,7 @@ class CompanysController < ApplicationController
     if @company.save
       @company.id = @company.id + 2000000000
       @company.admit = FALSE
+      @company.commitment = FALSE
       @company.save
 
       begin
@@ -48,6 +49,13 @@ class CompanysController < ApplicationController
 
   def index
     
+  end
+
+  def destroy
+    company = Company.find(params[:id])
+    company.commitment = TRUE
+    company.save
+    redirect_to super_users_url, notice: "承認しました"
   end
 
   private

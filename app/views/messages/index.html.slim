@@ -1,4 +1,8 @@
 h1 メッセージ一覧
+- if current_user
+  = link_to  'マイページ', "/user_pages", class: 'btn btn-primary'
+- elsif current_company
+  = link_to  'マイページ', "/com_pages",class: 'btn btn-primary'
 br
 br
 br
@@ -12,16 +16,14 @@ p 受信メッセージ
         th = Message.human_attribute_name(:内容)
         th = Message.human_attribute_name(:受信日時)
     tbody
-      - @messages.zip(@sender).each do |messages, sender|
+      - @messages.each do |messages|
+        - sender = Company.find(messages.send_id)
         tr
           td= sender.com_name
           td= messages.mess.first(5) + " ..."
           td= messages.send_date
           td= link_to '詳細', messages, type:'button', class: 'btn btn-sm btn-primary'
-- if current_user 
-  = link_to  'マイページ', "/user_pages", class: 'btn btn-primary'
-- elsif current_company
-  = link_to  'マイページ', "/com_pages",class: 'btn btn-primary'
+
   br
   br
   br
@@ -33,7 +35,8 @@ p 受信メッセージ
         th = Message.human_attribute_name(:内容)
         th = Message.human_attribute_name(:受信日時)
     tbody
-      - @messages2.zip(@sender2).each do |messages2, sender2|
+      - @messages2.each do |messages2|
+        - sender2 = Company.find(messages2.reception_id)
         tr
           td= sender2.com_name
           td= messages2.mess.first(5) + " ..."
@@ -41,7 +44,6 @@ p 受信メッセージ
           td= link_to '詳細', messages2, type:'button', class: 'btn btn-sm btn-primary'
 
 - elsif current_company
-  = link_to "戻る",com_pages_path
   table.table.table-hover
     thead.thead-default
       tr
@@ -49,7 +51,8 @@ p 受信メッセージ
         th = Message.human_attribute_name(:内容)
         th = Message.human_attribute_name(:受信日時)
     tbody
-      - @messages.zip(@sender).each do |messages, sender|
+      - @messages.each do |messages|
+        - sender = User.find(messages.send_id)
         tr
           td= sender.user_name
           td= messages.mess.first(5) + " ..."
@@ -67,9 +70,10 @@ p 受信メッセージ
         th = Message.human_attribute_name(:内容)
         th = Message.human_attribute_name(:受信日時)
     tbody
-      - @messages2.zip(@sender2).each do |messages2, sender2|
+      - @messages2.each do |messages2|
+        - sender = User.find(messages2.reception_id)
         tr
-          td= sender2.user_name
+          td= sender.user_name
           td= messages2.mess.first(5) + " ..."
           td= messages2.send_date
           td= link_to '詳細', messages2, type:'button', class: 'btn btn-sm btn-primary'

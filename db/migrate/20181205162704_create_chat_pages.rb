@@ -14,7 +14,7 @@ class CreateChatPages < ActiveRecord::Migration[5.2]
       t.boolean :readable, default:true
       t.string :password, limit:30
       t.string :page_url
-      t.date :update, null:false
+      t.date :update_date, null:false
 
       t.timestamps
     end
