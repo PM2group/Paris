@@ -6,6 +6,12 @@
             <input type="button" name="mypage" value="マイぺージ"  class = "btn btn-primary"/>
         </a>
     </div>
+<% elsif current_super_user%>
+    <div id = "mypage">
+        <a href = "/super_users">
+            <input type="button" name="mypage" value="マイぺージ"  class = "btn btn-primary"/>
+        </a>
+    </div>
 <%end%>
 
     <form method="GET" action="/search/member">
