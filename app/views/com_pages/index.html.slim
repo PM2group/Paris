@@ -35,6 +35,7 @@ table.table.table-hover
       th = Company.human_attribute_name(:フレームワーク)
       /th = Company.human_attribute_name(:開発体制)
       th = Company.human_attribute_name(:初任給)
+      th = Company.human_attribute_name(:オファー残高)
   tbody
     tr
       td= @company.com_name
@@ -44,6 +45,7 @@ table.table.table-hover
       td= @company.frame
       /td= @company.system
       td= @company.salary
+      td= @company.balance
     tr
       th = Company.human_attribute_name(:労働条件)
   tbody

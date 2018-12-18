@@ -17,27 +17,4 @@ class InquiryMailer < ApplicationMailer
         end
     end
 
-    def offer_mail(inquiry)
-        @inquiry = inquiry
-
-        mail(
-          from: 'send.mail.0420@gmail.com',
-          to:   inquiry.mem_info,      
-          subject: 'オファー希望が来ました'
-        )
-
-    end
-
-    def approval_mail(inquiry)
-        @inquiry = inquiry
-
-        mail(
-            from: 'send.mail.0420@gmail.com',
-            to:   inquiry.com_info,      
-            subject: "オファー承認されました"
-            )
-
-    end
-      
-
 end
