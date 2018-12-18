@@ -9,13 +9,13 @@ class SearchController < ApplicationController
     @param = params
 
     unless params[:s_word].empty? then
-      list[0].concat(" AND concat(univercity) LIKE ?")
+      list[0].concat(" AND concat(des_occupation,des_location,univercity,lang_ex) LIKE ?")
       s_word = "%" + params[:s_word] + "%"
       list.push(s_word)
     end
 
     unless params[:e_word].empty? then
-      list[0].concat(" AND univercity NOT LIKE ?")
+      list[0].concat(" AND concat(des_occupation,des_location,univercity,lang_ex) NOT LIKE ?")
       e_word = "%" + params[:e_word] + "%"
       list.push(e_word)
     end
