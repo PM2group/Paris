@@ -65,10 +65,11 @@ ActiveRecord::Schema.define(version: 2018_12_18_075651) do
     t.string "lang"
     t.string "adoption"
     t.text "appeal"
-    t.string "system"
+    t.string "system_ex"
     t.integer "company_id"
     t.integer "balance", default: 30
     t.boolean "admit"
+    t.string "bank", null: false
     t.boolean "commitment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

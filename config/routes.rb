@@ -44,6 +44,8 @@ Rails.application.routes.draw do
   post '/user_pages/:id', to: 'user_pages#index'
   
   root to: 'tops#index'
+
+
   resources :users
   resources :user_pages, except: [:delete]
   resources :companys

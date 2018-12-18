@@ -58,7 +58,7 @@ class CompanysController < ApplicationController
 
   private
   def company_params
-    params.require(:company).permit(:com_name,:occupations,:location,:com_info,:condition,:salary,:password,:password_confirmation,:frame,:lang,:adoption,:system,:appeal,:bank)
+    params.require(:company).permit(:com_name,:occupations,:location,:com_info,:condition,:salary,:password,:password_confirmation,:frame,:lang,:adoption,:system_ex,:appeal,:bank)
   end
   
 end

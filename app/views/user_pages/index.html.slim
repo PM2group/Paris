@@ -115,11 +115,12 @@ table.table.table-hover
  
       - if current_company
         - if @com.nil?
-          = form_with model: @company_offer, local: true do |f|
-            .form-group
-              = f.label :オファー内容
-              = f.text_area :message, {class: 'form-control', rows: "5",maxlength: "250"}
-              = f.submit "送信", class: 'btn btn-primary'
+          - if current_company.commitment == TRUE
+           = form_with model: @company_offer, local: true do |f|
+              .form-group
+                = f.label :オファー内容
+                = f.text_area :message, {class: 'form-control', rows: "5",maxlength: "250"}
+                = f.submit "送信", class: 'btn btn-primary'
 
 
 .mb-3
