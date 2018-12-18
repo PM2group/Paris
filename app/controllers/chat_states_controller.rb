@@ -28,7 +28,7 @@ class ChatStatesController < ApplicationController
     end
     @chat_state.remark_date = Date.today
     @chat_join_mems = @chat_page.chat_join_mems.all
-    @chat_page.update = Date.today
+    @chat_page.update_date = Date.today
 
     if @chat_state.save
       redirect_to chat_page_path(@chat_page), notice: "送信しました"

@@ -32,6 +32,14 @@ class SuperUsersController < ApplicationController
       company_offers.each do |offer|
         offer.destroy
       end
+      reported_mans = Report.where(reported_man: user.id)
+      reported_mans.each do |reported_man|
+        reported_man.destroy
+      end
+      report_mans = Report.where(report_man: user.id)
+      report_mans.each do |report_man|
+        report_man.destroy
+      end
       user.destroy
       redirect_to super_users_url, notice: "アカウントID[#{params[:id]}]を削除しました"
     elsif (params[:id].to_i / 1000000000)==2
@@ -39,6 +47,14 @@ class SuperUsersController < ApplicationController
       company_offers = CompanyOffer.where(com_id: com.id)
       company_offers.each do |offer|
         offer.destroy
+      end
+      reported_mans = Report.where(reported_man: com.id)
+      reported_mans.each do |reported_man|
+        reported_man.destroy
+      end
+      report_mans = Report.where(report_man: com.id)
+      report_mans.each do |report_man|
+        report_man.destroy
       end
       com.destroy
       redirect_to super_users_url, notice: "アカウントID[#{params[:id]}]を削除しました"

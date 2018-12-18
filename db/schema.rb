@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2018_12_15_130332) do
     t.boolean "readable", default: true
     t.string "password", limit: 30
     t.string "page_url"
-    t.date "update", null: false
+    t.date "update_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
