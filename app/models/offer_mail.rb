@@ -1,0 +1,2 @@
+class OfferMail < ApplicationRecord
+end
