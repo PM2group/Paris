@@ -17,6 +17,7 @@ class CreateCompanies < ActiveRecord::Migration[5.2]
       t.integer :balance,default: 30
       t.boolean :admit
       t.string :bank,null: false
+      t.boolean :commitment
 
 
       t.timestamps

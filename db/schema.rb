@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_15_130332) do
+ActiveRecord::Schema.define(version: 2018_12_18_075651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2018_12_15_130332) do
     t.boolean "readable", default: true
     t.string "password", limit: 30
     t.string "page_url"
-    t.date "update", null: false
+    t.date "update_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2018_12_15_130332) do
     t.integer "company_id"
     t.integer "balance", default: 30
     t.boolean "admit"
+    t.boolean "commitment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -94,6 +95,13 @@ ActiveRecord::Schema.define(version: 2018_12_15_130332) do
     t.integer "reception_id"
     t.text "mess"
     t.date "send_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "offer_mails", force: :cascade do |t|
+    t.string "name"
+    t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

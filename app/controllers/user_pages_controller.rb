@@ -51,7 +51,17 @@ class UserPagesController < ApplicationController
     company_offer = CompanyOffer.find(params[:id])
     company_offer.acc_flag = TRUE
     company_offer.save
-    redirect_to user_pages_path, notice: "更新"
+    begin
+      @off = Company.new
+      @off = Company.find(company_offer.com_id)
+      OfferMailMailer.o_mail(@off).deliver_now
+      redirect_to user_pages_path, notice: "更新"
+    rescue
+      company_offer = CompanyOffer.find(params[:id])
+      company_offer.acc_flag = FALSE
+      company_offer.save
+      redirect_to user_pages_path, notice: "返信できませんした"
+    end
   end
 
   def create

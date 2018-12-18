@@ -9,13 +9,13 @@ class SearchController < ApplicationController
     @param = params
 
     unless params[:s_word].empty? then
-      list[0].concat(" AND univercity LIKE ?")
+      list[0].concat(" AND concat(des_occupation,des_location,univercity,lang_ex) LIKE ?")
       s_word = "%" + params[:s_word] + "%"
       list.push(s_word)
     end
 
     unless params[:e_word].empty? then
-      list[0].concat(" AND univercity NOT LIKE ?")
+      list[0].concat(" AND concat(des_occupation,des_location,univercity,lang_ex) NOT LIKE ?")
       e_word = "%" + params[:e_word] + "%"
       list.push(e_word)
     end
@@ -149,11 +149,14 @@ class SearchController < ApplicationController
     end
 
     if params[:sort] == 0
-      @chat = ChatPage.order("updated_at DESC").where(list)
+      @chat = ChatPage.where(list)
+      @chat = @chat.order("updated_at DESC")
     elsif params[:sort] == 1
-      @chat = ChatPage.order("join_mem").where(list)
+      @chat = ChatPage.where(list)
+      @chat = @chat.order("join_mem DESC")
     else
-      @chat = ChatPage.order("max_mem").where(list)
+      @chat = ChatPage.where(list)
+      @chat = @chat.order("max_mem DESC")
     end
   end
 

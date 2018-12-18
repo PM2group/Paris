@@ -25,7 +25,17 @@ class CompanyOffersController < ApplicationController
       company_offer.save!
       company.balance -= 1
       company.save!
-      redirect_to com_pages_path
+      begin
+
+        @off = User.new
+        @off = User.find(params[:id].to_i)
+        OfferMailMailer.o_mail(@off).deliver_now
+        redirect_to com_pages_path
+      rescue
+        redirect_to "/search/member/#{params[:id]}", notice:"オファーが送れませんでした"
+      end
+
+      
 
     elsif current_company.balance == 0
       redirect_to company_offers_path

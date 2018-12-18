@@ -33,8 +33,9 @@ table.table.table-hover
       th = Company.human_attribute_name(:勤務地)
       th = Company.human_attribute_name(:開発言語)
       th = Company.human_attribute_name(:フレームワーク)
-      th = Company.human_attribute_name(:開発体制)
+      /th = Company.human_attribute_name(:開発体制)
       th = Company.human_attribute_name(:初任給)
+      th = Company.human_attribute_name(:オファー残高)
   tbody
     tr
       td= @company.com_name
@@ -42,8 +43,9 @@ table.table.table-hover
       td= @company.location
       td= @company.lang
       td= @company.frame
-      td= @company.system
+      /td= @company.system
       td= @company.salary
+      td= @company.balance
     tr
       th = Company.human_attribute_name(:労働条件)
   tbody
@@ -82,6 +84,7 @@ table.table.table-hover
     tr
       th 作成したディスカッション一覧
       th パスワード
+      th 更新日時
       th
   tbody
     - @chat_pages.each do |chat_page|
@@ -98,6 +101,7 @@ table.table.table-hover
               td
                 |
                 input name="password" style=("width:300px; height:30px") type="text"/
+            td #{chat_page.update_date}
             td= button_to "チャットページへ",login_chat_path,class: 'btn btn-primary mr-3'
             
     tr

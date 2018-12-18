@@ -16,6 +16,5 @@ class InquiryMailer < ApplicationMailer
         )
         end
     end
-      
 
 end

@@ -32,7 +32,8 @@ table.table.table-hover
         td= link_to report.report_chat, "/chat_pages/#{report.report_chat}"
         td= link_to report.report_chat, "/chat_pages/#{report.report_chat}"
         td= link_to '確認', report, method: :delete, data: { confirm:"通報#{report.id}をデータベースから削除します。よろしいですか？"}, type:'button', class: 'btn btn-sm btn-danger'
-
+br
+br
 table.table.table-hover
  thead.thead-default
    tr
@@ -41,8 +42,9 @@ table.table.table-hover
    - @company.each do |company|
      tr
        td= link_to company.com_name,"/search/company/#{company.id}"
-       td= link_to '確認完了',company, type:'button', class: 'btn btn-sm btn-primary'
-
+       td= link_to '確認完了',company,method: :delete, type:'button', class: 'btn btn-sm btn-primary'
+br
+br
 table.table.table-hover
   thead.thead-default
     tr

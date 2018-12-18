@@ -1,6 +1,4 @@
 # coding: utf-8
-
-# coding: utf-8
 class CompanysController < ApplicationController
   skip_before_action :login_required
   skip_before_action :login_com_required
@@ -15,7 +13,9 @@ class CompanysController < ApplicationController
     if @company.save
       @company.id = @company.id + 2000000000
       @company.admit = FALSE
+      @company.commitment = FALSE
       @company.save
+
       begin
         InquiryMailer.send_mail(@company).deliver_now
         redirect_to companys_path, notice:"メールが送信されました。内容を確認してください"
@@ -47,6 +47,13 @@ class CompanysController < ApplicationController
 
   def index
     
+  end
+
+  def destroy
+    company = Company.find(params[:id])
+    company.commitment = TRUE
+    company.save
+    redirect_to super_users_url, notice: "承認しました"
   end
 
   private

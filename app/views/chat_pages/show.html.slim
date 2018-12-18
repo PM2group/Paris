@@ -1,7 +1,11 @@
 - if current_user
-  = button_to 'マイページ', user_page_path(current_user.id),class: 'btn btn-primary mr-3'
+  = link_to 'マイページ', user_page_path(current_user.id),class: 'btn btn-primary mr-3'
 - elsif current_company
-  = button_to 'マイページ', com_page_path(current_company.id),class: 'btn btn-primary mr-3'
+  = link_to 'マイページ', com_page_path(current_company.id),class: 'btn btn-primary mr-3'
+- elsif current_super_user
+  = link_to 'マイページ', super_users_path,class: 'btn btn-primary mr-3'
+- else
+  = link_to 'TOP',"/", class: 'btn btn-primary'
 
 h1= @chat_page.theme
 
@@ -11,8 +15,8 @@ p 参加人数
 p 上限人数
 = @chat_page.max_mem
 
-p 日付
-= Date.today
+p 更新日時
+= @chat_page.update_date
 
 
 .mb-3
@@ -21,26 +25,30 @@ table.table.table-hover
    tr[style="width 900px"]
      th 発言内容
      th 発言者
+     th      
+     th     
  tbody
    - @chat_states.each do |chat_state|
      tr
        td= chat_state.sentence
-       td= chat_state.mem_name
-       - if !current_user && !current_company
-         - if chat_state.mem_val == "com"
-           td= link_to 'マイページ', com_page_path(chat_state.mem_id)
-       - elsif chat_state.mem_val == "user"
-         td= link_to 'マイページ', user_page_path(chat_state.mem_id)
-       - elsif current_user || chat_state.mem_name == current_company.com_name
-         td= link_to 'マイページ', com_page_path(chat_state.mem_id)
+       - if !User.where(id: chat_state.mem_id).empty? || !Company.where(id: chat_state.mem_id).empty?         
+         td= chat_state.mem_name
+         - if current_user || current_company
+           - if chat_state.mem_val == "com" && (current_user || chat_state.mem_name == current_company.com_name)
+             td= link_to 'マイページ', com_page_path(chat_state.mem_id),class: 'btn btn-primary mr-3'
+           - elsif chat_state.mem_val == "user"
+             td= link_to 'マイページ', user_page_path(chat_state.mem_id),class: 'btn btn-primary mr-3'
+         - if current_user && (current_user.id != chat_state.mem_id)
+           form action=reports_path method="POST"
+             td= link_to '通報', reports_path(report_chat: @chat_page.id, report_man: @report_man, reported_man: chat_state.mem_id), method: :create, data: { confirm:"通報します。よろしいですか？"}, type:'button', class: 'btn btn-sm btn-danger'
+         - else
+           td
        - else
-         td マイページ
-       - if (current_user && current_user.id != chat_state.mem_id) || (current_company && current_company.id != chat_state.mem_id)
-         form action=reports_path method="POST"
-           td= link_to '通報', reports_path(report_chat: @chat_page.id, report_man: @report_man, reported_man: chat_state.mem_id), method: :create, data: { confirm:"通報します。よろしいですか？"}, type:'button', class: 'btn btn-sm btn-danger'
+         td 削除済みアカウント
+         td 
+         td
 
-
-- if current_company || current_user
+- if current_user || (current_company && (current_company.com_name == @chat_page.designer_name))
   - if@new_mem
     form action=chat_page_path method="GET"
       td

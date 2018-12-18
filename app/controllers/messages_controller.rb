@@ -8,9 +8,8 @@ class MessagesController < ApplicationController
     else
       @user = current_company
     end
-    
-    @messages = Message.where(reception_id: @user.id)
-    @messages2 = Message.where(send_id: @user.id)
+    @messages = Message.where(reception_id: @user.id).order('created_at desc')
+    @messages2 = Message.where(send_id: @user.id).order('created_at desc')
   end
 
   def show
