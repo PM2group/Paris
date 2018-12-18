@@ -51,7 +51,7 @@ class UserPagesController < ApplicationController
     company_offer = CompanyOffer.find(params[:id])
     company_offer.acc_flag = TRUE
     company_offer.save
-    approval_mail(Company.where("id = ?",company_offer.com_id))
+    InquiryMailer.approval_mail(Company.where("id = ?",company_offer.com_id))
     redirect_to user_pages_path, notice: "更新"
   end
 

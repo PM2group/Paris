@@ -25,7 +25,7 @@ class CompanyOffersController < ApplicationController
       company_offer.save!
       company.balance -= 1
       company.save!
-      offer_mail(User.where("id = ?",company_offer.mem_id))
+      InquiryMailer.offer_mail(User.where("id = ?",company_offer.mem_id))
       redirect_to com_pages_path
 
     elsif current_company.balance == 0
