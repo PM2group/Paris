@@ -28,11 +28,13 @@ table.table.table-hover
        td= chat_state.mem_name
        - if !current_user && !current_company
          - if chat_state.mem_val == "com"
-           td= link_to 'マイページ', com_page_path(chat_state.mem_id)
+           td= link_to 'マイページ', com_page_path(chat_state.mem_id),class: 'btn btn-primary mr-3'
+         - else 
+           td= link_to 'マイページ', user_page_path(chat_state.mem_id),class: 'btn btn-primary mr-3'
        - elsif chat_state.mem_val == "user"
-         td= link_to 'マイページ', user_page_path(chat_state.mem_id)
+         td= link_to 'マイページ', user_page_path(chat_state.mem_id),class: 'btn btn-primary mr-3'
        - elsif current_user || chat_state.mem_name == current_company.com_name
-         td= link_to 'マイページ', com_page_path(chat_state.mem_id)
+         td= link_to 'マイページ', com_page_path(chat_state.mem_id),class: 'btn btn-primary mr-3'
        - else
          td マイページ
        - if (current_user && current_user.id != chat_state.mem_id) || (current_company && current_company.id != chat_state.mem_id)
