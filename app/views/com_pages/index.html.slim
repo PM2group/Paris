@@ -82,6 +82,7 @@ table.table.table-hover
     tr
       th 作成したディスカッション一覧
       th パスワード
+      th 更新日時
       th
   tbody
     - @chat_pages.each do |chat_page|
@@ -98,6 +99,7 @@ table.table.table-hover
               td
                 |
                 input name="password" style=("width:300px; height:30px") type="text"/
+            td #{chat_page.update_date}
             td= button_to "チャットページへ",login_chat_path,class: 'btn btn-primary mr-3'
             
     tr
