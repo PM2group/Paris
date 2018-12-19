@@ -155,17 +155,27 @@
 
 
   <div id ="results">
+  <table>
+  <tr>
+  <th>名前</th>
+  <th>業種</th>
+  <th>所在地</th>
+  <th>使用言語</th>
+  <th>給与</th>
+  </tr>
     <% @company.each do |company| %>
-        <a href = "company/<%= company.id %>" >
-            名前：<%= company.com_name%></br>
-            業種:<%= company.occupations%></br>
-            所在地:<%= company.location%></br>
-            使用言語:<%= company.lang%></br>
-            給与:<%= company.salary%></br>
-            </a>
-        </br>
-    <% end %>
+          <tr>
+          
+          <td><a href = "company/<%= company.id %>" ><%= company.com_name%></a></td>
+          <td><%= company.occupations%></td>
+          <td><%= company.location%></td>
+          <td><%= company.lang%></td>
+          <td><%= company.salary%></td>
+        
+   </tr>
 
+    <% end %>
+  </table>
   </div>
 
     <div id ="search">
