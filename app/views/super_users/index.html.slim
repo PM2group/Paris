@@ -30,7 +30,6 @@ table.table.table-hover
         -else
           td= link_to report.reported_man, "/search/company/#{report.reported_man}"          
         td= link_to report.report_chat, "/chat_pages/#{report.report_chat}"
-        td= link_to report.report_chat, "/chat_pages/#{report.report_chat}"
         td= link_to '確認', report, method: :delete, data: { confirm:"通報#{report.id}をデータベースから削除します。よろしいですか？"}, type:'button', class: 'btn btn-sm btn-danger'
 br
 br
