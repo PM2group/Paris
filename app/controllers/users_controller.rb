@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     unless @user.mem_birth.nil?
       unless @user.mem_gra.nil? 
-        if @user.mem_birth > @user.mem_gra.years_ago(23) 
+        if @user.mem_birth > @user.mem_gra.years_ago(20) 
           redirect_to new_user_path, notice:"誕生日と卒業年に誤りがあります"and return
         end
       end
