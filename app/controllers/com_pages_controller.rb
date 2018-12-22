@@ -11,7 +11,8 @@ class ComPagesController < ApplicationController
       end
     elsif current_user
       @company = Company.find(params[:id])
-      @use = CompanyOffer.find_by(mem_id: current_user)
+      user_offers = CompanyOffer.where(mem_id: current_user)
+      @use = user_offers.find_by(com_id: @company.id)
     else
       begin
         @company = Company.find(params[:id])

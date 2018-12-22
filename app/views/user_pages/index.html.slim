@@ -12,7 +12,7 @@
   = link_to  'チャット検索', "/search/chat?s_word=&e_word=&category=&theme=&part=", class: 'btn btn-primary'
   = link_to  'マイページ', "/com_pages",class: 'btn btn-primary'
   - if @com
-    - if @com.acc_flag == TRUE
+    - if @com.acc_flag == TRUE && @com.reaction == TRUE
       = link_to  'メッセージ送信',"/search/member/message/new/" + @user.id.to_s, class: 'btn btn-primary'
 - elsif current_super_user
   = link_to  'マイページ', super_users_path, class: 'btn btn-primary'

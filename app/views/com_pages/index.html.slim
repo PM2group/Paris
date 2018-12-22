@@ -15,7 +15,7 @@
   = link_to  'チャット検索', "/search/chat?s_word=&e_word=&category=&theme=&part=", class: 'btn btn-primary'
   = link_to  'マイページ', "/user_pages", class: 'btn btn-primary'
   -if @use
-    - if @use.acc_flag == TRUE
+    - if @use.acc_flag == TRUE && @use.reaction == TRUE
      = link_to  'メッセージ送信', "/search/company/message/new/" + @company.id.to_s, class: 'btn btn-primary'
 - elsif current_super_user
   = link_to  'マイページ', super_users_path, class: 'btn btn-primary'
