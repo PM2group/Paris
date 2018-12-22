@@ -57,7 +57,7 @@ class CompanyOffersController < ApplicationController
     company_offer.reaction = FALSE
     company_offer.acc_flag = TRUE
     company_offer.save!
-    redirect_to user_pages_path
+    redirect_to user_pages_path,notice:"オファーを辞退しました"
   end
 
   

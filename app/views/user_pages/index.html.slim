@@ -100,8 +100,8 @@ table.table.table-hover
              
               - if offer.acc_flag == FALSE
                 td
-                  = link_to '辞退', offer,method: :delete, data: {confirm: "削除"},class: 'btn btn-danger'
-                  = link_to '承認', user_page_path(offer),method: :PATCH, data:{ confirm:"登録"},class: 'btn btn-primary mr-3'
+                  = link_to '辞退', offer,method: :delete, data: {confirm: "辞退しますか？"},class: 'btn btn-danger'
+                  = link_to '承認', user_page_path(offer),method: :PATCH, data:{ confirm:"承認しますか？"},class: 'btn btn-primary mr-3'
                   td = link_to '企業ページへ', com_page_path(offer.com_id),class: 'btn btn-primary mr-3'
                 tr
                   th = CompanyOffer.human_attribute_name(:オファーメッセージ)

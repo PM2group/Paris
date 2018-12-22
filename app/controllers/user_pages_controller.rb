@@ -55,7 +55,7 @@ class UserPagesController < ApplicationController
       @off = Company.new
       @off = Company.find(company_offer.com_id)
       OfferMailMailer.o_mail(@off).deliver_now
-      redirect_to user_pages_path, notice: "更新"
+      redirect_to user_pages_path, notice: "オファーに返信しました"
     rescue
       company_offer = CompanyOffer.find(params[:id])
       company_offer.acc_flag = FALSE
