@@ -43,7 +43,7 @@ ja:
         com_name: 企業名
         ocuupations: 職種
         location: 勤務地
-        com_info: 連絡先
+        com_info: メールアドレス
         condition: 労働条件
         salary: 初任給
         password: パスワード
