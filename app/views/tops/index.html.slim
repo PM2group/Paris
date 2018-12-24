@@ -35,7 +35,7 @@ p[style="position:absolute; top:330px; left:250px; overflow: hhiden"]
 
 h1[style="position:absolute; top:270px; left:650px; width:300px; overflow: hhiden"] 新着チャット
 p[style="position:absolute; top:330px; left:650px; overflow: hhiden"]
-    - @chat = ChatPage.order("updated_at DESC").limit(3)
+    - @chat = ChatPage.where("readable").order("updated_at DESC").limit(3)
     - @chat.each do |chat|
         a href="chat_pages/#{chat.id}"
             | 作成者：#{chat.designer_name}

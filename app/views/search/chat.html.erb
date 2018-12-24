@@ -108,23 +108,32 @@
   </div>
 
   <div id ="results">
-            
+  <table>
+  <tr>
+  <th>作成者</th>
+  <th>テーマ</th>
+  <th>上限人数</th>
+  <th>参加人数</th>
+  <th>開催日</th>
+  <th></th>
+  </tr>
     <% @chat.each do |chat| %>
-        <a href = "/chat_pages/<%= chat.id %>" >
-            作成者：<%= chat.designer_name%></br>
-            テーマ:<%= chat.theme%></br>
-            上限人数:<%= chat.max_mem%></br>
-            参加人数:<%= chat.join_mem%></br>
-            開催日:<%= chat.start_date%></br>
-            <%if  #{chat.designer_id/1000000000} == 1%>
-            企業書き込み不可
-            <% else %>
-            企業書き込み可
-            <% end %>
-            </br>
-            </a>
-            </br>
-    <% end %>
+      <tr>
+          
+      <td><a href = "/chat_pages/<%= chat.id %>" ><%= chat.designer_name%></a></td>
+      <td><%= chat.theme%></td>
+      <td><%= chat.max_mem%></td>
+      <td><%= chat.join_mem%></td>
+      <%if  #{chat.designer_id/1000000000} == 1%>
+      <td>企業書き込み不可</td>
+      <% else %>
+      <td>企業書き込み可</td>
+      <% end %>
+    
+</tr>
+
+<% end %>
+</table>
 
   </div>
 

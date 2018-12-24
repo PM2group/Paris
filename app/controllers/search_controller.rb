@@ -85,7 +85,7 @@ class SearchController < ApplicationController
     end
     
     unless params[:system].empty? then
-      list[0].concat(" AND system LIKE ?")
+      list[0].concat(" AND system_ex LIKE ?")
       system = "%" + params[:system] + "%"
       list.push(system)
     end
