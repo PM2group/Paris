@@ -124,7 +124,8 @@
       <td><%= chat.theme%></td>
       <td><%= chat.max_mem%></td>
       <td><%= chat.join_mem%></td>
-      <%if  #{chat.designer_id/1000000000} == 1%>
+      <td><%= chat.start_date%></td>
+      <%if  chat.designer_id/1000000000 == 1%>
       <td>企業書き込み不可</td>
       <% else %>
       <td>企業書き込み可</td>
