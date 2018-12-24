@@ -129,17 +129,27 @@
 
 
         <div id ="results">
-            
+        <table>
+        <tr>
+        <th>名前　</th>
+        <th>生年月日　</th>
+        <th>希望職種　</th>
+        <th>希望勤務地　</th>
+        <th>プログラミング言語　</th>
+        <th></th>
                 <% @member.each do |member| %>
-                    <a href = "member/<%= member.id %>" >
-                        名前：<%= member.user_name%></br>
-                        生年月日:<%= member.mem_birth %></br>
-                        希望職種:<%= member.des_occupation %></br>
-                        希望勤務地:<%= member.des_location %></br>
-                        プログラミング言語:<%= member.lang_ex %></br>
-                        </br>
-                        </a>
-                <% end %>
+                    <tr>
+          
+                    <td> <a href = "member/<%= member.id %>" ><%= member.user_name%>　</a></td>
+                    <td><%= member.mem_birth %>　</td>
+                    <td><%= member.des_occupation %>　</td>
+                    <td><%= member.des_location %>　</td>
+                    <td><%= member.lang_ex %></td>
+                  
+             </tr>
+          
+              <% end %>
+            </table>
                 </br>
         </div>
 
