@@ -22,14 +22,19 @@ table.table.table-hover
       tr
         td= report.id
         -if (report.report_man.to_i / 1000000000)==1
-          td= link_to report.report_man, "/search/member/#{report.report_man}"
+          - user = User.find(report.report_man)
+          td= link_to user.user_name, "/search/member/#{report.report_man}"
         -else
-          td= link_to report.report_man, "/search/company/#{report.report_man}"          
+          - com = Company.find(report.report_man)
+          td= link_to com.com_name, "/search/company/#{report.report_man}"          
         -if (report.reported_man.to_i / 1000000000)==1
-          td= link_to report.reported_man, "/search/member/#{report.reported_man}"
+          - user = User.find(report.reported_man)
+          td= link_to user.user_name, "/search/member/#{report.reported_man}"
         -else
-          td= link_to report.reported_man, "/search/company/#{report.reported_man}"          
-        td= link_to report.report_chat, "/chat_pages/#{report.report_chat}"
+          - com = Company.find(report.reported_man)
+          td= link_to com.com_name, "/search/company/#{report.reported_man}"          
+        - chat = ChatPage.find(report.report_chat)
+        td= link_to chat.theme, "/chat_pages/#{report.report_chat}"
         td= link_to '確認', report, method: :delete, data: { confirm:"通報#{report.id}をデータベースから削除します。よろしいですか？"}, type:'button', class: 'btn btn-sm btn-danger'
 br
 br
